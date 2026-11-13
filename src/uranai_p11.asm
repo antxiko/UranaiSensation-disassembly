@@ -20,8 +20,11 @@ L_9803:
 	jp L_98B1		;9803
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9806..0x980f  (9 bytes)
-DATA_9806:
+; DATOS leido_9806: lo usa el codigo: 0x9810 ld (09806h),a; 0x98B5 ld
+;   a,(09806h); 0x98C7 ld hl,09807h (en +1); 0x9931 ld (09807h),a (en +1) (9
+;   bytes)
+;   0x9806..0x980f  (9 bytes)
+DATA_leido_9806:
 	defb 006h,0b2h,011h,000h,0b2h,001h,006h,000h,0edh	; 9806  .........
 
 ; ======================================================================
@@ -258,8 +261,10 @@ L_99C0:
 	ret			;99c0
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x99c1..0x99c7  (6 bytes)
-DATA_99C1:
+; DATOS leido_99C1: lo usa el codigo: 0x99AB ld hl,099c1h -> 0x826C (tabla de
+;   palabras: la de A) (6 bytes)
+;   0x99c1..0x99c7  (6 bytes)
+DATA_leido_99C1:
 	defb 060h,018h,050h,010h,040h,010h	; 99c1
 
 ; ======================================================================
@@ -361,8 +366,10 @@ DATA_casillas_9D26:
 	defb 0c6h,0c7h,000h	; 9d56
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9d59..0x9f25  (460 bytes)
-DATA_9D59:
+; DATOS leido_9D59: lo usa el codigo: 0x9858 ld hl,09d59h; 0x986B ld hl,09d83h
+;   (en +42); 0x9874 ld hl,09e3eh (en +229) (460 bytes)
+;   0x9d59..0x9f25  (460 bytes)
+DATA_leido_9D59:
 	defb 086h,087h,088h,089h,08ah,08bh,0feh,08ch,08dh,08eh,08fh,090h,091h,0feh,092h,093h	; 9d59  ................
 	defb 094h,095h,096h,097h,0feh,098h,099h,09ah,09bh,09ch,09dh,0feh,09eh,09fh,09ah,0a0h	; 9d69  ................
 	defb 0a1h,0a2h,0feh,0a3h,0a4h,0a5h,0a6h,0a7h,0a8h,0ffh,0bah,04ch,04dh,04dh,04dh,04dh	; 9d79  ...........LMMMM
@@ -401,8 +408,10 @@ DATA_paleta_9F25:
 	defb 070h,000h,070h,005h,070h,007h,060h,003h,055h,005h,075h,005h,077h,007h,000h,000h	; 9f35  p.p.p.`.U.u.w...
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9f45..0xa000  (187 bytes)
-DATA_9F45:
+; DATOS resto_9F45: nadie lo lee; son los mismos bytes que p0E en esta misma
+;   direccion: lo que habia en la memoria al grabar (187 bytes)
+;   0x9f45..0xa000  (187 bytes)
+DATA_resto_9F45:
 	defb 084h,080h,0c0h,0c0h,080h,004h,000h,082h,080h,0c0h,004h,0e0h,002h,000h,089h,0f7h	; 9f45  ................
 	defb 07fh,038h,01ch,01ch,00ch,000h,000h,003h,003h,001h,004h,000h,083h,080h,0e0h,0e0h	; 9f55  .8..............
 	defb 004h,070h,089h,060h,000h,080h,080h,0c0h,0c0h,0e0h,00fh,00fh,006h,01fh,003h,00fh	; 9f65  .p.`............

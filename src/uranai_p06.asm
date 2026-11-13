@@ -119,8 +119,11 @@ L_92CA:
 	jp L_95C9		;92d1
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x92d4..0x92eb  (23 bytes)
-DATA_92D4:
+; DATOS leido_92D4: lo usa el codigo: 0x92CD ld ix,092d4h; 0x92CA ld
+;   (092d5h),a (en +1); 0x9229 ld (092d6h),hl (en +2); 0x9239 ld (092d6h),hl
+;   (en +2) (23 bytes)
+;   0x92d4..0x92eb  (23 bytes)
+DATA_leido_92D4:
 	defb 020h,0c4h,004h,0a0h,000h,0b0h,080h,07bh,004h,000h,010h,05bh,004h,000h,010h,057h	; 92d4   ......{...[...W
 	defb 004h,000h,005h,06bh,004h,000h,010h	; 92e4
 
@@ -150,8 +153,9 @@ DATA_casillas_9399:
 	defb 006h,03eh,004h,001h,080h,003h,044h,080h,003h,046h,028h,001h,080h,080h,050h,000h	; 93a9  .>....D..F(...P.
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x93b9..0x93bc  (3 bytes)
-DATA_93B9:
+; DATOS suelto_93B9: nadie lo lee ni lo apunta (3 bytes)
+;   0x93b9..0x93bc  (3 bytes)
+DATA_suelto_93B9:
 	defb 0cdh,03eh,098h	; 93b9
 
 ; ======================================================================
@@ -309,8 +313,9 @@ L_9542:
 	jp L_9A9C		;9545
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9548..0x9565  (29 bytes)
-DATA_9548:
+; DATOS suelto_9548: nadie lo lee ni lo apunta (29 bytes)
+;   0x9548..0x9565  (29 bytes)
+DATA_suelto_9548:
 	defb 03eh,001h,032h,0efh,0d1h,0edh,073h,0f1h,0e0h,021h,000h,0d7h,011h,0ffh,0dah,0cdh	; 9548  >.2...s..!......
 	defb 09fh,095h,011h,000h,0d7h,0cdh,08ah,095h,0afh,032h,0efh,0d1h,0c9h	; 9558  .........2...
 
@@ -336,8 +341,9 @@ L_9565:
 	ret			;9589
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x958a..0x9593  (9 bytes)
-DATA_958A:
+; DATOS suelto_958A: nadie lo lee ni lo apunta (9 bytes)
+;   0x958a..0x9593  (9 bytes)
+DATA_suelto_958A:
 	defb 021h,000h,002h,001h,09eh,005h,0c3h,04bh,082h	; 958a  !......K.
 
 ; ======================================================================
@@ -352,8 +358,9 @@ L_9593:
 	jp 08215h		;959c
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x959f..0x95b0  (17 bytes)
-DATA_959F:
+; DATOS suelto_959F: nadie lo lee ni lo apunta (17 bytes)
+;   0x959f..0x95b0  (17 bytes)
+DATA_suelto_959F:
 	defb 0afh,001h,0ffh,003h,008h,008h,086h,023h,008h,00bh,079h,0b0h,020h,0f7h,008h,012h	; 959f  .......#..y. ...
 	defb 0c9h	; 95af
 
@@ -555,8 +562,11 @@ L_96BA:
 	ret			;96c4
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x96c5..0x96c9  (4 bytes)
-DATA_96C5:
+; DATOS leido_96C5: lo usa el codigo: 0x981D ld (096c5h),a; 0x9820 ld
+;   hl,096c5h; 0x9826 ld (096c6h),a (en +1); 0x9829 ld hl,096c6h (en +1) (4
+;   bytes)
+;   0x96c5..0x96c9  (4 bytes)
+DATA_leido_96C5:
 	defb 082h,02ah,002h,0d2h	; 96c5
 
 ; ======================================================================
@@ -671,8 +681,10 @@ L_9879:
 	jr $-94		;987e
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9880..0x9910  (144 bytes)
-DATA_9880:
+; DATOS leido_9880: lo usa el codigo: 0x9869 ld hl,09880h -> 0x826C (tabla de
+;   palabras: la de A); 0x9542 ld hl,09900h (en +128) (144 bytes)
+;   0x9880..0x9910  (144 bytes)
+DATA_leido_9880:
 	defb 090h,098h,0a0h,098h,0b0h,098h,0c0h,098h,0d0h,098h,0e0h,098h,0f0h,098h,000h,099h	; 9880  ................
 	defb 005h,000h,000h,009h,000h,000h,00ah,000h,000h,00bh,000h,000h,00dh,000h,000h,0ffh	; 9890  ................
 	defb 005h,011h,001h,009h,011h,001h,00ah,011h,001h,00bh,011h,001h,00dh,011h,001h,0ffh	; 98a0  ................
@@ -760,8 +772,10 @@ L_99A6:
 	jp L_9820		;99a9
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x99ac..0x99b4  (8 bytes)
-DATA_99AC:
+; DATOS leido_99AC: lo usa el codigo: 0x9982 ld hl,099ach -> 0x8221 (tabla de
+;   bytes: HL + A) (8 bytes)
+;   0x99ac..0x99b4  (8 bytes)
+DATA_leido_99AC:
 	defb 090h,0a0h,0b0h,0c0h,0d0h,0e0h,0ffh,0ffh	; 99ac  ........
 
 ; ======================================================================
@@ -806,8 +820,11 @@ L_99DD:
 	ret			;99de
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x99df..0x99e7  (8 bytes)
-DATA_99DF:
+; DATOS leido_99DF: lo usa el codigo: 0x99E7 ld hl,099dfh; 0x9A00 ld
+;   a,(099dfh); 0x99ED ld (099e0h),a (en +1); 0x99F0 ld hl,099e0h (en +1) (8
+;   bytes)
+;   0x99df..0x99e7  (8 bytes)
+DATA_leido_99DF:
 	defb 000h,000h,000h,03eh,0ffh,032h,0dfh,099h	; 99df  ...>.2..
 
 ; ======================================================================
@@ -880,8 +897,10 @@ L_9A47:
 	jp L_99E7		;9a4c
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a4f..0x9a8d  (62 bytes)
-DATA_9A4F:
+; DATOS leido_9A4F: lo usa el codigo: 0x9A36 ld hl,09a4fh -> 0x826C (tabla de
+;   palabras: la de A) (62 bytes)
+;   0x9a4f..0x9a8d  (62 bytes)
+DATA_leido_9A4F:
 	defb 063h,09ah,06ah,09ah,071h,09ah,078h,09ah,07fh,09ah,086h,09ah,07fh,09ah,078h,09ah	; 9a4f  c.j.q.x.......x.
 	defb 071h,09ah,06ah,09ah,005h,027h,002h,00dh,037h,007h,0ffh,005h,037h,003h,00dh,037h	; 9a5f  q.j..'..7...7..7
 	defb 006h,0ffh,005h,037h,004h,00dh,037h,005h,0ffh,005h,037h,005h,00dh,037h,004h,0ffh	; 9a6f  ...7..7...7..7..
@@ -914,8 +933,10 @@ L_9A9C:
 	jr L_9A9C		;9aa8
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9aaa..0x9c00  (342 bytes)
-DATA_9AAA:
+; DATOS resto_9AAA: nadie lo lee; son los mismos bytes que p02 en esta misma
+;   direccion: lo que habia en la memoria al grabar (342 bytes)
+;   0x9aaa..0x9c00  (342 bytes)
+DATA_resto_9AAA:
 	defb 0f7h,008h,012h,0c9h,021h,000h,0d3h,0afh,001h,0ffh,003h,0cdh,0bbh,09ah,0ebh,0beh	; 9aaa  ....!...........
 	defb 0c9h,008h,008h,086h,023h,008h,00bh,079h,0b0h,020h,0f7h,008h,0c9h,04bh,004h,000h	; 9aba  ....#..y. ...K..
 	defb 00ch,023h,004h,000h,006h,039h,004h,000h,010h,029h,004h,000h,010h,049h,004h,000h	; 9aca  .#...9...)...I..

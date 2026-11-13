@@ -8,3 +8,14 @@ F 0x9B4B w8
 D 0x9BDA 0x9BE4 saltos_9BDA  5 destinos del despachador (call 0x822D en 0x9BD7) (10 bytes)
 F 0x9BDA w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x98B3 0x98B5 leido_98B3  lo usa el codigo: 0x98C6 ld (098b3h),hl -> 0x8215 (leer sectores); 0x98D9 ld hl,(098b3h) (2 bytes)
+D 0x98F6 0x99F9 leido_98F6  lo usa el codigo: 0x982C ld hl,098f6h; 0x9A06 ld (099f8h),a (en +258); 0x9A38 ld a,(099f8h) (en +258) (259 bytes)
+D 0x9AEF 0x9AF6 leido_9AEF  lo usa el codigo: 0x9ADB ld ix,09aefh; 0x9AD8 ld (09af3h),hl (en +4) (7 bytes)
+D 0x9AFA 0x9B44 leido_9AFA  lo usa el codigo: 0x9A42 ld hl,09afah -> 0x826C (tabla de palabras: la de A); 0x9A0C ld hl,09b26h -> 0x8221 (tabla de bytes: HL + A) (en +44) (74 bytes)
+D 0x9C3B 0x9C40 leido_9C3B  lo usa el codigo: 0x9C30 ld hl,09c3bh -> 0x8221 (tabla de bytes: HL + A) (5 bytes)
+D 0x9C64 0x9C82 leido_9C64  lo usa el codigo: 0x9C53 ld hl,09c77h (en +19); 0x9C5B ld hl,09c78h -> 0x8221 (tabla de bytes: HL + A) (en +20) (30 bytes)
+D 0x9C86 0x9C97 leido_9C86  lo usa el codigo: 0x9C98 ld (09c86h),a; 0x9D5F ld (09c86h),a; 0x9C9B ld (09c87h),a (en +1); 0x9D5C ld a,(09c87h) (en +1) (17 bytes)
+D 0x9FAE 0x9FB4 leido_9FAE  lo usa el codigo: 0x9FBC ld (09faeh),bc; 0x9FCE ld a,(09fafh) -> 0x8266 (copia de la VRAM) (en +1); 0x9FE1 ld a,(09fafh) -> 0x8224 (copia a la VRAM) (en +1); 0x9FC0 ld (09fb0h),hl (en +2) (6 bytes)
+D 0xA032 0xA200 suelto_A032  nadie lo lee ni lo apunta (462 bytes)
+# --- fin de explica.py ---

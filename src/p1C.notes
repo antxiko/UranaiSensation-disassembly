@@ -3,3 +3,16 @@
 D 0xA23D 0xA245 saltos_A23D  4 destinos del despachador (call 0x822D en 0xA23A) (8 bytes)
 F 0xA23D w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9A33 0x9A58 leido_9A33  lo usa el codigo: 0x9B41 ld (09a33h),a; 0x9BA0 ld a,(09a33h); 0x9BBC ld a,(09a34h) (en +1); 0x9F2C ld (09a34h),a (en +1) (37 bytes)
+D 0x9B2D 0x9B31 leido_9B2D  lo usa el codigo: 0x9B0C ld hl,09b2dh -> 0x8221 (tabla de bytes: HL + A) (4 bytes)
+D 0x9BC5 0x9BC6 leido_9BC5  lo usa el codigo: 0x9A5A ld (09bc5h),a; 0x9A9B ld (09bc5h),a (1 bytes)
+D 0x9D8D 0x9DD5 leido_9D8D  lo usa el codigo: 0x9D64 ld hl,09d8dh -> 0x8221 (tabla de bytes: HL + A) (72 bytes)
+D 0xA044 0xA04C leido_A044  lo usa el codigo: 0xA039 ld hl,0a044h -> 0x826C (tabla de palabras: la de A) (8 bytes)
+D 0xA064 0xA1E2 leido_A064  lo usa el codigo: 0x9EF7 ld de,0a064h; 0x9F02 ld hl,0a064h; 0x9F92 ld de,0a068h (en +4); 0x9FB8 ld de,0a081h (en +29) (382 bytes)
+D 0xA272 0xA276 leido_A272  lo usa el codigo: 0xA264 ld hl,0a272h -> 0x8221 (tabla de bytes: HL + A) (4 bytes)
+D 0xA27B 0xA282 leido_A27B  lo usa el codigo: 0xA276 ld hl,0a27bh (7 bytes)
+D 0xA28A 0xA29A leido_A28A  lo usa el codigo: 0xA282 ld hl,0a28ah (16 bytes)
+D 0xA2EF 0xA2F2 leido_A2EF  lo usa el codigo: 0xA31E ld bc,(0a2efh); 0xA327 ld (0a2efh),hl; 0xA2F2 ld (0a2f1h),a (en +2); 0xA2F5 ld a,(0a2f1h) -> 0x8221 (tabla de bytes: HL + A) (en +2) (3 bytes)
+D 0xA32C 0xA400 leido_A32C  lo usa el codigo: 0xA2F8 ld hl,0a32ch -> 0x8221 (tabla de bytes: HL + A) (212 bytes)
+# --- fin de explica.py ---

@@ -7,3 +7,10 @@ D 0x9A65 0x9BA6 vram_9A65  RLE a la VRAM hasta el 0; lo usa 0x983E (321 bytes)
 D 0x9BB8 0x9BC0 saltos_9BB8  4 destinos del despachador (call 0x822D en 0x9BB5) (8 bytes)
 F 0x9BB8 w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9BA6 0x9BB2 leido_9BA6  lo usa el codigo: 0x9BB2 ld a,(09ba6h); 0x9BCC ld hl,09ba6h; 0x9BFA ld a,(09ba7h) (en +1); 0x9C73 ld (09ba7h),a (en +1) (12 bytes)
+D 0x9BEF 0x9BF6 leido_9BEF  lo usa el codigo: 0x9BE3 ld hl,09befh (7 bytes)
+D 0x9C2B 0x9C3F leido_9C2B  lo usa el codigo: 0x9C03 ld hl,09c2bh -> 0x8221 (tabla de bytes: HL + A) (20 bytes)
+D 0x9CCF 0x9CD2 leido_9CCF  lo usa el codigo: 0x9CB3 ld hl,09ccfh -> 0x8221 (tabla de bytes: HL + A) (3 bytes)
+D 0x9D8E 0x9E00 leido_9D8E  lo usa el codigo: 0x9D74 ld hl,09d8eh -> 0x826C (tabla de palabras: la de A) (114 bytes)
+# --- fin de explica.py ---

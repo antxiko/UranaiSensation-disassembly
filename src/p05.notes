@@ -3,3 +3,7 @@
 D 0x9F89 0xA1E7 casillas_9F89  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9CAE (606 bytes)
 D 0xA1E7 0xA207 paleta_A1E7  paleta: 16 colores de 2 bytes; lo usa 0x9CA1 (32 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9C06 0x9C08 leido_9C06  lo usa el codigo: 0x9ECF ld (09c06h),a; 0x9EDC ld a,(09c06h); 0x9C12 ld (09c07h),a (en +1); 0x9D6E ld a,(09c07h) (en +1) (2 bytes)
+D 0xA207 0xA400 leido_A207  lo usa el codigo: 0x9CB3 ld hl,0a207h; 0x9CDF ld hl,0a21bh (en +20); 0x9C33 ld hl,0a232h (en +43); 0x9E8C ld hl,0a265h -> 0x8221 (tabla de bytes: HL + A) (en +94) (505 bytes)
+# --- fin de explica.py ---

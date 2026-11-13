@@ -130,8 +130,10 @@ DATA_dibujo_9B2D:
 	defb 01fh,010h,010h,07fh,010h,02eh,024h,044h,05fh,000h	; 9b3d  ......$D_.
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9b47..0x9c00  (185 bytes)
-DATA_9B47:
+; DATOS resto_9B47: nadie lo lee; son los mismos bytes que p20 en esta misma
+;   direccion: lo que habia en la memoria al grabar (185 bytes)
+;   0x9b47..0x9c00  (185 bytes)
+DATA_resto_9B47:
 	defb 034h,006h,01eh,083h,051h,052h,0f3h,080h,00bh,053h,006h,01eh,086h,03eh,01eh,03fh	; 9b47  4...QR...S...>.?
 	defb 033h,01eh,034h,006h,01eh,080h,007h,05eh,081h,01eh,080h,006h,065h,08eh,028h,029h	; 9b57  3.4....^....e.()
 	defb 06bh,06ch,02ch,01eh,03eh,01eh,03fh,033h,01eh,034h,01eh,028h,080h,003h,0a2h,081h	; 9b67  kl,.>.?3.4.(....

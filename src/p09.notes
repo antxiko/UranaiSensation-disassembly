@@ -1,1 +1,8 @@
 # Notas de p09 (sectores 93-99, en 0x9800).
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x982A 0x982B leido_982A  lo usa el codigo: 0x9B8E ld hl,0982ah; 0x9BAE ld a,(0982ah) (1 bytes)
+D 0x997A 0x9984 leido_997A  lo usa el codigo: 0x996B ld de,0997ah; 0x9970 ld de,0997fh (en +5) (10 bytes)
+D 0x9CB4 0x9CB5 relleno_9CB4  0xC9 repetido; nadie lo lee (1 bytes)
+D 0x9D22 0x9DB8 leido_9D22  lo usa el codigo: 0x980D ld de,09d22h (150 bytes)
+D 0x9DF9 0xA600 leido_9DF9  lo usa el codigo: 0x9850 ld hl,09df9h; 0x9859 ld hl,09e11h -> 0x826C (tabla de palabras: la de A) (en +24); 0x99B0 ld hl,0a3e1h -> 0x826C (tabla de palabras: la de A) (en +1512); 0x98D3 ld de,0a5f1h -> 0x8206 (DE + A) (en +2040) (2055 bytes)
+# --- fin de explica.py ---

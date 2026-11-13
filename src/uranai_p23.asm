@@ -148,8 +148,9 @@ DATA_casillas_98CD:
 	defb 082h,081h,082h,081h,082h,081h,085h,082h,083h,09dh,086h,082h,000h	; 9aed  .............
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9afa..0x9b01  (7 bytes)
-DATA_9AFA:
+; DATOS leido_9AFA: lo usa el codigo: 0x984E ld ix,09afah (7 bytes)
+;   0x9afa..0x9b01  (7 bytes)
+DATA_leido_9AFA:
 	defb 040h,03ch,004h,0a8h,000h,0b0h,080h	; 9afa
 
 ; ----------------------------------------------------------------------
@@ -189,8 +190,9 @@ DATA_vram_9BA9:
 	defb 000h,003h,040h,083h,020h,012h,03fh,00eh,000h,082h,008h,018h,000h	; 9c09  ..@. .?......
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9c16..0x9c1e  (8 bytes)
-DATA_9C16:
+; DATOS leido_9C16: lo usa el codigo: 0x980C ld ix,09c16h (8 bytes)
+;   0x9c16..0x9c1e  (8 bytes)
+DATA_leido_9C16:
 	defb 002h,004h,040h,050h,000h,000h,000h,000h	; 9c16  ..@P....
 
 ; ----------------------------------------------------------------------
@@ -209,8 +211,11 @@ DATA_dibujo_9C24:
 	defb 035h,000h,063h,066h,06ch,078h,07ch,066h,063h,000h	; 9c34  5.cflx|fc.
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9c3e..0x9c44  (6 bytes)
-DATA_9C3E:
+; DATOS leido_9C3E: lo usa el codigo: 0x9C83 ld (09c3eh),a; 0x9CDE ld
+;   hl,09c3eh; 0x9C92 ld (09c40h),hl (en +2); 0x9CA2 ld hl,(09c40h) -> 0x8266
+;   (copia de la VRAM) (en +2) (6 bytes)
+;   0x9c3e..0x9c44  (6 bytes)
+DATA_leido_9C3E:
 	defb 000h,0ddh,07dh,0c6h,008h,06fh	; 9c3e
 
 ; ======================================================================
@@ -329,8 +334,10 @@ L_9D06:
 	ret			;9d0c
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9d0d..0x9e00  (243 bytes)
-DATA_9D0D:
+; DATOS resto_9D0D: nadie lo lee; son los mismos bytes que p22 en esta misma
+;   direccion: lo que habia en la memoria al grabar (243 bytes)
+;   0x9d0d..0x9e00  (243 bytes)
+DATA_resto_9D0D:
 	defb 0edh,079h,0fbh,0c9h,03eh,024h,032h,026h,0d2h,0cdh,087h,082h,0edh,061h,0afh,0edh	; 9d0d  .y..>$2&.....a..
 	defb 079h,0edh,069h,0edh,079h,02ah,027h,0d2h,0edh,061h,0afh,0bch,020h,001h,03ch,0edh	; 9d1d  y.i.y*'..a.. .<.
 	defb 079h,0afh,0edh,079h,0edh,079h,0edh,069h,03ch,0edh,079h,03eh,070h,0edh,079h,0fbh	; 9d2d  y..y.y.i<.y>p.y.

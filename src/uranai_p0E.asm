@@ -497,8 +497,11 @@ DATA_paleta_9D6B:
 	defb 070h,000h,052h,004h,003h,007h,070h,004h,055h,005h,070h,007h,077h,007h,000h,000h	; 9d7b  p.R...p.U.p.w...
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9d8b..0x9df0  (101 bytes)
-DATA_9D8B:
+; DATOS leido_9D8B: lo usa el codigo: 0x9873 ld hl,09d8bh; 0x9947 ld hl,09da3h
+;   (en +24); 0x9955 ld hl,09dcch -> 0x8221 (tabla de bytes: HL + A) (en +65)
+;   (101 bytes)
+;   0x9d8b..0x9df0  (101 bytes)
+DATA_leido_9D8B:
 	defb 000h,0ffh,000h,058h,068h,080h,001h,0ffh,000h,058h,068h,090h,002h,0ffh,000h,058h	; 9d8b  ...Xh....Xh....X
 	defb 068h,0a0h,003h,0ffh,000h,058h,068h,0b0h,002h,002h,002h,002h,002h,002h,002h,092h	; 9d9b  h....Xh.........
 	defb 002h,092h,002h,002h,092h,002h,092h,092h,092h,092h,092h,0a2h,0a2h,0a2h,0a2h,0a2h	; 9dab  ................
@@ -589,8 +592,10 @@ DATA_casillas_A0C7:
 	defb 000h	; a157
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa158..0xa200  (168 bytes)
-DATA_A158:
+; DATOS resto_A158: nadie lo lee; son los mismos bytes que p0C en esta misma
+;   direccion: lo que habia en la memoria al grabar (168 bytes)
+;   0xa158..0xa200  (168 bytes)
+DATA_resto_A158:
 	defb 019h,0c9h,032h,096h,0a3h,0cdh,00bh,0a2h,0edh,053h,000h,0d2h,0cdh,00bh,0a2h,0edh	; a158  ..2......S......
 	defb 053h,006h,0d2h,0cdh,00bh,0a2h,0edh,053h,002h,0d2h,07eh,023h,032h,032h,0d2h,07eh	; a168  S......S..~#22.~
 	defb 023h,032h,033h,0d2h,0cdh,0c6h,0a1h,02ah,006h,0d2h,0cdh,075h,082h,03eh,0ffh,032h	; a178  #23....*...u.>.2

@@ -7,3 +7,13 @@ D 0x9CF7 0x9D14 texto_9CF7  texto: x, y y las letras hasta 0xFF; lo usa 0x9C28 (
 D 0x9D5B 0x9D75 texto_9D5B  texto: x, y y las letras hasta 0xFF; lo usa 0x9D51 (26 bytes)
 D 0x9D75 0x9D8F texto_9D75  texto: x, y y las letras hasta 0xFF; lo usa 0x9D51 (26 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x991E 0x9A39 leido_991E  lo usa el codigo: 0x990D ld hl,0991eh -> 0x8221 (tabla de bytes: HL + A); 0x983B ld hl,0992eh -> 0x826C (tabla de palabras: la de A) (en +16) (283 bytes)
+D 0x9AC3 0x9B25 leido_9AC3  lo usa el codigo: 0x9AAD ld hl,09ac3h; 0x9AB7 ld hl,09af4h (en +49) (98 bytes)
+D 0x9B53 0x9B97 leido_9B53  lo usa el codigo: 0x9B3C ld hl,09b53h -> 0x826C (tabla de palabras: la de A) (68 bytes)
+D 0x9C30 0x9CDA leido_9C30  lo usa el codigo: 0x9C04 ld hl,09c30h; 0x9C0E ld hl,09c4ah (en +26) (170 bytes)
+D 0x9E6C 0x9ECA leido_9E6C  lo usa el codigo: 0x9E1D ld hl,09e6ch; 0x9E27 ld hl,09e76h -> 0x826C (tabla de palabras: la de A) (en +10); 0x9E4C ld hl,09e80h (en +20); 0x9E56 ld hl,09ea5h (en +57) (94 bytes)
+D 0x9FFD 0xA003 leido_9FFD  lo usa el codigo: 0xA00B ld (09ffdh),bc; 0xA01D ld a,(09ffeh) -> 0x8266 (copia de la VRAM) (en +1); 0xA030 ld a,(09ffeh) -> 0x8224 (copia a la VRAM) (en +1); 0xA00F ld (09fffh),hl (en +2) (6 bytes)
+D 0xA12F 0xA132 suelto_A12F  nadie lo lee ni lo apunta (3 bytes)
+D 0xA262 0xA400 leido_A262  lo usa el codigo: 0xA10B ld hl,0a262h -> 0x826C (tabla de palabras: la de A); 0xA0B2 ld (0a2bch),a (en +90); 0xA0DD ld (0a2bch),a (en +90); 0xA081 ld (0a2bdh),a (en +91) (414 bytes)
+# --- fin de explica.py ---

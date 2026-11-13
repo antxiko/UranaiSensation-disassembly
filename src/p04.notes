@@ -19,3 +19,22 @@ F 0x9ECF w8
 D 0xA0CE 0xA0EE saltos_A0CE  16 destinos del despachador (call 0x822D en 0xA0CB) (32 bytes)
 F 0xA0CE w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9C87 0x9C89 leido_9C87  lo usa el codigo: 0x9F76 ld (09c87h),a; 0x9F8B ld a,(09c87h); 0x9DF1 ld (09c88h),a (en +1); 0x9E91 ld (09c88h),a (en +1) (2 bytes)
+D 0xA320 0xA3C4 leido_A320  lo usa el codigo: 0x9D03 ld hl,0a320h; 0x9CF2 ld hl,0a39ch -> 0x826C (tabla de palabras: la de A) (en +124) (164 bytes)
+D 0xA3D6 0xA3FA leido_A3D6  lo usa el codigo: 0x9ED5 ld hl,0a3d6h -> 0x8221 (tabla de bytes: HL + A); 0x9F20 ld hl,0a3e0h -> 0x8221 (tabla de bytes: HL + A) (en +10); 0x9FFC ld hl,0a3e4h -> 0x8221 (tabla de bytes: HL + A) (en +14); 0x9FE3 ld hl,0a3eeh -> 0x8221 (tabla de bytes: HL + A) (en +24) (36 bytes)
+D 0xA567 0xA568 leido_A567  lo usa el codigo: 0xA56C ld (0a567h),a; 0xA5F5 ld a,(0a567h) (1 bytes)
+D 0xA89F 0xA8A5 suelto_A89F  nadie lo lee ni lo apunta (6 bytes)
+D 0xA98B 0xAC3F leido_A98B  lo usa el codigo: 0xA581 ld hl,0a98bh -> 0x9609 (el menu de la p02); 0xA7BA ld hl,0a98bh -> 0x9609 (el menu de la p02); 0xA5B4 ld hl,0ab33h (en +424); 0xA708 ld hl,0ab3bh -> 0x8221 (tabla de bytes: HL + A) (en +432) (692 bytes)
+D 0xAC57 0xAD28 leido_AC57  lo usa el codigo: 0xA885 ld hl,0ac57h; 0xA87A ld hl,0ac89h (en +50); 0xA86C ld hl,0acbch (en +101); 0xA861 ld hl,0ace5h (en +142) (209 bytes)
+D 0xAE5A 0xAE5D leido_AE5A  lo usa el codigo: 0xAEC5 ld hl,0ae5ah (3 bytes)
+D 0xAFC4 0xB175 leido_AFC4  lo usa el codigo: 0xAE9F ld de,0afc4h; 0xA89A ld de,0b028h (en +100); 0xB183 ld hl,0b174h (en +432); 0xB19D ld (0b174h),a -> 0x8221 (tabla de bytes: HL + A) (en +432) (433 bytes)
+D 0xB1CE 0xB1E1 leido_B1CE  lo usa el codigo: 0xB1A8 ld hl,0b1ceh (19 bytes)
+D 0xB1E6 0xB1F6 leido_B1E6  lo usa el codigo: 0xB1A1 ld hl,0b1e6h -> 0x8221 (tabla de bytes: HL + A) (16 bytes)
+D 0xB2CB 0xB2EA leido_B2CB  lo usa el codigo: 0xB2EE ld hl,0b2cbh; 0xB309 ld (0b2cbh),hl; 0xB2F3 ld de,0b2cch (en +1); 0xB311 ld (0b2cdh),a (en +2) (31 bytes)
+D 0xB32C 0xB338 leido_B32C  lo usa el codigo: 0xB320 ld hl,0b32ch (12 bytes)
+D 0xB530 0xB53D leido_B530  lo usa el codigo: 0xB4C6 ld hl,0b530h -> 0x8221 (tabla de bytes: HL + A); 0xB50A ld de,0b530h -> 0x8206 (DE + A); 0xB513 ld de,0b536h -> 0x8206 (DE + A) (en +6) (13 bytes)
+D 0xB612 0xB69F suelto_B612  nadie lo lee ni lo apunta (141 bytes)
+D 0xB6F5 0xB704 suelto_B6F5  nadie lo lee ni lo apunta (15 bytes)
+D 0xB729 0xB800 suelto_B729  nadie lo lee ni lo apunta (215 bytes)
+# --- fin de explica.py ---

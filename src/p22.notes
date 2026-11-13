@@ -4,3 +4,10 @@ D 0x9900 0x9916 texto_9900  texto: x, y y las letras hasta 0xFF; lo usa 0x9821 (
 D 0x9916 0x9932 texto_9916  texto: x, y y las letras hasta 0xFF; lo usa 0x9833 (28 bytes)
 D 0x9932 0x9943 texto_9932  texto: x, y y las letras hasta 0xFF; lo usa 0x983F (17 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9943 0x99E5 leido_9943  lo usa el codigo: 0x9845 ld hl,09943h; 0x9855 ld hl,0995fh (en +28); 0x98EB ld hl,09977h (en +52); 0x98F2 ld hl,0999fh (en +92) (162 bytes)
+D 0x9A93 0x9A96 suelto_9A93  nadie lo lee ni lo apunta (3 bytes)
+D 0x9BC6 0x9C22 leido_9BC6  lo usa el codigo: 0x9A6F ld hl,09bc6h -> 0x826C (tabla de palabras: la de A); 0x9A16 ld (09c20h),a (en +90); 0x9A41 ld (09c20h),a (en +90); 0x99E5 ld (09c21h),a (en +91) (92 bytes)
+D 0x9D54 0x9D5A leido_9D54  lo usa el codigo: 0x9D62 ld (09d54h),bc; 0x9D74 ld a,(09d55h) -> 0x8266 (copia de la VRAM) (en +1); 0x9D87 ld a,(09d55h) -> 0x8224 (copia a la VRAM) (en +1); 0x9D66 ld (09d56h),hl (en +2) (6 bytes)
+D 0x9DD8 0x9E00 resto_9DD8  nadie lo lee; son los mismos bytes que p20, p23 en esta misma direccion: lo que habia en la memoria al grabar (40 bytes)
+# --- fin de explica.py ---

@@ -19,3 +19,6 @@ C 0xC052 0x1A SETDTA: los sectores se leeran en DE
 C 0xC057 DE = el primer sector, HL = cuantos y unidad
 C 0xC059 0x2F: lectura de sectores sin pasar por ficheros
 D 0xC05F 0xC200 relleno  ceros hasta el final del sector (417 bytes)
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0xC05E 0xC05F relleno_C05E  0x00 repetido; nadie lo lee (1 bytes)
+# --- fin de explica.py ---

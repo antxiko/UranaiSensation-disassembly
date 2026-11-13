@@ -13,3 +13,21 @@ F 0xA589 w8
 D 0xA6A5 0xA6AD saltos_A6A5  4 destinos del despachador (call 0x822D en 0xA6A2) (8 bytes)
 F 0xA6A5 w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9A33 0x9A44 leido_9A33  lo usa el codigo: 0x9F90 ld (09a33h),a; 0x9FCE ld a,(09a33h); 0xA2A3 ld (09a36h),a (en +3); 0xA138 ld (09a37h),a (en +4) (17 bytes)
+D 0x9DB7 0x9EB1 leido_9DB7  lo usa el codigo: 0x9BA3 ld hl,09db7h; 0x9BA9 ld hl,09ddfh (en +40); 0x9BAF ld hl,09e07h (en +80); 0x9BB5 ld hl,09e2fh (en +120) (250 bytes)
+D 0xA063 0xA069 leido_A063  lo usa el codigo: 0xA04A ld hl,0a063h -> 0x826C (tabla de palabras: la de A) (6 bytes)
+D 0xA0D8 0xA0DE leido_A0D8  lo usa el codigo: 0xA0BF ld hl,0a0d8h -> 0x826C (tabla de palabras: la de A) (6 bytes)
+D 0xA0FE 0xA104 leido_A0FE  lo usa el codigo: 0xA0E5 ld hl,0a0feh -> 0x826C (tabla de palabras: la de A) (6 bytes)
+D 0xA228 0xA270 leido_A228  lo usa el codigo: 0xA209 ld hl,0a228h -> 0x8221 (tabla de bytes: HL + A) (72 bytes)
+D 0xA394 0xA39C leido_A394  lo usa el codigo: 0xA389 ld hl,0a394h -> 0x826C (tabla de palabras: la de A) (8 bytes)
+D 0xA3B4 0xA532 leido_A3B4  lo usa el codigo: 0xA28B ld de,0a3b4h; 0xA296 ld hl,0a3b4h; 0xA2E2 ld de,0a3b8h (en +4); 0xA308 ld de,0a3d1h (en +29) (382 bytes)
+D 0xA5BE 0xA5C2 leido_A5BE  lo usa el codigo: 0xA5B0 ld hl,0a5beh -> 0x8221 (tabla de bytes: HL + A) (4 bytes)
+D 0xA5C7 0xA5CE leido_A5C7  lo usa el codigo: 0xA5C2 ld hl,0a5c7h (7 bytes)
+D 0xA5D6 0xA5E6 leido_A5D6  lo usa el codigo: 0xA5CE ld hl,0a5d6h (16 bytes)
+D 0xA686 0xA696 leido_A686  lo usa el codigo: 0xA652 ld hl,0a686h -> 0x8221 (tabla de bytes: HL + A); 0xA672 ld hl,0a68ah -> 0x8221 (tabla de bytes: HL + A) (en +4); 0xA666 ld hl,0a68eh -> 0x826C (tabla de palabras: la de A) (en +8) (16 bytes)
+D 0xA6DB 0xA704 suelto_A6DB  nadie lo lee ni lo apunta (41 bytes)
+D 0xA75E 0xA78C suelto_A75E  nadie lo lee ni lo apunta (46 bytes)
+D 0xA7B6 0xA8C5 leido_A7B6  lo usa el codigo: 0x9F0B ld (0a8bah),a (en +260); 0x9F3F ld a,(0a8bah) (en +260); 0x9F38 ld hl,(0a8bbh) (en +261); 0x9F4A ld hl,(0a8bbh) (en +261) (271 bytes)
+D 0xA8FF 0xAC00 leido_A8FF  lo usa el codigo: 0xA8CB ld hl,0a8ffh -> 0x8221 (tabla de bytes: HL + A) (769 bytes)
+# --- fin de explica.py ---

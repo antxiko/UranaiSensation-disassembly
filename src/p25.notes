@@ -2,3 +2,14 @@
 # --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
 D 0x9AF6 0x9AFA casillas_9AF6  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9AEC (4 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x98FB 0x98FD leido_98FB  lo usa el codigo: 0x990E ld (098fbh),hl -> 0x8215 (leer sectores); 0x9921 ld hl,(098fbh) (2 bytes)
+D 0x993E 0x99F9 leido_993E  lo usa el codigo: 0x98C0 ld hl,0993eh; 0x9A06 ld (099f8h),a (en +186); 0x9A38 ld a,(099f8h) (en +186) (187 bytes)
+D 0x9AEF 0x9AF6 leido_9AEF  lo usa el codigo: 0x9ADB ld ix,09aefh; 0x9AD8 ld (09af3h),hl (en +4) (7 bytes)
+D 0x9AFA 0x9B7D leido_9AFA  lo usa el codigo: 0x9A42 ld hl,09afah -> 0x826C (tabla de palabras: la de A); 0x9A0C ld hl,09b26h -> 0x8221 (tabla de bytes: HL + A) (en +44); 0x9B95 ld hl,09b44h (en +74); 0x9BA3 ld hl,09b44h (en +74) (131 bytes)
+D 0x9BDA 0x9BE0 leido_9BDA  lo usa el codigo: 0x9BCF ld hl,09bdah -> 0x8221 (tabla de bytes: HL + A) (6 bytes)
+D 0x9C0C 0x9D64 leido_9C0C  lo usa el codigo: 0x9BE3 ld hl,09c0ch -> 0x826C (tabla de palabras: la de A) (344 bytes)
+D 0x9DC2 0x9DDA leido_9DC2  lo usa el codigo: 0x9DB9 ld hl,09dc2h -> 0x8221 (tabla de bytes: HL + A); 0x9DDB ld (09dc9h),a (en +7); 0x9EA2 ld (09dc9h),a (en +7); 0x9DDE ld (09dcah),a (en +8) (24 bytes)
+D 0xA0F1 0xA0F7 leido_A0F1  lo usa el codigo: 0xA0FF ld (0a0f1h),bc; 0xA111 ld a,(0a0f2h) -> 0x8266 (copia de la VRAM) (en +1); 0xA124 ld a,(0a0f2h) -> 0x8224 (copia a la VRAM) (en +1); 0xA103 ld (0a0f3h),hl (en +2) (6 bytes)
+D 0xA2A7 0xA400 relleno_A2A7  solo 0x00/0xFF (89 x 0xFF, 128 x 0x00, 128 x 0xFF); nadie lo lee (345 bytes)
+# --- fin de explica.py ---

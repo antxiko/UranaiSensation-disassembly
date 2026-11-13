@@ -247,8 +247,10 @@ L_99C9:
 	ret			;99ce
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x99cf..0x9a00  (49 bytes)
-DATA_99CF:
+; DATOS resto_99CF: nadie lo lee; son los mismos bytes que p1E, p26 en esta
+;   misma direccion: lo que habia en la memoria al grabar (49 bytes)
+;   0x99cf..0x9a00  (49 bytes)
+DATA_resto_99CF:
 	defb 090h,052h,005h,02ch,028h,01fh,00ch,010h,052h,052h,0ffh,090h,092h,0d4h,028h,02eh	; 99cf  .R.,(...RR....(.
 	defb 014h,001h,003h,014h,0beh,0feh,090h,0a2h,005h,02ch,028h,01fh,00ch,010h,052h,052h	; 99df  .........,(...RR
 	defb 0ffh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01fh,03ah,0c3h	; 99ef  ..............:.

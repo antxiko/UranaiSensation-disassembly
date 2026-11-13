@@ -164,8 +164,11 @@ DATA_texto_9932:
 	defb 0ffh	; 9942
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9943..0x99e5  (162 bytes)
-DATA_9943:
+; DATOS leido_9943: lo usa el codigo: 0x9845 ld hl,09943h; 0x9855 ld hl,0995fh
+;   (en +28); 0x98EB ld hl,09977h (en +52); 0x98F2 ld hl,0999fh (en +92) (162
+;   bytes)
+;   0x9943..0x99e5  (162 bytes)
+DATA_leido_9943:
 	defb 04bh,099h,051h,099h,018h,092h,002h,000h,072h,0c0h,000h,082h,0c0h,000h,0d0h,072h	; 9943  K.Q.....r......r
 	defb 0fdh,0bfh,0fdh,053h,0feh,0d0h,082h,0fdh,0c0h,0fdh,053h,0ffh,067h,099h,06dh,099h	; 9953  ...S......S.g.m.
 	defb 0cdh,0d1h,000h,002h,0a2h,0b0h,000h,0a2h,0d0h,000h,0b8h,0a2h,01ah,002h,000h,000h	; 9963  ................
@@ -282,8 +285,9 @@ L_9A7A:
 	ret			;9a92
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a93..0x9a96  (3 bytes)
-DATA_9A93:
+; DATOS suelto_9A93: nadie lo lee ni lo apunta (3 bytes)
+;   0x9a93..0x9a96  (3 bytes)
+DATA_suelto_9A93:
 	defb 0cdh,01eh,082h	; 9a93
 
 ; ======================================================================
@@ -472,8 +476,11 @@ L_9BBA:
 	ret			;9bc5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9bc6..0x9c22  (92 bytes)
-DATA_9BC6:
+; DATOS leido_9BC6: lo usa el codigo: 0x9A6F ld hl,09bc6h -> 0x826C (tabla de
+;   palabras: la de A); 0x9A16 ld (09c20h),a (en +90); 0x9A41 ld (09c20h),a
+;   (en +90); 0x99E5 ld (09c21h),a (en +91) (92 bytes)
+;   0x9bc6..0x9c22  (92 bytes)
+DATA_leido_9BC6:
 	defb 0dah,09bh,0dfh,09bh,0e4h,09bh,0e9h,09bh,0f2h,09bh,0f7h,09bh,0fch,09bh,005h,09ch	; 9bc6  ................
 	defb 00eh,09ch,017h,09ch,001h,000h,000h,000h,008h,001h,000h,000h,000h,000h,001h,000h	; 9bd6  ................
 	defb 000h,018h,008h,002h,000h,000h,020h,008h,000h,00bh,024h,008h,001h,0fch,000h,01ch	; 9be6  ...... ...$.....
@@ -652,8 +659,11 @@ L_9D3E:
 	ret			;9d53
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9d54..0x9d5a  (6 bytes)
-DATA_9D54:
+; DATOS leido_9D54: lo usa el codigo: 0x9D62 ld (09d54h),bc; 0x9D74 ld
+;   a,(09d55h) -> 0x8266 (copia de la VRAM) (en +1); 0x9D87 ld a,(09d55h) ->
+;   0x8224 (copia a la VRAM) (en +1); 0x9D66 ld (09d56h),hl (en +2) (6 bytes)
+;   0x9d54..0x9d5a  (6 bytes)
+DATA_leido_9D54:
 	defb 002h,000h,084h,002h,003h,001h	; 9d54
 
 ; ======================================================================
@@ -737,8 +747,10 @@ L_9DCC:
 	ret			;9dd7
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9dd8..0x9e00  (40 bytes)
-DATA_9DD8:
+; DATOS resto_9DD8: nadie lo lee; son los mismos bytes que p20, p23 en esta
+;   misma direccion: lo que habia en la memoria al grabar (40 bytes)
+;   0x9dd8..0x9e00  (40 bytes)
+DATA_resto_9DD8:
 	defb 082h,0c7h,00fh,008h,000h,081h,060h,007h,0e0h,08ah,008h,010h,020h,040h,000h,000h	; 9dd8  ......`..... @..
 	defb 008h,010h,028h,070h,006h,000h,094h,070h,030h,000h,010h,001h,051h,030h,050h,030h	; 9de8  ..(p...p0...Q0P0
 	defb 050h,031h,051h,030h,050h,030h,050h,007h	; 9df8  P1Q0P0P.

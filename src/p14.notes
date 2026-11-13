@@ -5,3 +5,11 @@ D 0x98A6 0x99F4 casillas_98A6  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x99F4 0x9A14 paleta_99F4  paleta: 16 colores de 2 bytes; lo usa 0x9896 (32 bytes)
 D 0x9A14 0x9A37 vram_9A14  RLE a la VRAM hasta el 0; lo usa 0x989F (35 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9812 0x9814 leido_9812  lo usa el codigo: 0x9A4B ld (09812h),a; 0x9A66 ld hl,09812h; 0x9A50 ld (09813h),a (en +1); 0x9A5A ld hl,09813h (en +1) (2 bytes)
+D 0x9A37 0x9A3F leido_9A37  lo usa el codigo: 0x9860 ld hl,09a37h (8 bytes)
+D 0x9A56 0x9A5A leido_9A56  lo usa el codigo: 0x9A3F ld hl,09a56h (4 bytes)
+D 0x9B12 0x9BCA leido_9B12  lo usa el codigo: 0x9AF9 ld hl,09b12h -> 0x826C (tabla de palabras: la de A); 0x9AF1 ld hl,09b18h -> 0x826C (tabla de palabras: la de A) (en +6); 0x9D03 ld hl,09b18h -> 0x8221 (tabla de bytes: HL + A) (en +6); 0x9B05 ld hl,09bc0h -> 0x8218 (casillas) (en +174) (184 bytes)
+D 0x9C84 0x9C8C leido_9C84  lo usa el codigo: 0x9C65 ld hl,09c84h; 0x9C73 ld hl,09c88h (en +4) (8 bytes)
+D 0x9D55 0x9E00 resto_9D55  nadie lo lee; son los mismos bytes que p12 en esta misma direccion: lo que habia en la memoria al grabar (171 bytes)
+# --- fin de explica.py ---

@@ -198,8 +198,10 @@ DATA_texto_997D:
 	defb 01fh,00ch,010h,052h,052h,0ffh	; 998d
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9993..0x9a00  (109 bytes)
-DATA_9993:
+; DATOS relleno_9993: solo 0x00/0xFF (13 x 0x00, 16 x 0xFF, 32 x 0x00, 16 x
+;   0xFF, 16 x 0x00, 16 x 0xFF); nadie lo lee (109 bytes)
+;   0x9993..0x9a00  (109 bytes)
+DATA_relleno_9993:
 	defb 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,0ffh,0ffh,0ffh	; 9993  ................
 	defb 0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,000h,000h,000h	; 99a3  ................
 	defb 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h	; 99b3  ................

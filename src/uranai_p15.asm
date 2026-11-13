@@ -176,7 +176,9 @@ DATA_casillas_9B4B:
 	defb 00dh,0ceh,081h,0cch,00dh,09ch,000h	; 9bdb
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9be2..0x9c00  (30 bytes)
-DATA_9BE2:
+; DATOS resto_9BE2: nadie lo lee; son los mismos bytes que p14, p16 en esta
+;   misma direccion: lo que habia en la memoria al grabar (30 bytes)
+;   0x9be2..0x9c00  (30 bytes)
+DATA_resto_9BE2:
 	defb 02ch,092h,047h,0afh,0cdh,00ch,082h,021h,02eh,092h,035h,0cah,011h,09ch,03ah,029h	; 9be2  ,.G....!..5...:)
 	defb 092h,03dh,0c2h,004h,09ch,021h,02ah,092h,07eh,0c6h,018h,077h,023h,07eh	; 9bf2  .=...!*.~..w#~

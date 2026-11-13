@@ -7,3 +7,6 @@ D 0x99AF 0x99C4 texto_99AF  texto: x, y y las letras hasta 0xFF; lo usa 0x992B (
 D 0x99C4 0x99DA texto_99C4  texto: x, y y las letras hasta 0xFF; lo usa 0x98F0 (22 bytes)
 D 0x99DA 0x99F0 texto_99DA  texto: x, y y las letras hasta 0xFF; lo usa 0x98F0 (22 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x99F0 0x9A00 resto_99F0  nadie lo lee; son los mismos bytes que p0B, p26, p27 en esta misma direccion: lo que habia en la memoria al grabar (16 bytes)
+# --- fin de explica.py ---

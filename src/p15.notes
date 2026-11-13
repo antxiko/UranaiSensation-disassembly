@@ -8,3 +8,6 @@ D 0x9A60 0x9A8C casillas_9A60  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x9A8C 0x9B4B casillas_9A8C  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x988B (191 bytes)
 D 0x9B4B 0x9BE2 casillas_9B4B  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x988B (151 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9BE2 0x9C00 resto_9BE2  nadie lo lee; son los mismos bytes que p14, p16 en esta misma direccion: lo que habia en la memoria al grabar (30 bytes)
+# --- fin de explica.py ---

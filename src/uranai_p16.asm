@@ -20,8 +20,11 @@ L_9803:
 	jp L_9918		;9803
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9806..0x980b  (5 bytes)
-DATA_9806:
+; DATOS leido_9806: lo usa el codigo: 0x981C ld (09806h),a; 0x9849 ld
+;   hl,09806h; 0x9892 ld (09807h),a (en +1); 0x9918 ld a,(09807h) (en +1) (5
+;   bytes)
+;   0x9806..0x980b  (5 bytes)
+DATA_leido_9806:
 	defb 0ceh,03ah,017h,0d2h,0b7h	; 9806
 
 ; ======================================================================
@@ -169,8 +172,10 @@ L_98E9:
 	jr L_98CC		;98f5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x98f7..0x98fd  (6 bytes)
-DATA_98F7:
+; DATOS leido_98F7: lo usa el codigo: 0x98D3 ld hl,098f7h -> 0x826C (tabla de
+;   palabras: la de A) (6 bytes)
+;   0x98f7..0x98fd  (6 bytes)
+DATA_leido_98F7:
 	defb 078h,070h,078h,080h,078h,090h	; 98f7
 
 ; ======================================================================
@@ -277,8 +282,10 @@ L_9980:
 	ret			;9982
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9983..0x9c00  (637 bytes)
-DATA_9983:
+; DATOS leido_9983: lo usa el codigo: 0x990A ld hl,09983h -> 0x826C (tabla de
+;   palabras: la de A) (637 bytes)
+;   0x9983..0x9c00  (637 bytes)
+DATA_leido_9983:
 	defb 0edh,099h,0f6h,099h,0ffh,099h,008h,09ah,011h,09ah,01ah,09ah,023h,09ah,02ch,09ah	; 9983  ............#.,.
 	defb 035h,09ah,03eh,09ah,047h,09ah,050h,09ah,050h,09ah,05ch,09ah,05ch,09ah,068h,09ah	; 9993  5.>.G.P.P.\.\.h.
 	defb 068h,09ah,074h,09ah,074h,09ah,080h,09ah,080h,09ah,08ch,09ah,098h,09ah,0a4h,09ah	; 99a3  h.t.t...........

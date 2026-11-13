@@ -4,3 +4,6 @@ D 0x9951 0x9968 texto_9951  texto: x, y y las letras hasta 0xFF; lo usa 0x9826 (
 D 0x9968 0x997D texto_9968  texto: x, y y las letras hasta 0xFF; lo usa 0x9910 (21 bytes)
 D 0x997D 0x9993 texto_997D  texto: x, y y las letras hasta 0xFF; lo usa 0x98EC (22 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9993 0x9A00 resto_9993  nadie lo lee; son los mismos bytes que p1E en esta misma direccion: lo que habia en la memoria al grabar (109 bytes)
+# --- fin de explica.py ---

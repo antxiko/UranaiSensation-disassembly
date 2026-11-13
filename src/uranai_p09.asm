@@ -37,8 +37,10 @@ L_9800:
 	jp L_982B		;9827
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x982a..0x982b  (1 bytes)
-DATA_982A:
+; DATOS leido_982A: lo usa el codigo: 0x9B8E ld hl,0982ah; 0x9BAE ld
+;   a,(0982ah) (1 bytes)
+;   0x982a..0x982b  (1 bytes)
+DATA_leido_982A:
 	defb 03eh	; 982a
 
 ; ======================================================================
@@ -251,8 +253,10 @@ L_9973:
 	ret			;9979
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x997a..0x9984  (10 bytes)
-DATA_997A:
+; DATOS leido_997A: lo usa el codigo: 0x996B ld de,0997ah; 0x9970 ld de,0997fh
+;   (en +5) (10 bytes)
+;   0x997a..0x9984  (10 bytes)
+DATA_leido_997A:
 	defb 001h,001h,001h,000h,000h,04bh,00ch,01fh,017h,03bh	; 997a  .....K....
 
 ; ======================================================================
@@ -682,8 +686,9 @@ L_9CB0:
 	jr L_9CA8		;9cb2
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9cb4..0x9cb5  (1 bytes)
-DATA_9CB4:
+; DATOS relleno_9CB4: 0xC9 repetido; nadie lo lee (1 bytes)
+;   0x9cb4..0x9cb5  (1 bytes)
+DATA_relleno_9CB4:
 	defb 0c9h	; 9cb4
 
 ; ======================================================================
@@ -763,8 +768,9 @@ L_9D16:
 	ret			;9d21
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9d22..0x9db8  (150 bytes)
-DATA_9D22:
+; DATOS leido_9D22: lo usa el codigo: 0x980D ld de,09d22h (150 bytes)
+;   0x9d22..0x9db8  (150 bytes)
+DATA_leido_9D22:
 	defb 0bdh,004h,0c0h,004h,0c3h,004h,0c6h,004h,0c9h,004h,0cch,004h,0cfh,004h,0d2h,004h	; 9d22  ................
 	defb 0d5h,004h,0d8h,004h,0dbh,004h,0deh,004h,0e1h,004h,0e4h,004h,0e7h,004h,0eah,004h	; 9d32  ................
 	defb 0edh,004h,0f0h,004h,0f3h,004h,0f6h,004h,0f9h,004h,0fch,004h,0ffh,004h,002h,005h	; 9d42  ................
@@ -834,8 +840,12 @@ L_9DE8:
 	ret			;9df8
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9df9..0xa600  (2055 bytes)
-DATA_9DF9:
+; DATOS leido_9DF9: lo usa el codigo: 0x9850 ld hl,09df9h; 0x9859 ld hl,09e11h
+;   -> 0x826C (tabla de palabras: la de A) (en +24); 0x99B0 ld hl,0a3e1h ->
+;   0x826C (tabla de palabras: la de A) (en +1512); 0x98D3 ld de,0a5f1h ->
+;   0x8206 (DE + A) (en +2040) (2055 bytes)
+;   0x9df9..0xa600  (2055 bytes)
+DATA_leido_9DF9:
 	defb 029h,09eh,067h,09eh,0a1h,09eh,0dfh,09eh,01bh,09fh,059h,09fh,095h,09fh,0d3h,09fh	; 9df9  ).g.......Y.....
 	defb 011h,0a0h,04dh,0a0h,08bh,0a0h,0c7h,0a0h,005h,0a1h,043h,0a1h,07dh,0a1h,0bbh,0a1h	; 9e09  ..M.......C.}...
 	defb 0f7h,0a1h,035h,0a2h,071h,0a2h,0afh,0a2h,0edh,0a2h,029h,0a3h,067h,0a3h,0a3h,0a3h	; 9e19  ..5.q.....).g...

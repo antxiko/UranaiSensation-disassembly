@@ -25,3 +25,7 @@ D 0x906C 0x9168 partes  las 41 partes del programa, 6 bytes cada una: primer sec
 F 0x906C 6
 D 0x918F 0x9190 byte_918F  (1 byte)
 D 0x919A 0x9200 tabla_919A  (102 bytes)
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x8663 0x8664 relleno_8663  0xAF repetido; nadie lo lee (1 bytes)
+D 0x870C 0x8711 suelto_870C  nadie lo lee ni lo apunta (5 bytes)
+# --- fin de explica.py ---

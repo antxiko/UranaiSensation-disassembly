@@ -14,3 +14,7 @@ D 0xA0C7 0xA158 casillas_A0C7  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x98DA 0x98FC saltos_98DA  17 destinos del despachador (call 0x822D en 0x98D7) (34 bytes)
 F 0x98DA w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9D8B 0x9DF0 leido_9D8B  lo usa el codigo: 0x9873 ld hl,09d8bh; 0x9947 ld hl,09da3h (en +24); 0x9955 ld hl,09dcch -> 0x8221 (tabla de bytes: HL + A) (en +65) (101 bytes)
+D 0xA158 0xA200 resto_A158  nadie lo lee; son los mismos bytes que p0C en esta misma direccion: lo que habia en la memoria al grabar (168 bytes)
+# --- fin de explica.py ---

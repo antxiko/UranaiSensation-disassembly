@@ -20,8 +20,11 @@ L_9C03:
 	jp L_9F09		;9c03
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9c06..0x9c08  (2 bytes)
-DATA_9C06:
+; DATOS leido_9C06: lo usa el codigo: 0x9ECF ld (09c06h),a; 0x9EDC ld
+;   a,(09c06h); 0x9C12 ld (09c07h),a (en +1); 0x9D6E ld a,(09c07h) (en +1) (2
+;   bytes)
+;   0x9c06..0x9c08  (2 bytes)
+DATA_leido_9C06:
 	defb 0c3h,068h	; 9c06
 
 ; ======================================================================
@@ -529,8 +532,11 @@ DATA_paleta_A1E7:
 	defb 070h,000h,056h,002h,075h,006h,053h,005h,055h,005h,022h,002h,077h,007h,000h,000h	; a1f7  p.V.u.S.U.".w...
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa207..0xa400  (505 bytes)
-DATA_A207:
+; DATOS leido_A207: lo usa el codigo: 0x9CB3 ld hl,0a207h; 0x9CDF ld hl,0a21bh
+;   (en +20); 0x9C33 ld hl,0a232h (en +43); 0x9E8C ld hl,0a265h -> 0x8221
+;   (tabla de bytes: HL + A) (en +94) (505 bytes)
+;   0xa207..0xa400  (505 bytes)
+DATA_leido_A207:
 	defb 018h,0d8h,040h,008h,018h,0e0h,040h,030h,018h,0e8h,040h,068h,018h,0f0h,040h,070h	; a207  ..@...@0..@h..@p
 	defb 018h,0f8h,040h,078h,07fh,07ch,07bh,07bh,07bh,07bh,07bh,07bh,07bh,07bh,07bh,07bh	; a217  ..@x.|{{{{{{{{{{
 	defb 07bh,07bh,07bh,07bh,07bh,07bh,07bh,07bh,07dh,07eh,0ffh,000h,053h,054h,0feh,0feh	; a227  {{{{{{{{}~..ST..

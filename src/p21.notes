@@ -5,3 +5,6 @@ D 0x9B07 0x9B27 paleta_9B07  paleta: 16 colores de 2 bytes; lo usa 0x9856 (32 by
 D 0x9B27 0x9B2D lista_dibujos_9B27  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0x980C (6 bytes)
 D 0x9B2D 0x9B47 dibujo_9B2D  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0x980C (26 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9B47 0x9C00 resto_9B47  nadie lo lee; son los mismos bytes que p20 en esta misma direccion: lo que habia en la memoria al grabar (185 bytes)
+# --- fin de explica.py ---

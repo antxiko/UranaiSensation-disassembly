@@ -84,8 +84,9 @@ L_987D:
 	ret			;988e
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x988f..0x989c  (13 bytes)
-DATA_988F:
+; DATOS leido_988F: lo usa el codigo: 0x981C ld ix,0988fh (13 bytes)
+;   0x988f..0x989c  (13 bytes)
+DATA_leido_988F:
 	defb 020h,07fh,004h,0a0h,000h,0b0h,040h,07fh,000h,0b0h,000h,0b0h,080h	; 988f   .....@......
 
 ; ----------------------------------------------------------------------
@@ -159,7 +160,9 @@ DATA_vram_9AD5:
 	defb 086h,0fch,000h	; 9be5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9be8..0x9c00  (24 bytes)
-DATA_9BE8:
+; DATOS resto_9BE8: nadie lo lee; son los mismos bytes que p0E en esta misma
+;   direccion: lo que habia en la memoria al grabar (24 bytes)
+;   0x9be8..0x9c00  (24 bytes)
+DATA_resto_9BE8:
 	defb 054h,0c0h,0c1h,0c2h,0c3h,0c4h,0c5h,0c6h,0b6h,0c8h,0c9h,0cah,0cbh,0cch,0cdh,0ceh	; 9be8  T...............
 	defb 0cfh,015h,019h,01ah,017h,016h,017h,016h	; 9bf8  ........

@@ -12,3 +12,20 @@ D 0xAF2F 0xAF33 casillas_AF2F  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0xAD48 0xAD54 saltos_AD48  6 destinos del despachador (call 0x822D en 0xAD45) (12 bytes)
 F 0xAD48 w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9E1E 0x9E42 leido_9E1E  lo usa el codigo: 0x9D23 ld hl,09e1eh (36 bytes)
+D 0xA048 0xA06C leido_A048  lo usa el codigo: 0x9CC1 ld ix,0a048h (36 bytes)
+D 0xA0B3 0xA0B4 leido_A0B3  lo usa el codigo: 0xA0EE ld (0a0b3h),a; 0xA131 ld hl,0a0b3h (1 bytes)
+D 0xA624 0xA738 leido_A624  lo usa el codigo: 0xA108 ld hl,0a624h -> 0x9609 (el menu de la p02); 0xA14A ld hl,0a63bh (en +23); 0xA14F ld hl,0a64bh -> 0x8206 (DE + A) (en +39); 0xA152 ld de,0a65bh -> 0x8206 (DE + A) (en +55) (276 bytes)
+D 0xA8CC 0xA8D0 leido_A8CC  lo usa el codigo: 0xA87C ld hl,0a8cch -> 0x8221 (tabla de bytes: HL + A); 0xA873 ld hl,0a8ceh (en +2) (4 bytes)
+D 0xA90F 0xA98A leido_A90F  lo usa el codigo: 0xA73B ld hl,0a90fh -> 0x9609 (el menu de la p02); 0xA7BE ld hl,0a94eh -> 0x8221 (tabla de bytes: HL + A) (en +63); 0xA7E8 ld hl,0a953h -> 0x8221 (tabla de bytes: HL + A) (en +68); 0xA804 ld hl,0a967h (en +88) (123 bytes)
+D 0xA9EE 0xAA3E leido_A9EE  lo usa el codigo: 0xA99C ld hl,0a9eeh -> 0x8221 (tabla de bytes: HL + A); 0xAA43 ld hl,0a9eeh -> 0x8221 (tabla de bytes: HL + A) (80 bytes)
+D 0xAA52 0xAA54 leido_AA52  lo usa el codigo: 0xAAFA ld ix,0aa52h -> 0x8275 (texto); 0xAB0D ld (0aa52h),a; 0xAB11 ld (0aa53h),a (en +1) (2 bytes)
+D 0xAA7E 0xAAC1 leido_AA7E  lo usa el codigo: 0xAA72 ld hl,0aa99h -> 0x8221 (tabla de bytes: HL + A) (en +27) (67 bytes)
+D 0xAD28 0xAD2A leido_AD28  lo usa el codigo: 0xAD42 ld a,(0ad28h); 0xAD56 ld (0ad28h),a; 0xAD5F ld (0ad29h),a (en +1); 0xAD64 ld hl,0ad29h (en +1) (2 bytes)
+D 0xADB6 0xADBE leido_ADB6  lo usa el codigo: 0xAD8E ld hl,0adb6h -> 0x8221 (tabla de bytes: HL + A); 0xAD9D ld hl,0adbah -> 0x8221 (tabla de bytes: HL + A) (en +4) (8 bytes)
+D 0xAE44 0xAE4A leido_AE44  lo usa el codigo: 0xADD2 ld hl,0ae44h (6 bytes)
+D 0xAF27 0xAF2B leido_AF27  lo usa el codigo: 0xAEFF ld hl,0af27h -> 0x8221 (tabla de bytes: HL + A); 0xAF11 ld hl,0af27h (4 bytes)
+D 0xAFB9 0xAFBF leido_AFB9  lo usa el codigo: 0xAFFE ld (0afb9h),a; 0xB059 ld hl,0afb9h; 0xB00D ld (0afbbh),hl (en +2); 0xB01D ld hl,(0afbbh) -> 0x8266 (copia de la VRAM) (en +2) (6 bytes)
+D 0xB088 0xB200 relleno_B088  solo 0x00/0xFF (120 x 0xFF, 128 x 0x00, 128 x 0xFF); nadie lo lee (376 bytes)
+# --- fin de explica.py ---

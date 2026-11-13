@@ -1,1 +1,8 @@
 # Notas de p13 (sectores 155-156, en 0x9800).
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x986F 0x987B leido_986F  lo usa el codigo: 0x9866 ld hl,0986fh -> 0x8221 (tabla de bytes: HL + A) (12 bytes)
+D 0x98A9 0x98FB leido_98A9  lo usa el codigo: 0x98A1 ld hl,098a9h -> 0x8221 (tabla de bytes: HL + A) (82 bytes)
+D 0x9948 0x9956 suelto_9948  nadie lo lee ni lo apunta (14 bytes)
+D 0x9A3D 0x9B06 leido_9A3D  lo usa el codigo: 0x9837 ld hl,09a3dh; 0x9895 ld hl,09acdh (en +144); 0x9917 ld hl,09ae6h (en +169); 0x9910 ld hl,09af6h (en +185) (201 bytes)
+D 0x9B47 0x9C00 resto_9B47  nadie lo lee; son los mismos bytes que p12 en esta misma direccion: lo que habia en la memoria al grabar (185 bytes)
+# --- fin de explica.py ---

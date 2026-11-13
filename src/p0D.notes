@@ -7,3 +7,11 @@ F 0x933B w8
 D 0x944E 0x945E saltos_944E  8 destinos del despachador (call 0x822D en 0x944B) (16 bytes)
 F 0x944E w8
 # --- fin de despachos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x921B 0x922D leido_921B  lo usa el codigo: 0x9378 ld a,(09223h) (en +8); 0x93B2 ld a,(09223h) (en +8); 0x943A ld (09224h),a (en +9); 0x947F ld a,(09224h) (en +9) (18 bytes)
+D 0x92C4 0x92CC suelto_92C4  nadie lo lee ni lo apunta (8 bytes)
+D 0x92FC 0x9306 suelto_92FC  nadie lo lee ni lo apunta (10 bytes)
+D 0x9581 0x9588 leido_9581  lo usa el codigo: 0x957A ld ix,09581h; 0x9577 ld (09582h),a (en +1); 0x942A ld (09583h),hl (en +2); 0x9436 ld (09583h),hl (en +2) (7 bytes)
+D 0x96B6 0x96EE leido_96B6  lo usa el codigo: 0x95AB ld hl,096b6h -> 0x8221 (tabla de bytes: HL + A); 0x9568 ld hl,096cah -> 0x8221 (tabla de bytes: HL + A) (en +20) (56 bytes)
+D 0x97A4 0x9800 leido_97A4  lo usa el codigo: 0x96F1 ld hl,097a4h -> 0x826C (tabla de palabras: la de A) (92 bytes)
+# --- fin de explica.py ---

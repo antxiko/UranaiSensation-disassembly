@@ -59,8 +59,11 @@ L_9A30:
 	jp L_A63D		;9a30
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a33..0x9a44  (17 bytes)
-DATA_9A33:
+; DATOS leido_9A33: lo usa el codigo: 0x9F90 ld (09a33h),a; 0x9FCE ld
+;   a,(09a33h); 0xA2A3 ld (09a36h),a (en +3); 0xA138 ld (09a37h),a (en +4) (17
+;   bytes)
+;   0x9a33..0x9a44  (17 bytes)
+DATA_leido_9A33:
 	defb 0fch,0d2h,018h,0edh,021h,03ah,09eh,022h,0fch,0d2h,018h,0e5h,021h,038h,09eh,022h	; 9a33  ....!:."....!8."
 	defb 0fch	; 9a43
 
@@ -622,8 +625,11 @@ L_9DAA:
 	ret			;9db6
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9db7..0x9eb1  (250 bytes)
-DATA_9DB7:
+; DATOS leido_9DB7: lo usa el codigo: 0x9BA3 ld hl,09db7h; 0x9BA9 ld hl,09ddfh
+;   (en +40); 0x9BAF ld hl,09e07h (en +80); 0x9BB5 ld hl,09e2fh (en +120) (250
+;   bytes)
+;   0x9db7..0x9eb1  (250 bytes)
+DATA_leido_9DB7:
 	defb 00dh,000h,000h,000h,025h,00fh,001h,001h,001h,03ah,011h,001h,003h,000h,03ah,013h	; 9db7  ....%....:....:.
 	defb 001h,001h,000h,03ah,015h,003h,000h,000h,03ah,017h,001h,000h,000h,03ah,01bh,000h	; 9dc7  ...:....:....:..
 	defb 000h,000h,03ah,01bh,000h,000h,000h,03ah,00dh,000h,000h,000h,025h,012h,001h,001h	; 9dd7  ..:....:....%...
@@ -909,8 +915,10 @@ L_A060:
 	jp 08275h		;a060
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa063..0xa069  (6 bytes)
-DATA_A063:
+; DATOS leido_A063: lo usa el codigo: 0xA04A ld hl,0a063h -> 0x826C (tabla de
+;   palabras: la de A) (6 bytes)
+;   0xa063..0xa069  (6 bytes)
+DATA_leido_A063:
 	defb 0fah,0a7h,053h,0a8h,0a7h,0a8h	; a063
 
 ; ======================================================================
@@ -969,8 +977,10 @@ L_A0D5:
 	jp 08275h		;a0d5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa0d8..0xa0de  (6 bytes)
-DATA_A0D8:
+; DATOS leido_A0D8: lo usa el codigo: 0xA0BF ld hl,0a0d8h -> 0x826C (tabla de
+;   palabras: la de A) (6 bytes)
+;   0xa0d8..0xa0de  (6 bytes)
+DATA_leido_A0D8:
 	defb 0b6h,0a7h,00fh,0a8h,068h,0a8h	; a0d8
 
 ; ======================================================================
@@ -996,8 +1006,10 @@ L_A0FB:
 	jp 08275h		;a0fb
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa0fe..0xa104  (6 bytes)
-DATA_A0FE:
+; DATOS leido_A0FE: lo usa el codigo: 0xA0E5 ld hl,0a0feh -> 0x826C (tabla de
+;   palabras: la de A) (6 bytes)
+;   0xa0fe..0xa104  (6 bytes)
+DATA_leido_A0FE:
 	defb 0cbh,0a7h,024h,0a8h,07bh,0a8h	; a0fe
 
 ; ======================================================================
@@ -1181,8 +1193,10 @@ L_A221:
 	jp L_A170		;a225
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa228..0xa270  (72 bytes)
-DATA_A228:
+; DATOS leido_A228: lo usa el codigo: 0xA209 ld hl,0a228h -> 0x8221 (tabla de
+;   bytes: HL + A) (72 bytes)
+;   0xa228..0xa270  (72 bytes)
+DATA_leido_A228:
 	defb 007h,02fh,007h,030h,007h,031h,00ch,02fh,00ch,030h,00ch,031h,011h,02fh,011h,030h	; a228  ./.0.1./.0.1./.0
 	defb 011h,031h,016h,02fh,016h,030h,016h,031h,01bh,02fh,01bh,030h,01bh,031h,020h,02fh	; a238  .1./.0.1./.0.1 /
 	defb 020h,030h,020h,031h,028h,02fh,028h,030h,028h,031h,0bfh,02fh,0bfh,030h,0bfh,031h	; a248   0 1(/(0(1./.0.1
@@ -1370,8 +1384,10 @@ L_A386:
 	ret			;a393
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa394..0xa39c  (8 bytes)
-DATA_A394:
+; DATOS leido_A394: lo usa el codigo: 0xA389 ld hl,0a394h -> 0x826C (tabla de
+;   palabras: la de A) (8 bytes)
+;   0xa394..0xa39c  (8 bytes)
+DATA_leido_A394:
 	defb 0f2h,0dah,0f1h,0dah,0f0h,0dah,0f6h,0dah	; a394  ........
 
 ; ======================================================================
@@ -1402,8 +1418,11 @@ L_A3AB:
 	jr L_A3A4		;a3b2
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa3b4..0xa532  (382 bytes)
-DATA_A3B4:
+; DATOS leido_A3B4: lo usa el codigo: 0xA28B ld de,0a3b4h; 0xA296 ld
+;   hl,0a3b4h; 0xA2E2 ld de,0a3b8h (en +4); 0xA308 ld de,0a3d1h (en +29) (382
+;   bytes)
+;   0xa3b4..0xa532  (382 bytes)
+DATA_leido_A3B4:
 	defb 0ech,0a3h,0f5h,0a3h,001h,000h,000h,000h,008h,001h,000h,000h,000h,000h,001h,000h	; a3b4  ................
 	defb 000h,018h,008h,002h,000h,000h,020h,008h,000h,00bh,024h,008h,001h,0fch,000h,01ch	; a3c4  ...... ...$.....
 	defb 008h,001h,000h,000h,004h,008h,002h,000h,000h,0a4h,008h,000h,000h,0a8h,00eh,002h	; a3d4  ................
@@ -1528,8 +1547,10 @@ L_A5B6:
 	ret			;a5bd
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa5be..0xa5c2  (4 bytes)
-DATA_A5BE:
+; DATOS leido_A5BE: lo usa el codigo: 0xA5B0 ld hl,0a5beh -> 0x8221 (tabla de
+;   bytes: HL + A) (4 bytes)
+;   0xa5be..0xa5c2  (4 bytes)
+DATA_leido_A5BE:
 	defb 004h,000h,005h,006h	; a5be
 
 ; ======================================================================
@@ -1542,8 +1563,9 @@ L_A5C2:
 	jr $-18		;a5c5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa5c7..0xa5ce  (7 bytes)
-DATA_A5C7:
+; DATOS leido_A5C7: lo usa el codigo: 0xA5C2 ld hl,0a5c7h (7 bytes)
+;   0xa5c7..0xa5ce  (7 bytes)
+DATA_leido_A5C7:
 	defb 006h,005h,000h,007h,000h,004h,008h	; a5c7
 
 ; ======================================================================
@@ -1557,8 +1579,9 @@ L_A5CE:
 	jr $-30		;a5d4
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa5d6..0xa5e6  (16 bytes)
-DATA_A5D6:
+; DATOS leido_A5D6: lo usa el codigo: 0xA5CE ld hl,0a5d6h (16 bytes)
+;   0xa5d6..0xa5e6  (16 bytes)
+DATA_leido_A5D6:
 	defb 007h,009h,00ah,00bh,00ch,00dh,00eh,000h,00fh,010h,011h,012h,013h,014h,005h,015h	; a5d6  ................
 
 ; ======================================================================
@@ -1629,8 +1652,12 @@ L_A63D:
 	jp L_9FD9		;a683
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa686..0xa696  (16 bytes)
-DATA_A686:
+; DATOS leido_A686: lo usa el codigo: 0xA652 ld hl,0a686h -> 0x8221 (tabla de
+;   bytes: HL + A); 0xA672 ld hl,0a68ah -> 0x8221 (tabla de bytes: HL + A) (en
+;   +4); 0xA666 ld hl,0a68eh -> 0x826C (tabla de palabras: la de A) (en +8)
+;   (16 bytes)
+;   0xa686..0xa696  (16 bytes)
+DATA_leido_A686:
 	defb 0b8h,0a0h,094h,094h,0a8h,078h,060h,060h,060h,0c0h,0f0h,0c0h,038h,0c1h,038h,0c1h	; a686  .....x```...8.8.
 
 ; ======================================================================
@@ -1682,8 +1709,9 @@ L_A6D2:
 	jp 082b4h		;a6d8
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa6db..0xa704  (41 bytes)
-DATA_A6DB:
+; DATOS suelto_A6DB: nadie lo lee ni lo apunta (41 bytes)
+;   0xa6db..0xa704  (41 bytes)
+DATA_suelto_A6DB:
 	defb 0cdh,09fh,0a6h,03ah,0d6h,0d1h,0b7h,028h,00ah,03dh,021h,0feh,0a6h,0cdh,06ch,082h	; a6db  ...:...(.=!...l.
 	defb 0c3h,075h,082h,021h,05eh,0a7h,03ah,017h,0d2h,0feh,002h,020h,003h,021h,075h,0a7h	; a6eb  .u.!^.:.... .!u.
 	defb 0c3h,075h,082h,0e3h,0a7h,03ch,0a8h,091h,0a8h	; a6fb  .u...<...
@@ -1721,8 +1749,9 @@ DATA_texto_A746:
 	defb 005h,002h,013h,008h,0c8h,00bh,002h,0ffh	; a756  ........
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa75e..0xa78c  (46 bytes)
-DATA_A75E:
+; DATOS suelto_A75E: nadie lo lee ni lo apunta (46 bytes)
+;   0xa75e..0xa78c  (46 bytes)
+DATA_suelto_A75E:
 	defb 090h,042h,010h,0c8h,002h,01fh,000h,0d4h,028h,02eh,014h,0feh,090h,052h,001h,003h	; a75e  .B......(....R..
 	defb 014h,05dh,0cbh,00dh,052h,052h,0ffh,090h,092h,010h,0c8h,002h,01fh,000h,0d4h,028h	; a76e  .]..RR.........(
 	defb 02eh,014h,0feh,090h,0a2h,001h,003h,014h,05dh,0cbh,00dh,052h,052h,0ffh	; a77e  ........]..RR.
@@ -1744,8 +1773,11 @@ DATA_texto_A7A1:
 	defb 00ch,010h,052h,052h,0ffh	; a7b1
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa7b6..0xa8c5  (271 bytes)
-DATA_A7B6:
+; DATOS leido_A7B6: lo usa el codigo: 0x9F0B ld (0a8bah),a (en +260); 0x9F3F
+;   ld a,(0a8bah) (en +260); 0x9F38 ld hl,(0a8bbh) (en +261); 0x9F4A ld
+;   hl,(0a8bbh) (en +261) (271 bytes)
+;   0xa7b6..0xa8c5  (271 bytes)
+DATA_leido_A7B6:
 	defb 018h,098h,0d4h,028h,02eh,010h,04bh,02dh,0feh,018h,0a8h,003h,0c2h,006h,00ch,013h	; a7b6  ...(..K-........
 	defb 008h,0c8h,00bh,002h,0ffh,018h,098h,0d4h,028h,02eh,014h,00ch,010h,002h,014h,00ah	; a7c6  ........(.......
 	defb 02bh,016h,0feh,018h,0a8h,005h,002h,013h,008h,0c8h,00bh,002h,0ffh,018h,098h,010h	; a7d6  +...............
@@ -1804,8 +1836,10 @@ L_A8F8:
 	ret			;a8fe
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa8ff..0xac00  (769 bytes)
-DATA_A8FF:
+; DATOS leido_A8FF: lo usa el codigo: 0xA8CB ld hl,0a8ffh -> 0x8221 (tabla de
+;   bytes: HL + A) (769 bytes)
+;   0xa8ff..0xac00  (769 bytes)
+DATA_leido_A8FF:
 	defb 0b8h,004h,000h,005h,0b7h,004h,000h,001h,0b1h,004h,000h,004h,0b5h,004h,000h,002h	; a8ff  ................
 	defb 0a8h,004h,000h,007h,0a1h,004h,000h,005h,09ch,004h,000h,004h,097h,004h,000h,004h	; a90f  ................
 	defb 0afh,004h,000h,002h,0a6h,004h,000h,002h,0a0h,004h,000h,001h,09bh,004h,000h,001h	; a91f  ................

@@ -238,6 +238,8 @@ DATA_texto_99DA:
 	defb 01fh,00ch,010h,052h,052h,0ffh	; 99ea
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x99f0..0x9a00  (16 bytes)
-DATA_99F0:
+; DATOS resto_99F0: nadie lo lee; son los mismos bytes que p0B, p26, p27 en
+;   esta misma direccion: lo que habia en la memoria al grabar (16 bytes)
+;   0x99f0..0x9a00  (16 bytes)
+DATA_resto_99F0:
 	defb 01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01eh,01fh,03ah,0c3h,0d1h	; 99f0  .............:..

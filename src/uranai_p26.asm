@@ -198,8 +198,10 @@ DATA_texto_997D:
 	defb 01fh,00ch,010h,052h,052h,0ffh	; 998d
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9993..0x9a00  (109 bytes)
-DATA_9993:
+; DATOS resto_9993: nadie lo lee; son los mismos bytes que p1E en esta misma
+;   direccion: lo que habia en la memoria al grabar (109 bytes)
+;   0x9993..0x9a00  (109 bytes)
+DATA_resto_9993:
 	defb 014h,05dh,0cbh,00dh,052h,052h,0ffh,090h,042h,0d4h,028h,02eh,014h,001h,003h,014h	; 9993  .]..RR..B.(.....
 	defb 02dh,0feh,090h,052h,024h,022h,01fh,00ch,010h,052h,052h,0ffh,090h,092h,0d4h,028h	; 99a3  -..R$"...RR....(
 	defb 02eh,014h,001h,003h,014h,02dh,0feh,090h,0a2h,024h,022h,01fh,00ch,010h,052h,052h	; 99b3  .....-...$"...RR

@@ -85,8 +85,9 @@ lee_sectores:		; BDOS 0x1A (destino DE) y 0x2F (lectura directa: DE = primer sec
 	ret			;c05d
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xc05e..0xc05f  (1 bytes)
-DATA_C05E:
+; DATOS relleno_C05E: 0x00 repetido; nadie lo lee (1 bytes)
+;   0xc05e..0xc05f  (1 bytes)
+DATA_relleno_C05E:
 	defb 000h	; c05e
 
 ; ----------------------------------------------------------------------

@@ -3,3 +3,14 @@
 D 0x98DF 0x9913 casillas_98DF  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x982E (52 bytes)
 D 0x9BC8 0x9BCC casillas_9BC8  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9BBE (4 bytes)
 # --- fin de tipos.py ---
+# --- explica.py: lo que se sabe medido de cada tramo sin nombre (no editar a mano) ---
+D 0x9848 0x984B suelto_9848  nadie lo lee ni lo apunta (3 bytes)
+D 0x994C 0x9950 leido_994C  lo usa el codigo: 0x991F ld hl,0994ch -> 0x8221 (tabla de bytes: HL + A) (4 bytes)
+D 0x9963 0x996C leido_9963  lo usa el codigo: 0x9953 ld de,09963h (9 bytes)
+D 0x9991 0x9993 leido_9991  lo usa el codigo: 0x99A4 ld (09991h),hl -> 0x8215 (leer sectores); 0x99B7 ld hl,(09991h) (2 bytes)
+D 0x99D4 0x9ACB leido_99D4  lo usa el codigo: 0x9856 ld hl,099d4h; 0x9AD8 ld (09acah),a (en +246); 0x9B0A ld a,(09acah) (en +246) (247 bytes)
+D 0x9BC1 0x9BC8 leido_9BC1  lo usa el codigo: 0x9BAD ld ix,09bc1h; 0x9BAA ld (09bc5h),hl (en +4) (7 bytes)
+D 0x9BCC 0x9C27 leido_9BCC  lo usa el codigo: 0x9B14 ld hl,09bcch -> 0x826C (tabla de palabras: la de A); 0x9ADE ld hl,09bf8h -> 0x8221 (tabla de bytes: HL + A) (en +44); 0x9C28 ld (09c16h),a (en +74); 0x9CEF ld (09c16h),a (en +74) (91 bytes)
+D 0xA070 0xA076 leido_A070  lo usa el codigo: 0xA07E ld (0a070h),bc; 0xA090 ld a,(0a071h) -> 0x8266 (copia de la VRAM) (en +1); 0xA0A3 ld a,(0a071h) -> 0x8224 (copia a la VRAM) (en +1); 0xA082 ld (0a072h),hl (en +2) (6 bytes)
+D 0xA0F4 0xA200 suelto_A0F4  nadie lo lee ni lo apunta (268 bytes)
+# --- fin de explica.py ---
