@@ -58,6 +58,27 @@ class Disco(unittest.TestCase if HAY_DSK else object):
         self.assertEqual(sum(1 for e in et if e in cod), 233)
         self.assertEqual(et[1438:1440], ["personas", "personas"])
 
+    def test_ningun_sector_sin_explicar(self):
+        et = disco.mapa(self.dsk)
+        self.assertNotIn("?", et, [i for i, e in enumerate(et) if e == "?"])
+
+    def test_cada_sector_de_datos_tiene_lector(self):
+        import sectores
+        _, duenos = sectores.mapa(self.dsk)
+        for i in list(range(251, 1438)) + [57]:
+            self.assertIn(i, duenos, "el sector %d no lo lee nadie" % i)
+
+    def test_restos_de_desarrollo(self):
+        d = self.dsk
+        self.assertEqual(d[512:515], bytes.fromhex("f9ffff"))
+        self.assertFalse(any(d[515:1024]))
+        self.assertEqual(d[4 * 512:4 * 512 + 3], bytes.fromhex("f9ffff"))
+        nombres = [d[7 * 512 + i + 1:7 * 512 + i + 11] for i in range(0, 96, 32)]
+        self.assertEqual(nombres, [b"SXDOS     ", b"UTOEXECBAS", b"NIT       "])
+        self.assertTrue(all(d[7 * 512 + i] == 0xE5 for i in range(0, 96, 32)))
+        self.assertEqual(d[16 * 512], 0xFF)
+        self.assertEqual(d[18 * 512:18 * 512 + 7], bytes.fromhex("fe00a027a000a0"))
+
     def test_disco_rehecho(self):
         """Lo que deja `make verify`: el .dsk rehecho con los listados reensamblados."""
         r = os.path.join(RAIZ, "work", "reensamblado.dsk")

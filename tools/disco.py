@@ -46,6 +46,19 @@ def partes(dsk):
     return out
 
 
+# Lo que dejo en el disco el de desarrollo, que ningun codigo lee (comprobado sector a
+# sector: tests/test_disco.py):
+#   1 y 4   la FAT de MSX-DOS y su copia: solo F9 FF FF (un disco de 720 KB vacio)
+#   7       el directorio: MSXDOS.SYS, AUTOEXEC.BAS e INIT, los tres BORRADOS (0xE5)
+#   16      AUTOEXEC.BAS (cluster 3): BASIC tokenizado (empieza por 0xFF), 63 bytes
+#   18      INIT (cluster 4): cabecera de BLOAD (0xFE, 0xA000-0xA027, entra en 0xA000)
+#   58-63   una version ANTERIOR del nucleo: el mismo codigo con las direcciones corridas
+#           (el 63 tiene la rutina de 0x9014 con 0x8F2A en vez de 0x8F69)
+RESTOS_DE_DESARROLLO = {1: "fat", 4: "fat", 7: "directorio", 16: "autoexec", 18: "init",
+                        58: "nucleo_viejo", 59: "nucleo_viejo", 60: "nucleo_viejo",
+                        61: "nucleo_viejo", 62: "nucleo_viejo", 63: "nucleo_viejo"}
+
+
 def modulos(dsk):
     """[(nombre, primer_sector, sectores, org)] de todo lo que es codigo."""
     m = [("arranque", 0, 1, 0xC000),
@@ -57,7 +70,8 @@ def modulos(dsk):
 
 
 def mapa(dsk):
-    """Lista de 1440 etiquetas: el modulo de cada sector, o 'datos', 'personas', 'vacio', '?'."""
+    """Lista de 1440 etiquetas: el modulo de cada sector, o 'datos' (lo lee alguna parte:
+    tools/sectores.py), 'personas', 'vacio', '?'."""
     et = ["?"] * N_SECTORES
     for nombre, s, k, _ in modulos(dsk):
         for i in range(s, s + k):
@@ -71,6 +85,14 @@ def mapa(dsk):
             et[i] = "vacio"
     for i in (1438, 1439):
         et[i] = "personas"
+    for i, e in RESTOS_DE_DESARROLLO.items():
+        assert et[i] == "?", "el sector %d ya es %s" % (i, et[i])
+        et[i] = e
+    import sectores
+    _, duenos = sectores.mapa(dsk)
+    for i, d in duenos.items():
+        if et[i] == "?":
+            et[i] = "datos"
     return et
 
 
