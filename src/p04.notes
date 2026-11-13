@@ -14,8 +14,8 @@ D 0xB545 0xB5BA casillas_B545  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0xB5BA 0xB612 casillas_B5BA  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0xB46C (88 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9ECF 0x9ED4 saltos_9ECF  3 destinos del despachador (call 0x822D en 0x9ECC) (5 bytes)
+D 0x9ECF 0x9ED5 saltos_9ECF  3 destinos del despachador (call 0x822D en 0x9ECC) (6 bytes)
 F 0x9ECF w8
-D 0xA0CE 0xA0ED saltos_A0CE  16 destinos del despachador (call 0x822D en 0xA0CB) (31 bytes)
+D 0xA0CE 0xA0EE saltos_A0CE  16 destinos del despachador (call 0x822D en 0xA0CB) (32 bytes)
 F 0xA0CE w8
 # --- fin de despachos.py ---

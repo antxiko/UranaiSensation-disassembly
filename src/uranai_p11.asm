@@ -116,17 +116,11 @@ L_98B1:
 	call 0822dh		;98b8
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_98BB: 6 destinos del despachador (call 0x822D en 0x98B8) (11
+; DATOS saltos_98BB: 6 destinos del despachador (call 0x822D en 0x98B8) (12
 ;   bytes)
-;   0x98bb..0x98c6  (11 bytes)
+;   0x98bb..0x98c7  (12 bytes)
 DATA_saltos_98BB:
-	defw 098c7h,098e4h,098fah,0990fh,0991fh	; 98bb
-	defb 043h	; 98c5
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x98c6..0x98c7  (1 bytes)
-DATA_98C6:
-	defb 099h	; 98c6
+	defw 098c7h,098e4h,098fah,0990fh,0991fh,09943h	; 98bb
 
 ; ======================================================================
 ; CODIGO 0x98c7..0x99c1  (250 bytes)

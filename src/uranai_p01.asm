@@ -18,8 +18,11 @@ L_9200:
 	jp L_9208		;9200
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9203..0x9208  (5 bytes)
-DATA_9203:
+; DATOS vars_9203: variables detras del primer jp: 0x9204 la pone a 1 0x9313
+;   (y 0xA0F1 de la p03) y la lee 0xA7A7 de la p04, con la p01 en 0x9200; los
+;   otros 4 bytes (c3 .. c3 f6 95) nadie los lee (5 bytes)
+;   0x9203..0x9208  (5 bytes)
+DATA_vars_9203:
 	defb 0c3h,08eh,0c3h,0f6h,095h	; 9203
 
 ; ======================================================================
@@ -35,17 +38,11 @@ L_9208:
 	call 0822dh		;9212
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9215: 4 destinos del despachador (call 0x822D en 0x9212) (7
+; DATOS saltos_9215: 4 destinos del despachador (call 0x822D en 0x9212) (8
 ;   bytes)
-;   0x9215..0x921c  (7 bytes)
+;   0x9215..0x921d  (8 bytes)
 DATA_saltos_9215:
-	defw 0921dh,09229h,0923dh	; 9215  -> L_921D L_9229 L_923D
-	defb 043h	; 921b
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x921c..0x921d  (1 bytes)
-DATA_921C:
-	defb 092h	; 921c
+	defw 0921dh,09229h,0923dh,09243h	; 9215  -> L_921D L_9229 L_923D L_9243
 
 ; ======================================================================
 ; CODIGO 0x921d..0x9249  (44 bytes)
@@ -79,17 +76,11 @@ L_9243:
 	call 0822dh		;9246
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9249: 4 destinos del despachador (call 0x822D en 0x9246) (7
+; DATOS saltos_9249: 4 destinos del despachador (call 0x822D en 0x9246) (8
 ;   bytes)
-;   0x9249..0x9250  (7 bytes)
+;   0x9249..0x9251  (8 bytes)
 DATA_saltos_9249:
-	defw 09505h,09251h,09472h	; 9249  -> L_9505 L_9251 L_9472
-	defb 0a5h	; 924f
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9250..0x9251  (1 bytes)
-DATA_9250:
-	defb 095h	; 9250
+	defw 09505h,09251h,09472h,095a5h	; 9249  -> L_9505 L_9251 L_9472 L_95A5
 
 ; ======================================================================
 ; CODIGO 0x9251..0x925c  (11 bytes)
@@ -103,19 +94,13 @@ L_9251:
 	call 0822dh		;9259
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_925C: 24 destinos del despachador (call 0x822D en 0x9259) (47
+; DATOS saltos_925C: 24 destinos del despachador (call 0x822D en 0x9259) (48
 ;   bytes)
-;   0x925c..0x928b  (47 bytes)
+;   0x925c..0x928c  (48 bytes)
 DATA_saltos_925C:
 	defw 092a4h,092b6h,092c4h,092d7h,092eah,0931eh,0932ch,09348h	; 925c
 	defw 09351h,09364h,0937fh,09397h,093adh,093cah,093d3h,093e6h	; 926c
-	defw 093f9h,09402h,09418h,0943ah,09443h,09457h,09461h	; 927c
-	defb 06ah	; 928a
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x928b..0x928c  (1 bytes)
-DATA_928B:
-	defb 094h	; 928b
+	defw 093f9h,09402h,09418h,0943ah,09443h,09457h,09461h,0946ah	; 927c
 
 ; ======================================================================
 ; CODIGO 0x928c..0x93f4  (360 bytes)
@@ -331,8 +316,11 @@ L_93F2:
 	jr L_93DF		;93f2
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x93f4..0x93f9  (5 bytes)
-DATA_93F4:
+; DATOS muerto_93F4: instrucciones que no se ejecutan: call 0x92AC ; jr
+;   0x940E, entre el jr de 0x93F2 y 0x93F9, sin ningun salto del listado que
+;   llegue aqui (5 bytes)
+;   0x93f4..0x93f9  (5 bytes)
+DATA_muerto_93F4:
 	defb 0cdh,0ach,092h,018h,015h	; 93f4
 
 ; ======================================================================
@@ -415,17 +403,11 @@ L_9472:
 	call 0822dh		;9475
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9478: 8 destinos del despachador (call 0x822D en 0x9475) (15
+; DATOS saltos_9478: 8 destinos del despachador (call 0x822D en 0x9475) (16
 ;   bytes)
-;   0x9478..0x9487  (15 bytes)
+;   0x9478..0x9488  (16 bytes)
 DATA_saltos_9478:
-	defw 09488h,0948dh,0949bh,094b6h,094cch,094e8h,094ffh	; 9478
-	defb 067h	; 9486
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9487..0x9488  (1 bytes)
-DATA_9487:
-	defb 094h	; 9487
+	defw 09488h,0948dh,0949bh,094b6h,094cch,094e8h,094ffh,09467h	; 9478
 
 ; ======================================================================
 ; CODIGO 0x9488..0x950b  (131 bytes)
@@ -503,17 +485,11 @@ L_9505:
 	call 0822dh		;9508
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_950B: 5 destinos del despachador (call 0x822D en 0x9508) (9
+; DATOS saltos_950B: 5 destinos del despachador (call 0x822D en 0x9508) (10
 ;   bytes)
-;   0x950b..0x9514  (9 bytes)
+;   0x950b..0x9515  (10 bytes)
 DATA_saltos_950B:
-	defw 09515h,0951ah,09539h,0958dh	; 950b  -> L_9515 L_951A L_9539 L_958D
-	defb 09dh	; 9513
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9514..0x9515  (1 bytes)
-DATA_9514:
-	defb 095h	; 9514
+	defw 09515h,0951ah,09539h,0958dh,0959dh	; 950b
 
 ; ======================================================================
 ; CODIGO 0x9515..0x95ab  (150 bytes)
@@ -596,17 +572,11 @@ L_95A5:
 	call 0822dh		;95a8
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_95AB: 6 destinos del despachador (call 0x822D en 0x95A8) (11
+; DATOS saltos_95AB: 6 destinos del despachador (call 0x822D en 0x95A8) (12
 ;   bytes)
-;   0x95ab..0x95b6  (11 bytes)
+;   0x95ab..0x95b7  (12 bytes)
 DATA_saltos_95AB:
-	defw 095b7h,095bch,095cah,095d8h,095e7h	; 95ab
-	defb 0f0h	; 95b5
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x95b6..0x95b7  (1 bytes)
-DATA_95B6:
-	defb 095h	; 95b6
+	defw 095b7h,095bch,095cah,095d8h,095e7h,095f0h	; 95ab
 
 ; ======================================================================
 ; CODIGO 0x95b7..0x95fc  (69 bytes)
@@ -653,6 +623,9 @@ L_95F6:
 	jp L_94E0		;95f9
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x95fc..0x9600  (4 bytes)
-DATA_95FC:
+; DATOS resto: el final del ultimo sector: 11 1c d3 0e, el principio de un ld
+;   de,0xD31C ; ld c,.. que la p00 tiene entero en 0x95FC (y otras partes en
+;   otras direcciones); nadie lo lee (4 bytes)
+;   0x95fc..0x9600  (4 bytes)
+DATA_resto:
 	defb 011h,01ch,0d3h,00eh	; 95fc

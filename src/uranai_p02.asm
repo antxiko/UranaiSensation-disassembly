@@ -65,8 +65,11 @@ L_9646:
 	jp L_9918		;964d
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9650..0x9657  (7 bytes)
-DATA_9650:
+; DATOS lista_9650: la lista de 0x9918 (desde 0x9646): un registro de 6 bytes
+;   (marca 0x20; cuantos dibujos, que 0x9646 pone en 0x9651; VRAM 0xA004;
+;   origen 0xB000, lo recien leido del disco) y el 0x80 que la acaba (7 bytes)
+;   0x9650..0x9657  (7 bytes)
+DATA_lista_9650:
 	defb 020h,0c4h,004h,0a0h,000h,0b0h,080h	; 9650
 
 ; ======================================================================
@@ -173,8 +176,10 @@ L_96EC:
 	ret			;9704
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9705..0x9708  (3 bytes)
-DATA_9705:
+; DATOS muerto_9705: call 0x821E detras del ret de 0x9704: nada salta aqui (3
+;   bytes)
+;   0x9705..0x9708  (3 bytes)
+DATA_muerto_9705:
 	defb 0cdh,01eh,082h	; 9705
 
 ; ======================================================================
@@ -363,15 +368,30 @@ L_982C:
 	ret			;9837
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9838..0x989a  (98 bytes)
-DATA_9838:
-	defb 04ch,098h,051h,098h,056h,098h,05bh,098h,064h,098h,069h,098h,06eh,098h,077h,098h	; 9838  L.Q.V.[.d.i.n.w.
-	defb 080h,098h,089h,098h,001h,000h,000h,000h,008h,001h,000h,000h,000h,000h,001h,000h	; 9848  ................
-	defb 000h,018h,008h,002h,000h,000h,020h,008h,000h,00bh,024h,008h,001h,0fch,000h,01ch	; 9858  ...... ...$.....
-	defb 008h,001h,000h,000h,004h,008h,002h,000h,000h,0a4h,008h,000h,000h,0a8h,00eh,002h	; 9868  ................
-	defb 000h,000h,068h,005h,000h,000h,06ch,01ah,002h,000h,000h,060h,005h,000h,000h,064h	; 9878  ..h...l....`...d
-	defb 01ah,002h,000h,000h,010h,008h,000h,000h,014h,008h,0efh,0eeh,000h,000h,000h,000h	; 9888  ................
-	defb 0eeh,0eeh	; 9898
+; DATOS sprites_9838: 10 punteros a grupos de sprites; 0x96E1 coge el de
+;   0xD20F (20 bytes)
+;   0x9838..0x984c  (20 bytes)
+DATA_sprites_9838:
+	defw 0984ch,09851h,09856h,0985bh,09864h,09869h,0986eh,09877h,09880h,09889h	; 9838
+
+; ----------------------------------------------------------------------
+; DATOS grupos_984C: los 10 grupos de sprites de sprites_9838: cuantos sprites
+;   y, por cada uno, dy, dx, dibujo y color, que 0x96EC suma a la posicion y
+;   copia a 0xD280 (70 bytes)
+;   0x984c..0x9892  (70 bytes)
+DATA_grupos_984C:
+	defb 001h,000h,000h,000h,008h,001h,000h,000h,000h,000h,001h,000h,000h,018h,008h,002h	; 984c  ................
+	defb 000h,000h,020h,008h,000h,00bh,024h,008h,001h,0fch,000h,01ch,008h,001h,000h,000h	; 985c  .. ...$.........
+	defb 004h,008h,002h,000h,000h,0a4h,008h,000h,000h,0a8h,00eh,002h,000h,000h,068h,005h	; 986c  ..............h.
+	defb 000h,000h,06ch,01ah,002h,000h,000h,060h,005h,000h,000h,064h,01ah,002h,000h,000h	; 987c  ..l....`...d....
+	defb 010h,008h,000h,000h,014h,008h	; 988c
+
+; ----------------------------------------------------------------------
+; DATOS vars_9892: variables: 0x9892 y 0x9893 (bytes), 0x9894 (BC), 0x9896
+;   (HL) y 0x9898 (DE), que guarda 0x98A2 (8 bytes)
+;   0x9892..0x989a  (8 bytes)
+DATA_vars_9892:
+	defb 0efh,0eeh,000h,000h,000h,000h,0eeh,0eeh	; 9892  ........
 
 ; ======================================================================
 ; CODIGO 0x989a..0x9a63  (457 bytes)
@@ -665,8 +685,12 @@ L_9A46:
 	ret			;9a62
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a63..0x9a88  (37 bytes)
-DATA_9A63:
+; DATOS muerto_9A63: codigo que no se ejecuta: cargaria la lista de personas
+;   (los sectores 1438-1439, por 0x9A91, a 0xD300), comprobaria su suma
+;   (0x9AAE) y la copiaria a 0xD700; nada del listado ni de las otras partes
+;   salta aqui (37 bytes)
+;   0x9a63..0x9a88  (37 bytes)
+DATA_muerto_9A63:
 	defb 03eh,001h,032h,0efh,0d1h,0edh,073h,0f1h,0e0h,0cdh,091h,09ah,011h,0ffh,0d6h,0cdh	; 9a63  >.2...s.........
 	defb 0aeh,09ah,0c2h,0deh,082h,0afh,032h,0efh,0d1h,011h,000h,0d7h,021h,000h,0d3h,001h	; 9a73  ......2.....!...
 	defb 000h,004h,0edh,0b0h,0c9h	; 9a83
@@ -682,8 +706,10 @@ L_9A88:
 	jp 0824bh		;9a8e
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a91..0x9a9d  (12 bytes)
-DATA_9A91:
+; DATOS muerto_9A91: codigo que no se ejecuta: lee 2 sectores desde el 1438 en
+;   0xD300 (jp 0x8215); solo lo llama muerto_9A63 (12 bytes)
+;   0x9a91..0x9a9d  (12 bytes)
+DATA_muerto_9A91:
 	defb 011h,000h,0d3h,021h,000h,002h,001h,09eh,005h,0c3h,015h,082h	; 9a91  ...!........
 
 ; ======================================================================
@@ -709,27 +735,56 @@ L_9AA2:
 	ret			;9aad
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9aae..0x9c00  (338 bytes)
-DATA_9AAE:
+; DATOS muerto_9AAE: codigo que no se ejecuta: suma 0x3FF bytes desde 0xD300 y
+;   la compara con la de 0xD6FF; solo lo llama muerto_9A63 (25 bytes)
+;   0x9aae..0x9ac7  (25 bytes)
+DATA_muerto_9AAE:
 	defb 021h,000h,0d3h,0afh,001h,0ffh,003h,0cdh,0bbh,09ah,0ebh,0beh,0c9h,008h,008h,086h	; 9aae  !...............
-	defb 023h,008h,00bh,079h,0b0h,020h,0f7h,008h,0c9h,04bh,004h,000h,00ch,023h,004h,000h	; 9abe  #..y. ...K...#..
-	defb 006h,039h,004h,000h,010h,029h,004h,000h,010h,049h,004h,000h,002h,04dh,001h,000h	; 9ace  .9...)...I...M..
-	defb 003h,097h,001h,000h,003h,05dh,003h,000h,003h,0f0h,003h,000h,003h,008h,008h,008h	; 9ade  .....]..........
-	defb 008h,008h,008h,002h,00ch,001h,006h,000h,000h,01eh,021h,020h,040h,040h,040h,040h	; 9aee  ..........! @@@@
-	defb 040h,040h,040h,020h,000h,000h,000h,000h,000h,010h,020h,020h,020h,020h,020h,026h	; 9afe  @@@ ......     &
-	defb 038h,0d0h,011h,016h,008h,001h,006h,000h,000h,000h,01ch,022h,022h,041h,041h,041h	; 9b0e  8..........""AAA
-	defb 041h,042h,003h,004h,000h,000h,000h,000h,000h,000h,000h,0feh,000h,000h,000h,000h	; 9b1e  AB..............
-	defb 008h,030h,000h,004h,018h,000h,000h,000h,000h,000h,000h,01fh,020h,020h,040h,040h	; 9b2e  .0..........  @@
-	defb 040h,020h,020h,010h,00ch,003h,000h,000h,008h,010h,010h,010h,090h,050h,050h,092h	; 9b3e  @  ..........PP.
-	defb 0fch,010h,011h,016h,010h,009h,00ah,000h,000h,000h,000h,000h,003h,044h,024h,012h	; 9b4e  .............D$.
-	defb 00fh,000h,000h,000h,000h,000h,000h,000h,020h,040h,040h,044h,0f8h,020h,020h,020h	; 9b5e  ........ @@D.
-	defb 020h,024h,0f9h,026h,020h,011h,006h,000h,000h,000h,000h,000h,01fh,020h,020h,041h	; 9b6e   $.& ........  A
-	defb 042h,046h,043h,040h,040h,000h,000h,000h,080h,000h,002h,084h,0c4h,0a4h,0a2h,092h	; 9b7e  BFC@@...........
-	defb 08ah,086h,040h,044h,058h,042h,00ch,000h,000h,001h,001h,000h,000h,038h,046h,041h	; 9b8e  ..@DXB.......8FA
-	defb 080h,080h,080h,000h,000h,000h,000h,000h,008h,010h,010h,012h,0fch,008h,008h,048h	; 9b9e  ...............H
-	defb 024h,020h,022h,02ch,041h,006h,000h,000h,000h,060h,018h,007h,000h,000h,00ch,010h	; 9bae  $ ",A....`......
-	defb 010h,020h,020h,020h,020h,000h,000h,000h,000h,008h,010h,092h,07ch,010h,010h,090h	; 9bbe  .    .......|...
-	defb 090h,088h,089h,006h,000h,001h,006h,000h,000h,000h,00ch,003h,002h,041h,041h,040h	; 9bce  .............AA@
-	defb 040h,020h,020h,011h,00eh,000h,000h,000h,000h,010h,020h,020h,010h,010h,008h,008h	; 9bde  @  .......  ....
-	defb 008h,008h,011h,016h,020h,0c1h,006h,000h,000h,000h,000h,000h,000h,020h,020h,020h	; 9bee  .... ........
-	defb 020h,010h	; 9bfe
+	defb 023h,008h,00bh,079h,0b0h,020h,0f7h,008h,0c9h	; 9abe  #..y. ...
+
+; ----------------------------------------------------------------------
+; DATOS sectores_9AC7: 4 lecturas de disco de 4 bytes (primer sector, 0 y
+;   cuantos sectores): 0x9637 coge la de A (0-3: p03 0x9CD8, p05 0x9C58, p04
+;   0x9C95 y 0x9CB7) y 0x961E la lee en 0xB000 (16 bytes)
+;   0x9ac7..0x9ad7  (16 bytes)
+DATA_sectores_9AC7:
+	defb 04bh,004h,000h,00ch	; 9ac7
+	defb 023h,004h,000h,006h	; 9acb
+	defb 039h,004h,000h,010h	; 9acf
+	defb 029h,004h,000h,010h	; 9ad3
+
+; ----------------------------------------------------------------------
+; DATOS sectores_9AD7: 5 lecturas de disco de 4 bytes (primer sector, 0,
+;   cuantos): 0x9A37 coge la de A y 0x9A1E la lee en 0xB200; desde los
+;   listados solo se pide la 0 (p03 0x9CD4) (20 bytes)
+;   0x9ad7..0x9aeb  (20 bytes)
+DATA_sectores_9AD7:
+	defb 049h,004h,000h,002h	; 9ad7
+	defb 04dh,001h,000h,003h	; 9adb
+	defb 097h,001h,000h,003h	; 9adf
+	defb 05dh,003h,000h,003h	; 9ae3
+	defb 0f0h,003h,000h,003h	; 9ae7
+
+; ----------------------------------------------------------------------
+; DATOS resto: hasta el final del ultimo sector: nadie de la p02 lo lee (277
+;   bytes)
+;   0x9aeb..0x9c00  (277 bytes)
+DATA_resto:
+	defb 008h,008h,008h,008h,008h,008h,002h,00ch,001h,006h,000h,000h,01eh,021h,020h,040h	; 9aeb  .............! @
+	defb 040h,040h,040h,040h,040h,040h,020h,000h,000h,000h,000h,000h,010h,020h,020h,020h	; 9afb  @@@@@@ ......
+	defb 020h,020h,026h,038h,0d0h,011h,016h,008h,001h,006h,000h,000h,000h,01ch,022h,022h	; 9b0b    &8..........""
+	defb 041h,041h,041h,041h,042h,003h,004h,000h,000h,000h,000h,000h,000h,000h,0feh,000h	; 9b1b  AAAAB...........
+	defb 000h,000h,000h,008h,030h,000h,004h,018h,000h,000h,000h,000h,000h,000h,01fh,020h	; 9b2b  ....0..........
+	defb 020h,040h,040h,040h,020h,020h,010h,00ch,003h,000h,000h,008h,010h,010h,010h,090h	; 9b3b   @@@  ..........
+	defb 050h,050h,092h,0fch,010h,011h,016h,010h,009h,00ah,000h,000h,000h,000h,000h,003h	; 9b4b  PP..............
+	defb 044h,024h,012h,00fh,000h,000h,000h,000h,000h,000h,000h,020h,040h,040h,044h,0f8h	; 9b5b  D$......... @@D.
+	defb 020h,020h,020h,020h,024h,0f9h,026h,020h,011h,006h,000h,000h,000h,000h,000h,01fh	; 9b6b      $.& ........
+	defb 020h,020h,041h,042h,046h,043h,040h,040h,000h,000h,000h,080h,000h,002h,084h,0c4h	; 9b7b    ABFC@@........
+	defb 0a4h,0a2h,092h,08ah,086h,040h,044h,058h,042h,00ch,000h,000h,001h,001h,000h,000h	; 9b8b  .....@DXB.......
+	defb 038h,046h,041h,080h,080h,080h,000h,000h,000h,000h,000h,008h,010h,010h,012h,0fch	; 9b9b  8FA.............
+	defb 008h,008h,048h,024h,020h,022h,02ch,041h,006h,000h,000h,000h,060h,018h,007h,000h	; 9bab  ..H$ ",A....`...
+	defb 000h,00ch,010h,010h,020h,020h,020h,020h,000h,000h,000h,000h,008h,010h,092h,07ch	; 9bbb  ....    .......|
+	defb 010h,010h,090h,090h,088h,089h,006h,000h,001h,006h,000h,000h,000h,00ch,003h,002h	; 9bcb  ................
+	defb 041h,041h,040h,040h,020h,020h,011h,00eh,000h,000h,000h,000h,010h,020h,020h,010h	; 9bdb  AA@@  .......  .
+	defb 010h,008h,008h,008h,008h,011h,016h,020h,0c1h,006h,000h,000h,000h,000h,000h,000h	; 9beb  ....... ........
+	defb 020h,020h,020h,020h,010h	; 9bfb

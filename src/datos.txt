@@ -1,0 +1,7 @@
+# Datos a los que el codigo llega por caminos que tools/tipos.py no sigue solo (tablas de
+# punteros, registros). Formato en tools/tipos.py (semillas_a_mano).
+# <modulo> <tipo> <quien> <dir> ...                              # explicacion
+# <modulo> registros <tipo> <quien> <tabla> <n> <tam> <desp>     # explicacion
+
+p17 registros casillas 0x9866 0x98AC 4 5 3   # 4 registros (uno por valor de 0xD217, 1-4) de 5 bytes: x, y, ancho y un puntero a casillas que pinta 0x987D
+p17 registros casillas 0x9866 0x98C0 4 5 3   # la segunda tabla de 0x9866 (desde 0x9841): x, y, ancho y puntero a casillas, uno por valor de 0xD217

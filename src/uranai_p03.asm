@@ -1605,17 +1605,11 @@ L_AD42:
 	call 0822dh		;ad45
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_AD48: 6 destinos del despachador (call 0x822D en 0xAD45) (11
+; DATOS saltos_AD48: 6 destinos del despachador (call 0x822D en 0xAD45) (12
 ;   bytes)
-;   0xad48..0xad53  (11 bytes)
+;   0xad48..0xad54  (12 bytes)
 DATA_saltos_AD48:
-	defw 0adbeh,0ae4ah,0ae83h,0aee5h,0af45h	; ad48
-	defb 08ch	; ad52
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0xad53..0xad54  (1 bytes)
-DATA_AD53:
-	defb 0afh	; ad53
+	defw 0adbeh,0ae4ah,0ae83h,0aee5h,0af45h,0af8ch	; ad48
 
 ; ======================================================================
 ; CODIGO 0xad54..0xadb6  (98 bytes)

@@ -135,7 +135,7 @@ def uno(nombre, s, k, org, dsk, src, work):
                 noc.append("# 0x%04X: llamada al despachador sin tabla legible detras" % a)
                 continue
             noc.append("0x%04X 0x%04X   # %d destinos del despachador (call 0x822D en 0x%04X)"
-                       % (a + 3, a + 2 + 2 * len(ws), len(ws), a))
+                       % (a + 3, a + 3 + 2 * len(ws), len(ws), a))
             for w in sorted(set(ws)):
                 ent.append("0x%04X   # tabla del despachador de 0x%04X" % (w, a))
         escribe_seccion(os.path.join(src, nombre + ".entries"), ent)

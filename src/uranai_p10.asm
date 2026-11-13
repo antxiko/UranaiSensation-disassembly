@@ -51,18 +51,12 @@ L_9235:
 	call 0822dh		;923e
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9241: 12 destinos del despachador (call 0x822D en 0x923E) (23
+; DATOS saltos_9241: 12 destinos del despachador (call 0x822D en 0x923E) (24
 ;   bytes)
-;   0x9241..0x9258  (23 bytes)
+;   0x9241..0x9259  (24 bytes)
 DATA_saltos_9241:
 	defw 09259h,09276h,092a9h,092c0h,0931fh,09394h,0939eh,093bdh	; 9241
-	defw 093d2h,094f3h,09514h	; 9251  -> L_93D2 L_94F3 L_9514
-	defb 038h	; 9257
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9258..0x9259  (1 bytes)
-DATA_9258:
-	defb 095h	; 9258
+	defw 093d2h,094f3h,09514h,09538h	; 9251  -> L_93D2 L_94F3 L_9514 L_9538
 
 ; ======================================================================
 ; CODIGO 0x9259..0x92a4  (75 bytes)
@@ -186,17 +180,11 @@ L_931F:
 	call 0822dh		;9322
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9325: 3 destinos del despachador (call 0x822D en 0x9322) (5
+; DATOS saltos_9325: 3 destinos del despachador (call 0x822D en 0x9322) (6
 ;   bytes)
-;   0x9325..0x932a  (5 bytes)
+;   0x9325..0x932b  (6 bytes)
 DATA_saltos_9325:
-	defw 0932bh,09351h	; 9325  -> L_932B L_9351
-	defb 058h	; 9329
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x932a..0x932b  (1 bytes)
-DATA_932A:
-	defb 093h	; 932a
+	defw 0932bh,09351h,09358h	; 9325  -> L_932B L_9351 L_9358
 
 ; ======================================================================
 ; CODIGO 0x932b..0x93d8  (173 bytes)
@@ -292,17 +280,11 @@ L_93D2:
 	call 0822dh		;93d5
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_93D8: 7 destinos del despachador (call 0x822D en 0x93D5) (13
+; DATOS saltos_93D8: 7 destinos del despachador (call 0x822D en 0x93D5) (14
 ;   bytes)
-;   0x93d8..0x93e5  (13 bytes)
+;   0x93d8..0x93e6  (14 bytes)
 DATA_saltos_93D8:
-	defw 093e6h,09432h,0945bh,094a7h,094b8h,094d5h	; 93d8
-	defb 0e6h	; 93e4
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x93e5..0x93e6  (1 bytes)
-DATA_93E5:
-	defb 094h	; 93e5
+	defw 093e6h,09432h,0945bh,094a7h,094b8h,094d5h,094e6h	; 93d8
 
 ; ======================================================================
 ; CODIGO 0x93e6..0x942e  (72 bytes)

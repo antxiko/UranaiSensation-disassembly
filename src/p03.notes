@@ -9,6 +9,6 @@ D 0xAF2B 0xAF2F casillas_AF2B  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0xAF2F 0xAF33 casillas_AF2F  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0xAF0E (4 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0xAD48 0xAD53 saltos_AD48  6 destinos del despachador (call 0x822D en 0xAD45) (11 bytes)
+D 0xAD48 0xAD54 saltos_AD48  6 destinos del despachador (call 0x822D en 0xAD45) (12 bytes)
 F 0xAD48 w8
 # --- fin de despachos.py ---

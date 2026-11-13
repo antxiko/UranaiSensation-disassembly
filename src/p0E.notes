@@ -11,6 +11,6 @@ D 0xA035 0xA0C7 casillas_A035  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0xA0C7 0xA158 casillas_A0C7  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A62 (145 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x98DA 0x98FB saltos_98DA  17 destinos del despachador (call 0x822D en 0x98D7) (33 bytes)
+D 0x98DA 0x98FC saltos_98DA  17 destinos del despachador (call 0x822D en 0x98D7) (34 bytes)
 F 0x98DA w8
 # --- fin de despachos.py ---

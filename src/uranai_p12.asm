@@ -181,17 +181,11 @@ L_993D:
 	call 0822dh		;9941
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9944: 3 destinos del despachador (call 0x822D en 0x9941) (5
+; DATOS saltos_9944: 3 destinos del despachador (call 0x822D en 0x9941) (6
 ;   bytes)
-;   0x9944..0x9949  (5 bytes)
+;   0x9944..0x994a  (6 bytes)
 DATA_saltos_9944:
-	defw 0994ah,09955h	; 9944  -> L_994A L_9955
-	defb 066h	; 9948
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9949..0x994a  (1 bytes)
-DATA_9949:
-	defb 099h	; 9949
+	defw 0994ah,09955h,09966h	; 9944  -> L_994A L_9955 L_9966
 
 ; ======================================================================
 ; CODIGO 0x994a..0x9a41  (247 bytes)

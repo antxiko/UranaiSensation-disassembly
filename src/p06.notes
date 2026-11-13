@@ -11,8 +11,8 @@ D 0x94E0 0x94E8 texto_94E0  texto: x, y y las letras hasta 0xFF; lo usa 0x94D4 (
 D 0x96D9 0x981B vram_96D9  RLE a la VRAM hasta el 0; lo usa 0x96D6 (322 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9847 0x9850 saltos_9847  5 destinos del despachador (call 0x822D en 0x9844) (9 bytes)
+D 0x9847 0x9851 saltos_9847  5 destinos del despachador (call 0x822D en 0x9844) (10 bytes)
 F 0x9847 w8
-D 0x9A06 0x9A0F saltos_9A06  5 destinos del despachador (call 0x822D en 0x9A03) (9 bytes)
+D 0x9A06 0x9A10 saltos_9A06  5 destinos del despachador (call 0x822D en 0x9A03) (10 bytes)
 F 0x9A06 w8
 # --- fin de despachos.py ---

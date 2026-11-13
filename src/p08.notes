@@ -4,6 +4,6 @@ D 0x9841 0x9A65 casillas_9841  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x9A65 0x9BA6 vram_9A65  RLE a la VRAM hasta el 0; lo usa 0x983E (321 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9BB8 0x9BBF saltos_9BB8  4 destinos del despachador (call 0x822D en 0x9BB5) (7 bytes)
+D 0x9BB8 0x9BC0 saltos_9BB8  4 destinos del despachador (call 0x822D en 0x9BB5) (8 bytes)
 F 0x9BB8 w8
 # --- fin de despachos.py ---

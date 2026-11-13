@@ -1,11 +1,11 @@
 # Notas de p1F (sectores 70-72, en 0x9200).
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x923E 0x9253 saltos_923E  11 destinos del despachador (call 0x822D en 0x923B) (21 bytes)
+D 0x923E 0x9254 saltos_923E  11 destinos del despachador (call 0x822D en 0x923B) (22 bytes)
 F 0x923E w8
-D 0x92A8 0x92B1 saltos_92A8  5 destinos del despachador (call 0x822D en 0x92A5) (9 bytes)
+D 0x92A8 0x92B2 saltos_92A8  5 destinos del despachador (call 0x822D en 0x92A5) (10 bytes)
 F 0x92A8 w8
-D 0x930F 0x931A saltos_930F  6 destinos del despachador (call 0x822D en 0x930C) (11 bytes)
+D 0x930F 0x931B saltos_930F  6 destinos del despachador (call 0x822D en 0x930C) (12 bytes)
 F 0x930F w8
-D 0x9450 0x945D saltos_9450  7 destinos del despachador (call 0x822D en 0x944D) (13 bytes)
+D 0x9450 0x945E saltos_9450  7 destinos del despachador (call 0x822D en 0x944D) (14 bytes)
 F 0x9450 w8
 # --- fin de despachos.py ---

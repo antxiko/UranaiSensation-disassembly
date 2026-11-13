@@ -635,17 +635,11 @@ L_983E:
 	call 0822dh		;9844
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9847: 5 destinos del despachador (call 0x822D en 0x9844) (9
+; DATOS saltos_9847: 5 destinos del despachador (call 0x822D en 0x9844) (10
 ;   bytes)
-;   0x9847..0x9850  (9 bytes)
+;   0x9847..0x9851  (10 bytes)
 DATA_saltos_9847:
-	defw 09851h,09858h,09910h,09973h	; 9847  -> L_9851 L_9858 L_9910 L_9973
-	defb 0ddh	; 984f
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9850..0x9851  (1 bytes)
-DATA_9850:
-	defb 099h	; 9850
+	defw 09851h,09858h,09910h,09973h,099ddh	; 9847
 
 ; ======================================================================
 ; CODIGO 0x9851..0x9880  (47 bytes)
@@ -844,17 +838,11 @@ L_9A00:
 	call 0822dh		;9a03
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9A06: 5 destinos del despachador (call 0x822D en 0x9A03) (9
+; DATOS saltos_9A06: 5 destinos del despachador (call 0x822D en 0x9A03) (10
 ;   bytes)
-;   0x9a06..0x9a0f  (9 bytes)
+;   0x9a06..0x9a10  (10 bytes)
 DATA_saltos_9A06:
-	defw 09a10h,09a18h,09a22h,09a2ah	; 9a06  -> L_9A10 L_9A18 L_9A22 L_9A2A
-	defb 08dh	; 9a0e
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9a0f..0x9a10  (1 bytes)
-DATA_9A0F:
-	defb 09ah	; 9a0f
+	defw 09a10h,09a18h,09a22h,09a2ah,09a8dh	; 9a06
 
 ; ======================================================================
 ; CODIGO 0x9a10..0x9a4f  (63 bytes)

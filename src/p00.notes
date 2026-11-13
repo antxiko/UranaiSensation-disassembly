@@ -1,5 +1,14 @@
 # Notas de p00 (sectores 77-80, en 0x9200).
+B 0x9200 ===== la presentacion: dibujos de 1 bit (0x82AE), casillas propias (0x92F0) y 30 dibujos de color (0x9538) =====
+D 0x9209 0x920D cuentas  las cuentas de 0x928E: 0x9209 y 0x920A bajan cada cuadro, 0x920C dice en que fase va (4 bytes)
+D 0x94B0 0x94F1 casillas_94B0  las casillas que pinta 0x92F0 desde 0x9274: un numero por casilla, 0xFE y un desplazamiento = siguiente fila, 0xFF = fin (65 bytes)
+D 0x94F1 0x94F8 lista_94F1  la lista de 0x9538 (desde 0x922C): un registro de 6 bytes (marca 0x20, 30 dibujos, VRAM 0xDC00, origen 0x9634) y el 0x80 que la acaba (7 bytes)
+D 0x9634 0x99F4 dibujos_9634  30 dibujos de 8x8 a 4 bits por punto (32 bytes cada uno) que 0x9538 copia a la VRAM 0xDC00 (960 bytes)
+D 0x99F4 0x9A00 resto  detras de los 30 dibujos; nadie lo lee (12 bytes)
 # --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9310 0x9378 patrones_9310  dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x9256 (104 bytes)
+D 0x9378 0x93E0 patrones_9378  dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x9262 (104 bytes)
+D 0x93E0 0x94B0 patrones_93E0  dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x926E (208 bytes)
 D 0x94F8 0x9518 paleta_94F8  paleta: 16 colores de 2 bytes; lo usa 0x92C4 (32 bytes)
 D 0x9518 0x9538 paleta_9518  paleta: 16 colores de 2 bytes; lo usa 0x9222 (32 bytes)
 # --- fin de tipos.py ---

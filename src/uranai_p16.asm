@@ -34,17 +34,11 @@ L_980B:
 	call 0822dh		;980e
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9811: 3 destinos del despachador (call 0x822D en 0x980E) (5
+; DATOS saltos_9811: 3 destinos del despachador (call 0x822D en 0x980E) (6
 ;   bytes)
-;   0x9811..0x9816  (5 bytes)
+;   0x9811..0x9817  (6 bytes)
 DATA_saltos_9811:
-	defw 09817h,0983ah	; 9811  -> L_9817 L_983A
-	defb 062h	; 9815
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9816..0x9817  (1 bytes)
-DATA_9816:
-	defb 098h	; 9816
+	defw 09817h,0983ah,09862h	; 9811  -> L_9817 L_983A L_9862
 
 ; ======================================================================
 ; CODIGO 0x9817..0x98f7  (224 bytes)

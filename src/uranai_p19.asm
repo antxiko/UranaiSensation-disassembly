@@ -382,17 +382,11 @@ L_9B44:
 	call 0822dh		;9b48
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9B4B: 4 destinos del despachador (call 0x822D en 0x9B48) (7
+; DATOS saltos_9B4B: 4 destinos del despachador (call 0x822D en 0x9B48) (8
 ;   bytes)
-;   0x9b4b..0x9b52  (7 bytes)
+;   0x9b4b..0x9b53  (8 bytes)
 DATA_saltos_9B4B:
-	defw 09b53h,09b9eh,09bd4h	; 9b4b  -> L_9B53 L_9B9E L_9BD4
-	defb 040h	; 9b51
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9b52..0x9b53  (1 bytes)
-DATA_9B52:
-	defb 09ch	; 9b52
+	defw 09b53h,09b9eh,09bd4h,09c40h	; 9b4b  -> L_9B53 L_9B9E L_9BD4 L_9C40
 
 ; ======================================================================
 ; CODIGO 0x9b53..0x9bda  (135 bytes)
@@ -484,17 +478,11 @@ L_9BD4:
 	call 0822dh		;9bd7
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9BDA: 5 destinos del despachador (call 0x822D en 0x9BD7) (9
+; DATOS saltos_9BDA: 5 destinos del despachador (call 0x822D en 0x9BD7) (10
 ;   bytes)
-;   0x9bda..0x9be3  (9 bytes)
+;   0x9bda..0x9be4  (10 bytes)
 DATA_saltos_9BDA:
-	defw 09be4h,09c20h,09c02h,09bf3h	; 9bda  -> L_9BE4 L_9C20 L_9C02 L_9BF3
-	defb 011h	; 9be2
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9be3..0x9be4  (1 bytes)
-DATA_9BE3:
-	defb 09ch	; 9be3
+	defw 09be4h,09c20h,09c02h,09bf3h,09c11h	; 9bda
 
 ; ======================================================================
 ; CODIGO 0x9be4..0x9c3b  (87 bytes)

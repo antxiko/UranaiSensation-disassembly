@@ -17,6 +17,8 @@ modulo, mide el dato leyendolo como lo lee el servicio:
                    0 = fin; n con el bit 7 = (n & 0x7F) bytes tal cual; si no, el byte
                    siguiente n veces                                         (nucleo 0x8FC6)
   0x82DB           paleta (HL): 16 colores de 2 bytes                       (nucleo 0x88BD)
+  0x82AE           patrones (HL; B = cuantos, C = color, DE = posicion): B dibujos de 8x8
+                   a un bit, 8 bytes cada uno                              (nucleo 0x8DA0)
   0x8218           casillas (HL; DE = posicion, C = ancho): 0 = fin; 0x01-0x7F = la
                    casilla siguiente n veces; 0x81-0xFF = (n & 0x7F) casillas tal
                    cual; 0x80 n v = n casillas seguidas desde la v      (nucleo 0x8EC7)
@@ -103,6 +105,7 @@ SERVICIOS = {
     0x82CC: ("ix", "dibujos", None),
     0x82DB: ("hl", "paleta", lambda b, o: 32),
     0x8218: ("hl", "casillas", casillas),
+    0x82AE: ("hl", "patrones", None),        # B dibujos de 8x8 a 1 bit: B*8 bytes (nucleo 0x8DA0)
 }
 
 
@@ -215,6 +218,12 @@ def mide(b, org, nombre, ins, c):
             ps = None
         if not ps:
             continue
+        if tipo == "patrones":
+            bcs = puntero(ins, k, "bc", pred)
+            if not bcs or None in bcs or len(bcs) != 1:
+                continue
+            n = next(iter(bcs)) >> 8
+            f = (lambda n: lambda b, o: 8 * n)(n)
         for p in sorted(ps):
             if p is None or not org <= p < org + len(b):
                 continue
@@ -253,7 +262,55 @@ DESC = {
     "lista_dibujos": "lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0",
     "paleta": "paleta: 16 colores de 2 bytes",
     "casillas": "casillas en el RLE de 0x8EC7 (nucleo), hasta el 0",
+    "texto_sin_pos": "texto sin posicion: las letras hasta 0xFF",
+    "registros": "tabla de registros",
+    "patrones": "dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice cuantos), que 0x8DA0 (nucleo) pinta con el color C",
 }
+
+
+MEDIDORES = {"texto": lambda b, o: texto(b, o), "texto_sin_pos": lambda b, o: texto(b, o, False),
+             "vram": vram_rle, "casillas": casillas, "dibujo": dibujo, "paleta": lambda b, o: 32}
+extra_tam = {}
+
+
+def semillas_a_mano(src, nombre, b, org):
+    """Los datos a los que el codigo llega por caminos que tipos.py no sigue (tablas de
+    punteros, registros), apuntados a mano en src/datos.txt:
+
+      <modulo> <tipo> <quien> <dir> ...            # explicacion
+      <modulo> registros <tipo> <quien> <tabla> <n> <tam> <desp>   # explicacion
+
+    El primero mide cada <dir> como <tipo>. El segundo declara una tabla de <n> registros
+    de <tam> bytes en <tabla> y mide como <tipo> lo que apunta la palabra de cada registro
+    en +<desp>. <quien> es la instruccion que lee el dato."""
+    f = os.path.join(src, "datos.txt")
+    if not os.path.exists(f):
+        return []
+    out = []
+    for l in open(f, encoding="utf-8"):
+        if l.startswith("#") or not l.strip():
+            continue
+        cuerpo, _, txt = l.partition("#")
+        t = cuerpo.split()
+        if t[0] != nombre:
+            continue
+        txt = txt.strip()
+        if t[1] == "registros":
+            tipo, quien, tabla, n, tam, desp = t[2], int(t[3], 16), int(t[4], 16), int(t[5]), int(t[6]), int(t[7])
+            out.append((tabla, tabla + n * tam, "registros", quien,
+                        txt or "%d registros de %d bytes; en +%d, un puntero a %s" % (n, tam, desp, tipo)))
+            extra_tam[(tabla, tabla + n * tam)] = tam
+            for i in range(n):
+                o = tabla - org + i * tam + desp
+                p = b[o] | b[o + 1] << 8
+                if org <= p < org + len(b):
+                    out.append((p, p + MEDIDORES[tipo](b, p - org), tipo, quien, ""))
+        else:
+            tipo, quien = t[1], int(t[2], 16)
+            for d in t[3:]:
+                p = int(d, 16)
+                out.append((p, p + MEDIDORES[tipo](b, p - org), tipo, quien, txt))
+    return out
 
 
 def main(argv):
@@ -285,23 +342,31 @@ def main(argv):
         datos = {}
         for x, e, tipo, quien in mide(b, org, nombre, instrucciones(asm), c):
             datos.setdefault((x, e, tipo), []).append(quien)
+        extra = {}
+        for x, e, tipo, quien, txt in semillas_a_mano(src, nombre, b, org):
+            datos.setdefault((x, e, tipo), []).append(quien)
+            if txt:
+                extra[(x, e, tipo)] = txt
         lineas, malos = [], 0
         for (x, e, tipo), q in sorted(datos.items()):
             if any(i in ocupado for i in range(x, e)):
                 malos += 1
                 continue
             ocupado.update(range(x, e))
+            desc = extra.get((x, e, tipo)) or DESC[tipo]
             lineas.append("D 0x%04X 0x%04X %s_%04X  %s; lo usa %s (%d bytes)" % (
-                x, e, tipo, x, DESC[tipo], ", ".join("0x%04X" % w for w in sorted(set(q))), e - x))
+                x, e, tipo, x, desc, ", ".join("0x%04X" % w for w in sorted(set(q))), e - x))
+            if tipo == "registros":
+                lineas.append("F 0x%04X %d" % (x, extra_tam[(x, e)]))
             total += e - x
         if lineas or malos:
-            print("%-8s %3d datos, %5d bytes%s" % (nombre, len(lineas), sum(int(l.split()[2], 16) - int(l.split()[1], 16) for l in lineas),
+            print("%-8s %3d datos, %5d bytes%s" % (nombre, len(lineas), sum(int(l.split()[2], 16) - int(l.split()[1], 16) for l in lineas if l.startswith("D ")),
                                                  "  (%d solapados, sin escribir)" % malos if malos else ""))
         if esc:
             escribe(notas, lineas)
-            noc = ["0x%04X 0x%04X   # %s" % (int(l.split()[1], 16), int(l.split()[2], 16), l.split()[3]) for l in lineas]
+            noc = ["0x%04X 0x%04X   # %s" % (int(l.split()[1], 16), int(l.split()[2], 16), l.split()[3]) for l in lineas if l.startswith("D ")]
             escribe(os.path.join(src, nombre + ".nocode"), noc)
-            pisa = sorted({int(l.split()[1], 16) for l in lineas if any(i in c for i in range(int(l.split()[1], 16), int(l.split()[2], 16)))})
+            pisa = sorted({int(l.split()[1], 16) for l in lineas if l.startswith("D ") and any(i in c for i in range(int(l.split()[1], 16), int(l.split()[2], 16)))})
             if pisa:
                 print("         el trazado anterior los tenia como codigo: %s" % " ".join("0x%04X" % x for x in pisa))
     print("TOTAL %d bytes" % total)

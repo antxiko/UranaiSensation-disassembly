@@ -57,18 +57,13 @@ L_922D:
 	call 0822dh		;9234
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_9237: 17 destinos del despachador (call 0x822D en 0x9234) (33
+; DATOS saltos_9237: 17 destinos del despachador (call 0x822D en 0x9234) (34
 ;   bytes)
-;   0x9237..0x9258  (33 bytes)
+;   0x9237..0x9259  (34 bytes)
 DATA_saltos_9237:
 	defw 09259h,0926eh,09295h,092abh,092cch,092f2h,09306h,09316h	; 9237
 	defw 09327h,09335h,093b2h,093dch,09404h,09448h,0951dh,09530h	; 9247
-	defb 037h	; 9257
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9258..0x9259  (1 bytes)
-DATA_9258:
-	defb 095h	; 9258
+	defw 09537h	; 9257  -> L_9537
 
 ; ======================================================================
 ; CODIGO 0x9259..0x92c4  (107 bytes)
@@ -213,17 +208,11 @@ L_9335:
 	call 0822dh		;9338
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_933B: 6 destinos del despachador (call 0x822D en 0x9338) (11
+; DATOS saltos_933B: 6 destinos del despachador (call 0x822D en 0x9338) (12
 ;   bytes)
-;   0x933b..0x9346  (11 bytes)
+;   0x933b..0x9347  (12 bytes)
 DATA_saltos_933B:
-	defw 09347h,09360h,09369h,09371h,09382h	; 933b
-	defb 0a9h	; 9345
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9346..0x9347  (1 bytes)
-DATA_9346:
-	defb 093h	; 9346
+	defw 09347h,09360h,09369h,09371h,09382h,093a9h	; 933b
 
 ; ======================================================================
 ; CODIGO 0x9347..0x944e  (263 bytes)
@@ -357,17 +346,11 @@ L_9448:
 	call 0822dh		;944b
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_944E: 8 destinos del despachador (call 0x822D en 0x944B) (15
+; DATOS saltos_944E: 8 destinos del despachador (call 0x822D en 0x944B) (16
 ;   bytes)
-;   0x944e..0x945d  (15 bytes)
+;   0x944e..0x945e  (16 bytes)
 DATA_saltos_944E:
-	defw 0945eh,09491h,0949bh,094b9h,094cah,094e8h,09513h	; 944e
-	defb 008h	; 945c
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0x945d..0x945e  (1 bytes)
-DATA_945D:
-	defb 095h	; 945d
+	defw 0945eh,09491h,0949bh,094b9h,094cah,094e8h,09513h,09508h	; 944e
 
 ; ======================================================================
 ; CODIGO 0x945e..0x9581  (291 bytes)

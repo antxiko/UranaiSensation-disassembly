@@ -14,6 +14,10 @@
 ; ======================================================================
 
 
+
+; ----------------------------------------------------------------------
+; ===== la presentacion: dibujos de 1 bit (0x82AE), casillas propias (0x92F0) y 30 dibujos de color (0x9538) =====
+; ----------------------------------------------------------------------
 L_9200:
 	jp L_920D		;9200
 L_9203:
@@ -22,8 +26,10 @@ L_9206:
 	jp L_92AF		;9206
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9209..0x920d  (4 bytes)
-DATA_9209:
+; DATOS cuentas: las cuentas de 0x928E: 0x9209 y 0x920A bajan cada cuadro,
+;   0x920C dice en que fase va (4 bytes)
+;   0x9209..0x920d  (4 bytes)
+DATA_cuentas:
 	defb 01eh,031h,000h,000h	; 9209
 
 ; ======================================================================
@@ -164,21 +170,39 @@ L_930E:
 	ret			;930f
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9310..0x94f8  (488 bytes)
-DATA_9310:
+; DATOS patrones_9310: dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice
+;   cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x9256 (104
+;   bytes)
+;   0x9310..0x9378  (104 bytes)
+DATA_patrones_9310:
 	defb 007h,007h,00fh,00fh,00fh,01fh,01fh,03fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh	; 9310  .......?........
 	defb 0f8h,0f8h,0f0h,0f0h,0f0h,0e0h,0e0h,0e0h,000h,000h,000h,000h,001h,003h,00fh,07fh	; 9320  ................
 	defb 03fh,07fh,07fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0fch,0f0h,0c0h	; 9330  ?...............
 	defb 0c0h,0c0h,080h,080h,000h,000h,000h,000h,000h,000h,000h,001h,003h,007h,00fh,00fh	; 9340  ................
 	defb 00fh,03fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0feh,0fch,0f8h,0f8h,0f0h	; 9350  .?..............
 	defb 0f8h,0c0h,000h,000h,000h,000h,000h,000h,01fh,01fh,01fh,03fh,03fh,03fh,07fh,07fh	; 9360  ...........???..
-	defb 0f0h,0e0h,0e0h,0c0h,0c0h,0c0h,080h,080h,000h,000h,000h,000h,000h,001h,001h,003h	; 9370  ................
-	defb 07fh,07fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0feh,0feh,0fch	; 9380  ................
-	defb 080h,080h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,007h	; 9390  ................
-	defb 003h,007h,007h,00fh,01fh,03fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0f8h	; 93a0  .....?..........
-	defb 0fch,0f8h,0f8h,0f0h,0e0h,0c0h,000h,000h,000h,003h,00fh,01fh,03fh,07fh,0ffh,0ffh	; 93b0  ............?...
-	defb 0ffh,0fch,0f0h,0e0h,0c0h,080h,080h,000h,001h,001h,001h,003h,003h,003h,007h,007h	; 93c0  ................
-	defb 0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0feh,0feh,0fch,0fch,0fch,0f8h,0f8h	; 93d0  ................
+	defb 0f0h,0e0h,0e0h,0c0h,0c0h,0c0h,080h,080h	; 9370  ........
+
+; ----------------------------------------------------------------------
+; DATOS patrones_9378: dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice
+;   cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x9262 (104
+;   bytes)
+;   0x9378..0x93e0  (104 bytes)
+DATA_patrones_9378:
+	defb 000h,000h,000h,000h,000h,001h,001h,003h,07fh,07fh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh	; 9378  ................
+	defb 0ffh,0ffh,0ffh,0ffh,0ffh,0feh,0feh,0fch,080h,080h,000h,000h,000h,000h,000h,000h	; 9388  ................
+	defb 000h,000h,000h,000h,000h,000h,000h,007h,003h,007h,007h,00fh,01fh,03fh,0ffh,0ffh	; 9398  .............?..
+	defb 0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0f8h,0fch,0f8h,0f8h,0f0h,0e0h,0c0h,000h,000h	; 93a8  ................
+	defb 000h,003h,00fh,01fh,03fh,07fh,0ffh,0ffh,0ffh,0fch,0f0h,0e0h,0c0h,080h,080h,000h	; 93b8  ....?...........
+	defb 001h,001h,001h,003h,003h,003h,007h,007h,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh	; 93c8  ................
+	defb 0ffh,0feh,0feh,0fch,0fch,0fch,0f8h,0f8h	; 93d8  ........
+
+; ----------------------------------------------------------------------
+; DATOS patrones_93E0: dibujos de 8x8 a un bit, 8 bytes cada uno (B de BC dice
+;   cuantos), que 0x8DA0 (nucleo) pinta con el color C; lo usa 0x926E (208
+;   bytes)
+;   0x93e0..0x94b0  (208 bytes)
+DATA_patrones_93E0:
 	defb 03ch,03ch,078h,078h,079h,0f3h,0f7h,0ffh,01fh,03eh,07ch,0f9h,0f3h,0e3h,0c3h,087h	; 93e0  <<xxy....>|.....
 	defb 01fh,07fh,0f8h,0f0h,0e0h,0e0h,0c0h,0c0h,0c0h,0f0h,0f8h,078h,078h,079h,079h,079h	; 93f0  ...........xxyyy
 	defb 07fh,07fh,0ffh,0f7h,0f7h,0e7h,0e7h,0e7h,00fh,00fh,01eh,01eh,01eh,03ch,03ch,03ch	; 9400  .............<<<
@@ -192,11 +216,26 @@ DATA_9310:
 	defb 0e3h,0e3h,0e3h,0e7h,0e7h,0e7h,0efh,0efh,0ceh,0ceh,0cfh,08fh,08fh,08fh,00fh,00fh	; 9480  ................
 	defb 0f7h,0e7h,0c7h,0cfh,08fh,08fh,01eh,01eh,08fh,08fh,08fh,01eh,01eh,01eh,03ch,03ch	; 9490  ..............<<
 	defb 007h,008h,017h,014h,017h,014h,008h,007h,080h,040h,020h,0a0h,020h,0a0h,040h,080h	; 94a0  .........@ . .@.
+
+; ----------------------------------------------------------------------
+; DATOS casillas_94B0: las casillas que pinta 0x92F0 desde 0x9274: un numero
+;   por casilla, 0xFE y un desplazamiento = siguiente fila, 0xFF = fin (65
+;   bytes)
+;   0x94b0..0x94f1  (65 bytes)
+DATA_casillas_94B0:
 	defb 001h,002h,003h,0feh,0f8h,004h,005h,006h,007h,0feh,0f0h,008h,009h,00ah,00bh,00eh	; 94b0  ................
 	defb 00fh,010h,011h,01bh,01ch,01dh,01eh,01fh,020h,021h,022h,023h,024h,025h,026h,0feh	; 94c0  ........ !"#$%&.
 	defb 000h,00ch,002h,00dh,012h,013h,014h,015h,027h,028h,029h,02ah,02bh,02ch,02dh,02eh	; 94d0  ........'()*+,-.
 	defb 02fh,030h,031h,032h,033h,034h,0feh,010h,016h,019h,017h,0feh,0f8h,018h,019h,01ah	; 94e0  /01234..........
-	defb 0ffh,020h,01eh,000h,0dch,034h,096h,080h	; 94f0  . ...4..
+	defb 0ffh	; 94f0
+
+; ----------------------------------------------------------------------
+; DATOS lista_94F1: la lista de 0x9538 (desde 0x922C): un registro de 6 bytes
+;   (marca 0x20, 30 dibujos, VRAM 0xDC00, origen 0x9634) y el 0x80 que la
+;   acaba (7 bytes)
+;   0x94f1..0x94f8  (7 bytes)
+DATA_lista_94F1:
+	defb 020h,01eh,000h,0dch,034h,096h,080h	; 94f1
 
 ; ----------------------------------------------------------------------
 ; DATOS paleta_94F8: paleta: 16 colores de 2 bytes; lo usa 0x92C4 (32 bytes)
@@ -389,8 +428,10 @@ L_9629:
 	ret			;9633
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9634..0x9a00  (972 bytes)
-DATA_9634:
+; DATOS dibujos_9634: 30 dibujos de 8x8 a 4 bits por punto (32 bytes cada uno)
+;   que 0x9538 copia a la VRAM 0xDC00 (960 bytes)
+;   0x9634..0x99f4  (960 bytes)
+DATA_dibujos_9634:
 	defb 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h	; 9634  ................
 	defb 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h	; 9644  ................
 	defb 000h,000h,000h,000h,000h,0eeh,0eeh,0eeh,00eh,0cch,0cch,0cch,00eh,0cfh,0ffh,0fch	; 9654  ................
@@ -451,4 +492,9 @@ DATA_9634:
 	defb 0ffh,0ffh,0ffh,0e0h,0ffh,0ffh,0feh,000h,0ffh,0feh,0e0h,000h,0eeh,0e0h,000h,000h	; 99c4  ................
 	defb 000h,000h,080h,000h,000h,000h,088h,000h,000h,000h,088h,080h,088h,088h,088h,088h	; 99d4  ................
 	defb 088h,088h,088h,088h,000h,000h,088h,080h,000h,000h,088h,000h,000h,000h,080h,000h	; 99e4  ................
+
+; ----------------------------------------------------------------------
+; DATOS resto: detras de los 30 dibujos; nadie lo lee (12 bytes)
+;   0x99f4..0x9a00  (12 bytes)
+DATA_resto:
 	defb 070h,000h,000h,000h,000h,001h,003h,007h,00fh,03fh,03fh,00fh	; 99f4  p........??.

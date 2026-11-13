@@ -1,1 +1,15 @@
 # Notas de p02 (sectores 9-11, en 0x9600).
+D 0x9650 0x9657 lista_9650  la lista de 0x9918 (desde 0x9646): un registro de 6 bytes (marca 0x20; cuantos dibujos, que 0x9646 pone en 0x9651; VRAM 0xA004; origen 0xB000, lo recien leido del disco) y el 0x80 que la acaba (7 bytes)
+D 0x9705 0x9708 muerto_9705  call 0x821E detras del ret de 0x9704: nada salta aqui (3 bytes)
+D 0x9838 0x984C sprites_9838  10 punteros a grupos de sprites; 0x96E1 coge el de 0xD20F (20 bytes)
+F 0x9838 w10
+D 0x984C 0x9892 grupos_984C  los 10 grupos de sprites de sprites_9838: cuantos sprites y, por cada uno, dy, dx, dibujo y color, que 0x96EC suma a la posicion y copia a 0xD280 (70 bytes)
+D 0x9892 0x989A vars_9892  variables: 0x9892 y 0x9893 (bytes), 0x9894 (BC), 0x9896 (HL) y 0x9898 (DE), que guarda 0x98A2 (8 bytes)
+D 0x9A63 0x9A88 muerto_9A63  codigo que no se ejecuta: cargaria la lista de personas (los sectores 1438-1439, por 0x9A91, a 0xD300), comprobaria su suma (0x9AAE) y la copiaria a 0xD700; nada del listado ni de las otras partes salta aqui (37 bytes)
+D 0x9A91 0x9A9D muerto_9A91  codigo que no se ejecuta: lee 2 sectores desde el 1438 en 0xD300 (jp 0x8215); solo lo llama muerto_9A63 (12 bytes)
+D 0x9AAE 0x9AC7 muerto_9AAE  codigo que no se ejecuta: suma 0x3FF bytes desde 0xD300 y la compara con la de 0xD6FF; solo lo llama muerto_9A63 (25 bytes)
+D 0x9AC7 0x9AD7 sectores_9AC7  4 lecturas de disco de 4 bytes (primer sector, 0 y cuantos sectores): 0x9637 coge la de A (0-3: p03 0x9CD8, p05 0x9C58, p04 0x9C95 y 0x9CB7) y 0x961E la lee en 0xB000 (16 bytes)
+F 0x9AC7 4
+D 0x9AD7 0x9AEB sectores_9AD7  5 lecturas de disco de 4 bytes (primer sector, 0, cuantos): 0x9A37 coge la de A y 0x9A1E la lee en 0xB200; desde los listados solo se pide la 0 (p03 0x9CD4) (20 bytes)
+F 0x9AD7 4
+D 0x9AEB 0x9C00 resto  hasta el final del ultimo sector: nadie de la p02 lo lee (277 bytes)

@@ -1,9 +1,9 @@
 # Notas de p10 (sectores 64-66, en 0x9200).
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9241 0x9258 saltos_9241  12 destinos del despachador (call 0x822D en 0x923E) (23 bytes)
+D 0x9241 0x9259 saltos_9241  12 destinos del despachador (call 0x822D en 0x923E) (24 bytes)
 F 0x9241 w8
-D 0x9325 0x932A saltos_9325  3 destinos del despachador (call 0x822D en 0x9322) (5 bytes)
+D 0x9325 0x932B saltos_9325  3 destinos del despachador (call 0x822D en 0x9322) (6 bytes)
 F 0x9325 w8
-D 0x93D8 0x93E5 saltos_93D8  7 destinos del despachador (call 0x822D en 0x93D5) (13 bytes)
+D 0x93D8 0x93E6 saltos_93D8  7 destinos del despachador (call 0x822D en 0x93D5) (14 bytes)
 F 0x93D8 w8
 # --- fin de despachos.py ---

@@ -1,6 +1,22 @@
 # Notas de p17 (sectores 164-169, en 0x9800).
+B 0x9800 ===== la pantalla del grupo sanguineo de 0xD217 (1-4): sus casillas, su paleta y sus dibujos =====
+D 0x9880 0x988C sangre_abc  4 registros de 3 bytes (uno por valor de 0xD217): los lee 0x984D y 0x9818-0x9824 los meten como operandos de las llamadas a 0x9203/0x9206 (12 bytes)
+F 0x9880 3
+D 0xA36B 0xA400 resto  lo que habia en la memoria al grabar la parte, que nadie de la p17 lee: desde 0xA394 son los mismos bytes que la p09 en esas direcciones (tools/restos.py), y 0xA36B-0xA39A la tabla de sprites que llevan otras partes (la p02 la usa en 0x9868) (149 bytes)
 # --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
 D 0x988C 0x98AC paleta_988C  paleta: 16 colores de 2 bytes; lo usa 0x9863 (32 bytes)
+D 0x98AC 0x98C0 registros_98AC  4 registros (uno por valor de 0xD217, 1-4) de 5 bytes: x, y, ancho y un puntero a casillas que pinta 0x987D; lo usa 0x9866 (20 bytes)
+F 0x98AC 5
+D 0x98C0 0x98D4 registros_98C0  la segunda tabla de 0x9866 (desde 0x9841): x, y, ancho y puntero a casillas, uno por valor de 0xD217; lo usa 0x9866 (20 bytes)
+F 0x98C0 5
+D 0x98D4 0x9A1C casillas_98D4  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (328 bytes)
+D 0x9A1C 0x9B6A casillas_9A1C  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (334 bytes)
+D 0x9B6A 0x9CAA casillas_9B6A  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (320 bytes)
+D 0x9CAA 0x9DED casillas_9CAA  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (323 bytes)
+D 0x9DED 0x9F34 casillas_9DED  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (327 bytes)
+D 0x9F34 0xA0F8 casillas_9F34  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (452 bytes)
+D 0xA0F8 0xA22A casillas_A0F8  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (306 bytes)
+D 0xA22A 0xA34B casillas_A22A  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9866 (289 bytes)
 D 0xA34B 0xA351 lista_dibujos_A34B  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0x9809 (6 bytes)
 D 0xA351 0xA36B dibujo_A351  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0x9809 (26 bytes)
 # --- fin de tipos.py ---

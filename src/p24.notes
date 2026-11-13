@@ -16,10 +16,10 @@ D 0xB637 0xB6E1 vram_B637  RLE a la VRAM hasta el 0; lo usa 0xB273 (170 bytes)
 D 0xB6FA 0xB783 vram_B6FA  RLE a la VRAM hasta el 0; lo usa 0xB6EF (137 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0xADF4 0xAE01 saltos_ADF4  7 destinos del despachador (call 0x822D en 0xADF1) (13 bytes)
+D 0xADF4 0xAE02 saltos_ADF4  7 destinos del despachador (call 0x822D en 0xADF1) (14 bytes)
 F 0xADF4 w8
-D 0xB204 0xB211 saltos_B204  7 destinos del despachador (call 0x822D en 0xB201) (13 bytes)
+D 0xB204 0xB212 saltos_B204  7 destinos del despachador (call 0x822D en 0xB201) (14 bytes)
 F 0xB204 w8
-D 0xB841 0xB84C saltos_B841  6 destinos del despachador (call 0x822D en 0xB83E) (11 bytes)
+D 0xB841 0xB84D saltos_B841  6 destinos del despachador (call 0x822D en 0xB83E) (12 bytes)
 F 0xB841 w8
 # --- fin de despachos.py ---

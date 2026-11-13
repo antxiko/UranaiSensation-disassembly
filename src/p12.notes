@@ -3,6 +3,6 @@
 D 0x9E07 0x9E2E texto_9E07  texto: x, y y las letras hasta 0xFF; lo usa 0x98C8 (39 bytes)
 # --- fin de tipos.py ---
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9944 0x9949 saltos_9944  3 destinos del despachador (call 0x822D en 0x9941) (5 bytes)
+D 0x9944 0x994A saltos_9944  3 destinos del despachador (call 0x822D en 0x9941) (6 bytes)
 F 0x9944 w8
 # --- fin de despachos.py ---

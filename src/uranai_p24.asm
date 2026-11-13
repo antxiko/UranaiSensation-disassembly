@@ -2258,17 +2258,11 @@ L_ADEB:
 	call 0822dh		;adf1
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_ADF4: 7 destinos del despachador (call 0x822D en 0xADF1) (13
+; DATOS saltos_ADF4: 7 destinos del despachador (call 0x822D en 0xADF1) (14
 ;   bytes)
-;   0xadf4..0xae01  (13 bytes)
+;   0xadf4..0xae02  (14 bytes)
 DATA_saltos_ADF4:
-	defw 0ae02h,0ae0fh,0ae1ch,0ae29h,0ae36h,0ae43h	; adf4
-	defb 050h	; ae00
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0xae01..0xae02  (1 bytes)
-DATA_AE01:
-	defb 0aeh	; ae01
+	defw 0ae02h,0ae0fh,0ae1ch,0ae29h,0ae36h,0ae43h,0ae50h	; adf4
 
 ; ======================================================================
 ; CODIGO 0xae02..0xae68  (102 bytes)
@@ -2449,17 +2443,11 @@ L_B1F8:
 	call 0822dh		;b201
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_B204: 7 destinos del despachador (call 0x822D en 0xB201) (13
+; DATOS saltos_B204: 7 destinos del despachador (call 0x822D en 0xB201) (14
 ;   bytes)
-;   0xb204..0xb211  (13 bytes)
+;   0xb204..0xb212  (14 bytes)
 DATA_saltos_B204:
-	defw 0b212h,0b222h,0b231h,0b240h,0b24fh,0b25eh	; b204
-	defb 06dh	; b210
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0xb211..0xb212  (1 bytes)
-DATA_B211:
-	defb 0b2h	; b211
+	defw 0b212h,0b222h,0b231h,0b240h,0b24fh,0b25eh,0b26dh	; b204
 
 ; ======================================================================
 ; CODIGO 0xb212..0xb27c  (106 bytes)
@@ -2787,17 +2775,11 @@ L_B83B:
 	call 0822dh		;b83e
 
 ; ----------------------------------------------------------------------
-; DATOS saltos_B841: 6 destinos del despachador (call 0x822D en 0xB83E) (11
+; DATOS saltos_B841: 6 destinos del despachador (call 0x822D en 0xB83E) (12
 ;   bytes)
-;   0xb841..0xb84c  (11 bytes)
+;   0xb841..0xb84d  (12 bytes)
 DATA_saltos_B841:
-	defw 0b84dh,0b884h,0b8a4h,0b927h,0b92eh	; b841
-	defb 06dh	; b84b
-
-; ----------------------------------------------------------------------
-; DATOS sin identificar  0xb84c..0xb84d  (1 bytes)
-DATA_B84C:
-	defb 0b9h	; b84c
+	defw 0b84dh,0b884h,0b8a4h,0b927h,0b92eh,0b96dh	; b841
 
 ; ======================================================================
 ; CODIGO 0xb84d..0xb98c  (319 bytes)

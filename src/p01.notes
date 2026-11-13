@@ -1,15 +1,18 @@
 # Notas de p01 (sectores 12-13, en 0x9200).
+D 0x9203 0x9208 vars_9203  variables detras del primer jp: 0x9204 la pone a 1 0x9313 (y 0xA0F1 de la p03) y la lee 0xA7A7 de la p04, con la p01 en 0x9200; los otros 4 bytes (c3 .. c3 f6 95) nadie los lee (5 bytes)
+D 0x93F4 0x93F9 muerto_93F4  instrucciones que no se ejecutan: call 0x92AC ; jr 0x940E, entre el jr de 0x93F2 y 0x93F9, sin ningun salto del listado que llegue aqui (5 bytes)
+D 0x95FC 0x9600 resto  el final del ultimo sector: 11 1c d3 0e, el principio de un ld de,0xD31C ; ld c,.. que la p00 tiene entero en 0x95FC (y otras partes en otras direcciones); nadie lo lee (4 bytes)
 # --- despachos.py: tablas de 0x822D (no editar a mano) ---
-D 0x9215 0x921C saltos_9215  4 destinos del despachador (call 0x822D en 0x9212) (7 bytes)
+D 0x9215 0x921D saltos_9215  4 destinos del despachador (call 0x822D en 0x9212) (8 bytes)
 F 0x9215 w8
-D 0x9249 0x9250 saltos_9249  4 destinos del despachador (call 0x822D en 0x9246) (7 bytes)
+D 0x9249 0x9251 saltos_9249  4 destinos del despachador (call 0x822D en 0x9246) (8 bytes)
 F 0x9249 w8
-D 0x925C 0x928B saltos_925C  24 destinos del despachador (call 0x822D en 0x9259) (47 bytes)
+D 0x925C 0x928C saltos_925C  24 destinos del despachador (call 0x822D en 0x9259) (48 bytes)
 F 0x925C w8
-D 0x9478 0x9487 saltos_9478  8 destinos del despachador (call 0x822D en 0x9475) (15 bytes)
+D 0x9478 0x9488 saltos_9478  8 destinos del despachador (call 0x822D en 0x9475) (16 bytes)
 F 0x9478 w8
-D 0x950B 0x9514 saltos_950B  5 destinos del despachador (call 0x822D en 0x9508) (9 bytes)
+D 0x950B 0x9515 saltos_950B  5 destinos del despachador (call 0x822D en 0x9508) (10 bytes)
 F 0x950B w8
-D 0x95AB 0x95B6 saltos_95AB  6 destinos del despachador (call 0x822D en 0x95A8) (11 bytes)
+D 0x95AB 0x95B7 saltos_95AB  6 destinos del despachador (call 0x822D en 0x95A8) (12 bytes)
 F 0x95AB w8
 # --- fin de despachos.py ---
