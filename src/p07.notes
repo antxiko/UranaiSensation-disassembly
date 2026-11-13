@@ -2,3 +2,9 @@
 # --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
 D 0x9517 0x9537 paleta_9517  paleta: 16 colores de 2 bytes; lo usa 0x9514 (32 bytes)
 # --- fin de tipos.py ---
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x92CD 0x92E6 saltos_92CD  13 destinos del despachador (call 0x822D en 0x92CA) (25 bytes)
+F 0x92CD w8
+D 0x939C 0x93AB saltos_939C  8 destinos del despachador (call 0x822D en 0x9399) (15 bytes)
+F 0x939C w8
+# --- fin de despachos.py ---

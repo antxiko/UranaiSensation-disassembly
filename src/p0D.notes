@@ -1,1 +1,9 @@
 # Notas de p0D (sectores 73-75, en 0x9200).
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x9237 0x9258 saltos_9237  17 destinos del despachador (call 0x822D en 0x9234) (33 bytes)
+F 0x9237 w8
+D 0x933B 0x9346 saltos_933B  6 destinos del despachador (call 0x822D en 0x9338) (11 bytes)
+F 0x933B w8
+D 0x944E 0x945D saltos_944E  8 destinos del despachador (call 0x822D en 0x944B) (15 bytes)
+F 0x944E w8
+# --- fin de despachos.py ---

@@ -1486,9 +1486,17 @@ L_A583:
 	call 0822dh		;a586
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa589..0xa591  (8 bytes)
-DATA_A589:
-	defb 091h,0a5h,0b0h,0a5h,0c2h,0a5h,0ceh,0a5h	; a589  ........
+; DATOS saltos_A589: 4 destinos del despachador (call 0x822D en 0xA586) (7
+;   bytes)
+;   0xa589..0xa590  (7 bytes)
+DATA_saltos_A589:
+	defw 0a591h,0a5b0h,0a5c2h	; a589  -> L_A591 L_A5B0 L_A5C2
+	defb 0ceh	; a58f
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0xa590..0xa591  (1 bytes)
+DATA_A590:
+	defb 0a5h	; a590
 
 ; ======================================================================
 ; CODIGO 0xa591..0xa5be  (45 bytes)
@@ -1646,9 +1654,17 @@ L_A69F:
 	call 0822dh		;a6a2
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa6a5..0xa6ad  (8 bytes)
-DATA_A6A5:
-	defb 0b6h,0a6h,0adh,0a6h,0c9h,0a6h,0d2h,0a6h	; a6a5  ........
+; DATOS saltos_A6A5: 4 destinos del despachador (call 0x822D en 0xA6A2) (7
+;   bytes)
+;   0xa6a5..0xa6ac  (7 bytes)
+DATA_saltos_A6A5:
+	defw 0a6b6h,0a6adh,0a6c9h	; a6a5  -> L_A6B6 L_A6AD L_A6C9
+	defb 0d2h	; a6ab
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0xa6ac..0xa6ad  (1 bytes)
+DATA_A6AC:
+	defb 0a6h	; a6ac
 
 ; ======================================================================
 ; CODIGO 0xa6ad..0xa6db  (46 bytes)

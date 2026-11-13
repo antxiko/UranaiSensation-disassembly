@@ -3,3 +3,6 @@
 0x4899 0x48D7   # 31 destinos de la tabla del jp (hl) de 0x4898
 0x4AC7 0x4AE7   # 16 destinos de la tabla del jp (hl) de 0x4AC6
 # --- fin de despachos.py ---
+# --- musica_lee.py: la musica, medida ejecutando el controlador (no editar a mano) ---
+0x4F25 0x7F23   # las cabeceras y la musica de los 64 sonidos
+# --- fin de musica_lee.py ---

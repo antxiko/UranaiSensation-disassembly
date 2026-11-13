@@ -160,11 +160,18 @@ L_98CD:
 	call 0822dh		;98d7
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x98da..0x98fc  (34 bytes)
-DATA_98DA:
-	defb 0e3h,099h,0f4h,099h,005h,09ah,039h,09ah,0e3h,099h,0f4h,099h,005h,09ah,039h,09ah	; 98da  ......9.......9.
-	defb 0e3h,099h,0f4h,099h,005h,09ah,039h,09ah,0e3h,099h,0f4h,099h,005h,09ah,039h,09ah	; 98ea  ......9.......9.
-	defb 04ah,09ah	; 98fa
+; DATOS saltos_98DA: 17 destinos del despachador (call 0x822D en 0x98D7) (33
+;   bytes)
+;   0x98da..0x98fb  (33 bytes)
+DATA_saltos_98DA:
+	defw 099e3h,099f4h,09a05h,09a39h,099e3h,099f4h,09a05h,09a39h	; 98da
+	defw 099e3h,099f4h,09a05h,09a39h,099e3h,099f4h,09a05h,09a39h	; 98ea
+	defb 04ah	; 98fa
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x98fb..0x98fc  (1 bytes)
+DATA_98FB:
+	defb 09ah	; 98fb
 
 ; ======================================================================
 ; CODIGO 0x98fc..0x9ab1  (437 bytes)

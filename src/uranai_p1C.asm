@@ -1033,9 +1033,17 @@ L_A237:
 	call 0822dh		;a23a
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa23d..0xa245  (8 bytes)
-DATA_A23D:
-	defb 045h,0a2h,064h,0a2h,076h,0a2h,082h,0a2h	; a23d  E.d.v...
+; DATOS saltos_A23D: 4 destinos del despachador (call 0x822D en 0xA23A) (7
+;   bytes)
+;   0xa23d..0xa244  (7 bytes)
+DATA_saltos_A23D:
+	defw 0a245h,0a264h,0a276h	; a23d  -> L_A245 L_A264 L_A276
+	defb 082h	; a243
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0xa244..0xa245  (1 bytes)
+DATA_A244:
+	defb 0a2h	; a244
 
 ; ======================================================================
 ; CODIGO 0xa245..0xa272  (45 bytes)

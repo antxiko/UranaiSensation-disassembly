@@ -124,9 +124,17 @@ L_9BB2:
 	call 0822dh		;9bb5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9bb8..0x9bc0  (8 bytes)
-DATA_9BB8:
-	defb 0f6h,09bh,03fh,09ch,04eh,09ch,060h,09ch	; 9bb8  ..?.N.`.
+; DATOS saltos_9BB8: 4 destinos del despachador (call 0x822D en 0x9BB5) (7
+;   bytes)
+;   0x9bb8..0x9bbf  (7 bytes)
+DATA_saltos_9BB8:
+	defw 09bf6h,09c3fh,09c4eh	; 9bb8  -> L_9BF6 L_9C3F L_9C4E
+	defb 060h	; 9bbe
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9bbf..0x9bc0  (1 bytes)
+DATA_9BBF:
+	defb 09ch	; 9bbf
 
 ; ======================================================================
 ; CODIGO 0x9bc0..0x9bef  (47 bytes)

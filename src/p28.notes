@@ -7,3 +7,9 @@ D 0xA746 0xA75E texto_A746  texto: x, y y las letras hasta 0xFF; lo usa 0xA0FB (
 D 0xA78C 0xA7A1 texto_A78C  texto: x, y y las letras hasta 0xFF; lo usa 0xA060 (21 bytes)
 D 0xA7A1 0xA7B6 texto_A7A1  texto: x, y y las letras hasta 0xFF; lo usa 0xA060 (21 bytes)
 # --- fin de tipos.py ---
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0xA589 0xA590 saltos_A589  4 destinos del despachador (call 0x822D en 0xA586) (7 bytes)
+F 0xA589 w8
+D 0xA6A5 0xA6AC saltos_A6A5  4 destinos del despachador (call 0x822D en 0xA6A2) (7 bytes)
+F 0xA6A5 w8
+# --- fin de despachos.py ---

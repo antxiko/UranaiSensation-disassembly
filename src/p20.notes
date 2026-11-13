@@ -6,3 +6,9 @@ D 0x9CBE 0x9CD6 casillas_9CBE  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x9CD6 0x9CF6 paleta_9CD6  paleta: 16 colores de 2 bytes; lo usa 0x9AD4 (32 bytes)
 D 0x9CF6 0x9F4E vram_9CF6  RLE a la VRAM hasta el 0; lo usa 0x9826 (600 bytes)
 # --- fin de tipos.py ---
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x9876 0x987B saltos_9876  3 destinos del despachador (call 0x822D en 0x9873) (5 bytes)
+F 0x9876 w8
+D 0x98D0 0x98D7 saltos_98D0  4 destinos del despachador (call 0x822D en 0x98CD) (7 bytes)
+F 0x98D0 w8
+# --- fin de despachos.py ---

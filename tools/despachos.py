@@ -140,6 +140,15 @@ def uno(nombre, s, k, org, dsk, src, work):
                 ent.append("0x%04X   # tabla del despachador de 0x%04X" % (w, a))
         escribe_seccion(os.path.join(src, nombre + ".entries"), ent)
         escribe_seccion(os.path.join(src, nombre + ".nocode"), noc)
+        notas = []
+        for l in noc:
+            if l.startswith("#"):
+                continue
+            a, e = int(l.split()[0], 16), int(l.split()[1], 16)
+            que = l.split("#", 1)[1].strip()
+            notas.append("D 0x%04X 0x%04X saltos_%04X  %s (%d bytes)" % (a, e, a, que, e - a))
+            notas.append("F 0x%04X w8" % a)
+        escribe_seccion(os.path.join(src, nombre + ".notes"), notas)
     return vistas, hl
 
 

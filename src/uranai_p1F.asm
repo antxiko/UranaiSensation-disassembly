@@ -51,10 +51,18 @@ L_9234:
 	call 0822dh		;923b
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x923e..0x9254  (22 bytes)
-DATA_923E:
-	defb 054h,092h,065h,092h,08ch,092h,0a2h,092h,0feh,092h,04ah,094h,02fh,095h,04ah,095h	; 923e  T.e.......J./.J.
-	defb 073h,095h,083h,095h,096h,095h	; 924e
+; DATOS saltos_923E: 11 destinos del despachador (call 0x822D en 0x923B) (21
+;   bytes)
+;   0x923e..0x9253  (21 bytes)
+DATA_saltos_923E:
+	defw 09254h,09265h,0928ch,092a2h,092feh,0944ah,0952fh,0954ah	; 923e
+	defw 09573h,09583h	; 924e  -> L_9573 L_9583
+	defb 096h	; 9252
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9253..0x9254  (1 bytes)
+DATA_9253:
+	defb 095h	; 9253
 
 ; ======================================================================
 ; CODIGO 0x9254..0x92a8  (84 bytes)
@@ -107,9 +115,17 @@ L_92A2:
 	call 0822dh		;92a5
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x92a8..0x92b2  (10 bytes)
-DATA_92A8:
-	defb 0b2h,092h,0bfh,092h,0cah,092h,0d3h,092h,0dch,092h	; 92a8  ..........
+; DATOS saltos_92A8: 5 destinos del despachador (call 0x822D en 0x92A5) (9
+;   bytes)
+;   0x92a8..0x92b1  (9 bytes)
+DATA_saltos_92A8:
+	defw 092b2h,092bfh,092cah,092d3h	; 92a8  -> L_92B2 L_92BF L_92CA L_92D3
+	defb 0dch	; 92b0
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x92b1..0x92b2  (1 bytes)
+DATA_92B1:
+	defb 092h	; 92b1
 
 ; ======================================================================
 ; CODIGO 0x92b2..0x930f  (93 bytes)
@@ -169,9 +185,17 @@ L_92FE:
 	call 0822dh		;930c
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x930f..0x931b  (12 bytes)
-DATA_930F:
-	defb 01bh,093h,03ch,093h,0a1h,093h,0d9h,093h,0c6h,093h,0d0h,093h	; 930f  ..<.........
+; DATOS saltos_930F: 6 destinos del despachador (call 0x822D en 0x930C) (11
+;   bytes)
+;   0x930f..0x931a  (11 bytes)
+DATA_saltos_930F:
+	defw 0931bh,0933ch,093a1h,093d9h,093c6h	; 930f
+	defb 0d0h	; 9319
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x931a..0x931b  (1 bytes)
+DATA_931A:
+	defb 093h	; 931a
 
 ; ======================================================================
 ; CODIGO 0x931b..0x9442  (295 bytes)
@@ -337,9 +361,17 @@ L_944A:
 	call 0822dh		;944d
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9450..0x945e  (14 bytes)
-DATA_9450:
-	defb 05eh,094h,081h,094h,0ach,094h,0e0h,094h,0f1h,094h,016h,095h,01ch,095h	; 9450  ^.............
+; DATOS saltos_9450: 7 destinos del despachador (call 0x822D en 0x944D) (13
+;   bytes)
+;   0x9450..0x945d  (13 bytes)
+DATA_saltos_9450:
+	defw 0945eh,09481h,094ach,094e0h,094f1h,09516h	; 9450
+	defb 01ch	; 945c
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x945d..0x945e  (1 bytes)
+DATA_945D:
+	defb 095h	; 945d
 
 ; ======================================================================
 ; CODIGO 0x945e..0x95d4  (374 bytes)

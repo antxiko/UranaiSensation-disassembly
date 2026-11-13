@@ -1,1 +1,5 @@
 # Notas de p16 (sectores 162-163, en 0x9800).
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x9811 0x9816 saltos_9811  3 destinos del despachador (call 0x822D en 0x980E) (5 bytes)
+F 0x9811 w8
+# --- fin de despachos.py ---

@@ -35,9 +35,17 @@ L_9208:
 	call 0822dh		;9212
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9215..0x921d  (8 bytes)
-DATA_9215:
-	defb 01dh,092h,029h,092h,03dh,092h,043h,092h	; 9215  ..).=.C.
+; DATOS saltos_9215: 4 destinos del despachador (call 0x822D en 0x9212) (7
+;   bytes)
+;   0x9215..0x921c  (7 bytes)
+DATA_saltos_9215:
+	defw 0921dh,09229h,0923dh	; 9215  -> L_921D L_9229 L_923D
+	defb 043h	; 921b
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x921c..0x921d  (1 bytes)
+DATA_921C:
+	defb 092h	; 921c
 
 ; ======================================================================
 ; CODIGO 0x921d..0x9249  (44 bytes)
@@ -71,9 +79,17 @@ L_9243:
 	call 0822dh		;9246
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9249..0x9251  (8 bytes)
-DATA_9249:
-	defb 005h,095h,051h,092h,072h,094h,0a5h,095h	; 9249  ..Q.r...
+; DATOS saltos_9249: 4 destinos del despachador (call 0x822D en 0x9246) (7
+;   bytes)
+;   0x9249..0x9250  (7 bytes)
+DATA_saltos_9249:
+	defw 09505h,09251h,09472h	; 9249  -> L_9505 L_9251 L_9472
+	defb 0a5h	; 924f
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9250..0x9251  (1 bytes)
+DATA_9250:
+	defb 095h	; 9250
 
 ; ======================================================================
 ; CODIGO 0x9251..0x925c  (11 bytes)
@@ -87,11 +103,19 @@ L_9251:
 	call 0822dh		;9259
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x925c..0x928c  (48 bytes)
-DATA_925C:
-	defb 0a4h,092h,0b6h,092h,0c4h,092h,0d7h,092h,0eah,092h,01eh,093h,02ch,093h,048h,093h	; 925c  ............,.H.
-	defb 051h,093h,064h,093h,07fh,093h,097h,093h,0adh,093h,0cah,093h,0d3h,093h,0e6h,093h	; 926c  Q.d.............
-	defb 0f9h,093h,002h,094h,018h,094h,03ah,094h,043h,094h,057h,094h,061h,094h,06ah,094h	; 927c  ......:.C.W.a.j.
+; DATOS saltos_925C: 24 destinos del despachador (call 0x822D en 0x9259) (47
+;   bytes)
+;   0x925c..0x928b  (47 bytes)
+DATA_saltos_925C:
+	defw 092a4h,092b6h,092c4h,092d7h,092eah,0931eh,0932ch,09348h	; 925c
+	defw 09351h,09364h,0937fh,09397h,093adh,093cah,093d3h,093e6h	; 926c
+	defw 093f9h,09402h,09418h,0943ah,09443h,09457h,09461h	; 927c
+	defb 06ah	; 928a
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x928b..0x928c  (1 bytes)
+DATA_928B:
+	defb 094h	; 928b
 
 ; ======================================================================
 ; CODIGO 0x928c..0x93f4  (360 bytes)
@@ -391,9 +415,17 @@ L_9472:
 	call 0822dh		;9475
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9478..0x9488  (16 bytes)
-DATA_9478:
-	defb 088h,094h,08dh,094h,09bh,094h,0b6h,094h,0cch,094h,0e8h,094h,0ffh,094h,067h,094h	; 9478  ..............g.
+; DATOS saltos_9478: 8 destinos del despachador (call 0x822D en 0x9475) (15
+;   bytes)
+;   0x9478..0x9487  (15 bytes)
+DATA_saltos_9478:
+	defw 09488h,0948dh,0949bh,094b6h,094cch,094e8h,094ffh	; 9478
+	defb 067h	; 9486
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9487..0x9488  (1 bytes)
+DATA_9487:
+	defb 094h	; 9487
 
 ; ======================================================================
 ; CODIGO 0x9488..0x950b  (131 bytes)
@@ -471,9 +503,17 @@ L_9505:
 	call 0822dh		;9508
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x950b..0x9515  (10 bytes)
-DATA_950B:
-	defb 015h,095h,01ah,095h,039h,095h,08dh,095h,09dh,095h	; 950b  ....9.....
+; DATOS saltos_950B: 5 destinos del despachador (call 0x822D en 0x9508) (9
+;   bytes)
+;   0x950b..0x9514  (9 bytes)
+DATA_saltos_950B:
+	defw 09515h,0951ah,09539h,0958dh	; 950b  -> L_9515 L_951A L_9539 L_958D
+	defb 09dh	; 9513
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9514..0x9515  (1 bytes)
+DATA_9514:
+	defb 095h	; 9514
 
 ; ======================================================================
 ; CODIGO 0x9515..0x95ab  (150 bytes)
@@ -556,9 +596,17 @@ L_95A5:
 	call 0822dh		;95a8
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x95ab..0x95b7  (12 bytes)
-DATA_95AB:
-	defb 0b7h,095h,0bch,095h,0cah,095h,0d8h,095h,0e7h,095h,0f0h,095h	; 95ab  ............
+; DATOS saltos_95AB: 6 destinos del despachador (call 0x822D en 0x95A8) (11
+;   bytes)
+;   0x95ab..0x95b6  (11 bytes)
+DATA_saltos_95AB:
+	defw 095b7h,095bch,095cah,095d8h,095e7h	; 95ab
+	defb 0f0h	; 95b5
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x95b6..0x95b7  (1 bytes)
+DATA_95B6:
+	defb 095h	; 95b6
 
 ; ======================================================================
 ; CODIGO 0x95b7..0x95fc  (69 bytes)

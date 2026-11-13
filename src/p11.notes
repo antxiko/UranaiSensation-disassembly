@@ -7,3 +7,7 @@ D 0x9D0A 0x9D26 casillas_9D0A  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0
 D 0x9D26 0x9D59 casillas_9D26  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x992B (51 bytes)
 D 0x9F25 0x9F45 paleta_9F25  paleta: 16 colores de 2 bytes; lo usa 0x99CA (32 bytes)
 # --- fin de tipos.py ---
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x98BB 0x98C6 saltos_98BB  6 destinos del despachador (call 0x822D en 0x98B8) (11 bytes)
+F 0x98BB w8
+# --- fin de despachos.py ---

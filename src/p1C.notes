@@ -1,1 +1,5 @@
 # Notas de p1C (sectores 20-24, en 0x9A00).
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0xA23D 0xA244 saltos_A23D  4 destinos del despachador (call 0x822D en 0xA23A) (7 bytes)
+F 0xA23D w8
+# --- fin de despachos.py ---

@@ -455,9 +455,17 @@ L_9EC9:
 	call 0822dh		;9ecc
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0x9ecf..0x9ed5  (6 bytes)
-DATA_9ECF:
-	defb 0f6h,0b3h,05fh,0b4h,0f0h,0b4h	; 9ecf
+; DATOS saltos_9ECF: 3 destinos del despachador (call 0x822D en 0x9ECC) (5
+;   bytes)
+;   0x9ecf..0x9ed4  (5 bytes)
+DATA_saltos_9ECF:
+	defw 0b3f6h,0b45fh	; 9ecf  -> L_B3F6 L_B45F
+	defb 0f0h	; 9ed3
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0x9ed4..0x9ed5  (1 bytes)
+DATA_9ED4:
+	defb 0b4h	; 9ed4
 
 ; ======================================================================
 ; CODIGO 0x9ed5..0xa0ce  (505 bytes)
@@ -764,10 +772,18 @@ L_A0CB:
 	call 0822dh		;a0cb
 
 ; ----------------------------------------------------------------------
-; DATOS sin identificar  0xa0ce..0xa0ee  (32 bytes)
-DATA_A0CE:
-	defb 0b4h,0a0h,0eeh,0a0h,0fdh,0a0h,0b4h,0a0h,009h,0a1h,029h,0a1h,024h,0a1h,0b4h,0a0h	; a0ce  ..........).$...
-	defb 018h,0a1h,02eh,0a1h,033h,0a1h,0b4h,0a0h,0b4h,0a0h,0b4h,0a0h,0b4h,0a0h,0b4h,0a0h	; a0de  ....3...........
+; DATOS saltos_A0CE: 16 destinos del despachador (call 0x822D en 0xA0CB) (31
+;   bytes)
+;   0xa0ce..0xa0ed  (31 bytes)
+DATA_saltos_A0CE:
+	defw 0a0b4h,0a0eeh,0a0fdh,0a0b4h,0a109h,0a129h,0a124h,0a0b4h	; a0ce
+	defw 0a118h,0a12eh,0a133h,0a0b4h,0a0b4h,0a0b4h,0a0b4h	; a0de
+	defb 0b4h	; a0ec
+
+; ----------------------------------------------------------------------
+; DATOS sin identificar  0xa0ed..0xa0ee  (1 bytes)
+DATA_A0ED:
+	defb 0a0h	; a0ed
 
 ; ======================================================================
 ; CODIGO 0xa0ee..0xa168  (122 bytes)

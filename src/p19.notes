@@ -2,3 +2,9 @@
 # --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
 D 0x9AF6 0x9AFA casillas_9AF6  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9AEC (4 bytes)
 # --- fin de tipos.py ---
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+D 0x9B4B 0x9B52 saltos_9B4B  4 destinos del despachador (call 0x822D en 0x9B48) (7 bytes)
+F 0x9B4B w8
+D 0x9BDA 0x9BE3 saltos_9BDA  5 destinos del despachador (call 0x822D en 0x9BD7) (9 bytes)
+F 0x9BDA w8
+# --- fin de despachos.py ---
