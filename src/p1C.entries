@@ -1,0 +1,26 @@
+# Puntos de entrada de la parte 1C (sectores 20-24, en 0x9A00).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9A00   # tabla de saltos: jp 0x9A58
+0x9A03   # tabla de saltos: jp 0x9B3D
+0x9A06   # tabla de saltos: jp 0x9BE3
+0x9A09   # tabla de saltos: jp 0x9BED
+0x9A0C   # tabla de saltos: jp 0x9BF5
+0x9A0F   # tabla de saltos: jp 0x9C13
+0x9A12   # tabla de saltos: jp 0x9C1F
+0x9A15   # tabla de saltos: jp 0x9C3A
+0x9A18   # tabla de saltos: jp 0x9C47
+0x9A1B   # tabla de saltos: jp 0x9E45
+0x9A1E   # tabla de saltos: jp 0x9ED5
+0x9A21   # tabla de saltos: jp 0x9EEF
+0x9A24   # tabla de saltos: jp 0x9EF0
+0x9A27   # tabla de saltos: jp 0xA1E2
+0x9A2A   # tabla de saltos: jp 0xA29A
+0x9A2D   # tabla de saltos: jp 0x9A99
+0x9A30   # tabla de saltos: jp 0x9AE8
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0xA245   # tabla del despachador de 0xA23A
+0xA264   # tabla del despachador de 0xA23A
+0xA276   # tabla del despachador de 0xA23A
+0xA282   # tabla del despachador de 0xA23A
+# --- fin de despachos.py ---

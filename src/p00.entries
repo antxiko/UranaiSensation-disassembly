@@ -1,0 +1,6 @@
+# Puntos de entrada de la parte 00 (sectores 77-80, en 0x9200).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9200   # tabla de saltos: jp 0x920D
+0x9203   # tabla de saltos: jp 0x928E
+0x9206   # tabla de saltos: jp 0x92AF

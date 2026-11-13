@@ -1,0 +1,15 @@
+# Puntos de entrada de la parte 18 (sectores 170-175, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9824
+0x9803   # tabla de saltos: jp 0x9A45
+0x9806   # tabla de saltos: jp 0x9A89
+0x9809   # tabla de saltos: jp 0x9B25
+0x980C   # tabla de saltos: jp 0x9B97
+0x980F   # tabla de saltos: jp 0x9BD6
+0x9812   # tabla de saltos: jp 0x9DA7
+0x9815   # tabla de saltos: jp 0x9E16
+0x9818   # tabla de saltos: jp 0x9DBC
+0x981B   # tabla de saltos: jp 0x9D8F
+0x981E   # tabla de saltos: jp 0x9ECA
+# no es cabecera: 0x9821   (variable de la p18: ld (0x9823),a)

@@ -1,0 +1,14 @@
+# Puntos de entrada de la parte 20 (sectores 199-202, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9810
+0x9803   # tabla de saltos: jp 0x9870
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x989A   # tabla del despachador de 0x9873
+0x98C7   # tabla del despachador de 0x9873
+0x9ACB   # tabla del despachador de 0x9873
+0x98D8   # tabla del despachador de 0x98CD
+0x9939   # tabla del despachador de 0x98CD
+0x99D8   # tabla del despachador de 0x98CD
+0x9A55   # tabla del despachador de 0x98CD
+# --- fin de despachos.py ---

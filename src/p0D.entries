@@ -1,0 +1,45 @@
+# Puntos de entrada de la parte 0D (sectores 73-75, en 0x9200).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9200   # tabla de saltos: jp 0x922D
+0x9203   # tabla de saltos: jp 0x954F
+0x9206   # tabla de saltos: jp 0x9577
+0x9209   # tabla de saltos: jp 0x9588
+0x920C   # tabla de saltos: jp 0x9592
+0x920F   # tabla de saltos: jp 0x95BA
+0x9212   # tabla de saltos: jp 0x95F2
+0x9215   # tabla de saltos: jp 0x9570
+0x9218   # tabla de saltos: jp 0x9A00 (fuera de la parte)
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9259   # tabla del despachador de 0x9234
+0x926E   # tabla del despachador de 0x9234
+0x9295   # tabla del despachador de 0x9234
+0x92AB   # tabla del despachador de 0x9234
+0x92CC   # tabla del despachador de 0x9234
+0x92F2   # tabla del despachador de 0x9234
+0x9306   # tabla del despachador de 0x9234
+0x9316   # tabla del despachador de 0x9234
+0x9327   # tabla del despachador de 0x9234
+0x9335   # tabla del despachador de 0x9234
+0x93B2   # tabla del despachador de 0x9234
+0x93DC   # tabla del despachador de 0x9234
+0x9404   # tabla del despachador de 0x9234
+0x9448   # tabla del despachador de 0x9234
+0x951D   # tabla del despachador de 0x9234
+0x9530   # tabla del despachador de 0x9234
+0x9537   # tabla del despachador de 0x9234
+0x9347   # tabla del despachador de 0x9338
+0x9360   # tabla del despachador de 0x9338
+0x9369   # tabla del despachador de 0x9338
+0x9371   # tabla del despachador de 0x9338
+0x9382   # tabla del despachador de 0x9338
+0x93A9   # tabla del despachador de 0x9338
+0x945E   # tabla del despachador de 0x944B
+0x9491   # tabla del despachador de 0x944B
+0x949B   # tabla del despachador de 0x944B
+0x94B9   # tabla del despachador de 0x944B
+0x94CA   # tabla del despachador de 0x944B
+0x94E8   # tabla del despachador de 0x944B
+0x9508   # tabla del despachador de 0x944B
+0x9513   # tabla del despachador de 0x944B
+# --- fin de despachos.py ---

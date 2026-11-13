@@ -1,0 +1,9 @@
+# Notas de p1E (sectores 15-15, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x996C 0x9983 texto_996C  texto: x, y y las letras hasta 0xFF; lo usa 0x9826 (23 bytes)
+D 0x9983 0x999A texto_9983  texto: x, y y las letras hasta 0xFF; lo usa 0x9826 (23 bytes)
+D 0x999A 0x99AF texto_999A  texto: x, y y las letras hasta 0xFF; lo usa 0x992B (21 bytes)
+D 0x99AF 0x99C4 texto_99AF  texto: x, y y las letras hasta 0xFF; lo usa 0x992B (21 bytes)
+D 0x99C4 0x99DA texto_99C4  texto: x, y y las letras hasta 0xFF; lo usa 0x98F0 (22 bytes)
+D 0x99DA 0x99F0 texto_99DA  texto: x, y y las letras hasta 0xFF; lo usa 0x98F0 (22 bytes)
+# --- fin de tipos.py ---

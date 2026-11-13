@@ -1,0 +1,15 @@
+# Notas de p04 (sectores 111-124, en 0x9C00).
+D 0x9C84 0x9C87 vars_9C84  tres variables de la parte (0x9C84, 0x9C85, 0x9C86) justo detras de la tabla de saltos; empiezan valiendo c3 84 a2, que parece un jp 0xA284 y no lo es (3 bytes)
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0xA168 0xA300 casillas_A168  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9CE3 (408 bytes)
+D 0xA300 0xA320 paleta_A300  paleta: 16 colores de 2 bytes; lo usa 0x9CE9 (32 bytes)
+D 0xA3C4 0xA3D6 texto_A3C4  texto: x, y y las letras hasta 0xFF; lo usa 0x9CB4 (18 bytes)
+D 0xA3FA 0xA4E5 casillas_A3FA  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0xA06F (235 bytes)
+D 0xA4E5 0xA4EA texto_A4E5  texto: x, y y las letras hasta 0xFF; lo usa 0xA055 (5 bytes)
+D 0xA4EA 0xA505 texto_A4EA  texto: x, y y las letras hasta 0xFF; lo usa 0xA14D (27 bytes)
+D 0xA505 0xA509 casillas_A505  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9CE3 (4 bytes)
+D 0xAC3F 0xAC4F texto_AC3F  texto: x, y y las letras hasta 0xFF; lo usa 0xA95B (16 bytes)
+D 0xAC4F 0xAC57 texto_AC4F  texto: x, y y las letras hasta 0xFF; lo usa 0xA932 (8 bytes)
+D 0xB545 0xB5BA casillas_B545  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0xB403 (117 bytes)
+D 0xB5BA 0xB612 casillas_B5BA  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0xB46C (88 bytes)
+# --- fin de tipos.py ---

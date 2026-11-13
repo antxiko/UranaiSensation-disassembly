@@ -1,0 +1,7 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9237 0x9258   # 17 destinos del despachador (call 0x822D en 0x9234)
+# 0x92F5: llamada al despachador sin tabla legible detras
+0x933B 0x9346   # 6 destinos del despachador (call 0x822D en 0x9338)
+0x944E 0x945D   # 8 destinos del despachador (call 0x822D en 0x944B)
+# --- fin de despachos.py ---

@@ -1,0 +1,35 @@
+# Puntos de entrada de la parte 07 (sectores 67-69, en 0x9200).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9200   # tabla de saltos: jp 0x92B8
+0x9203   # tabla de saltos: jp 0x9537
+0x9206   # tabla de saltos: jp 0x955F
+0x9209   # tabla de saltos: jp 0x95C0
+0x920C   # tabla de saltos: jp 0x95CA
+0x920F   # tabla de saltos: jp 0x9511
+0x9212   # tabla de saltos: jp 0x95F2
+0x9215   # tabla de saltos: jp 0x9570
+0x9218   # tabla de saltos: jp 0x9A00 (fuera de la parte)
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x92E7   # tabla del despachador de 0x92CA
+0x9312   # tabla del despachador de 0x92CA
+0x9322   # tabla del despachador de 0x92CA
+0x9349   # tabla del despachador de 0x92CA
+0x9366   # tabla del despachador de 0x92CA
+0x936F   # tabla del despachador de 0x92CA
+0x9378   # tabla del despachador de 0x92CA
+0x9396   # tabla del despachador de 0x92CA
+0x947F   # tabla del despachador de 0x92CA
+0x9489   # tabla del despachador de 0x92CA
+0x949D   # tabla del despachador de 0x92CA
+0x94CD   # tabla del despachador de 0x92CA
+0x94DE   # tabla del despachador de 0x92CA
+0x93AC   # tabla del despachador de 0x9399
+0x93C6   # tabla del despachador de 0x9399
+0x93E1   # tabla del despachador de 0x9399
+0x93E6   # tabla del despachador de 0x9399
+0x940E   # tabla del despachador de 0x9399
+0x9421   # tabla del despachador de 0x9399
+0x942A   # tabla del despachador de 0x9399
+0x9455   # tabla del despachador de 0x9399
+# --- fin de despachos.py ---

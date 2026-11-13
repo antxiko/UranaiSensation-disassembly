@@ -1,0 +1,7 @@
+# Sitios donde el codigo cae en datos o salta a ellos A PROPOSITO (o por un fallo del original
+# que no hace dano). tools/check_caidas.py los da por buenos SOLO si estan aqui.
+# <modulo> <direccion>  por que
+
+p14 0x989F  call 0x821B donde iba un jp: al volver ejecuta los dos primeros bytes de las casillas de 0x98A2 (80 f0 = add a,b ; ret p); el RLE de 0x8AFF acaba con A = 0 y B = 0, asi que ret p siempre sale. Fallo del original sin efecto.
+p0E 0x9806  jp 0x9821: 0x9821-0x9822 empiezan valiendo cd 31 (un call 0xCD31 a medias) y la propia parte los pone a 0 en 0x9827/0x982A, asi que quien entra despues por 0x9806 se encuentra nop ; nop y sigue en 0x9823, lo mismo que 0x9800.
+p0E 0x9800  jp 0x9823: 0x9823 es una instruccion, pero el trazado la ve dentro del call 0xCD31 que forman los bytes iniciales de 0x9821 (ver 0x9806).

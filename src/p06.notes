@@ -1,0 +1,12 @@
+# Notas de p06 (sectores 88-92, en 0x9200).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9282 0x92A2 paleta_9282  paleta: 16 colores de 2 bytes; lo usa 0x927F (32 bytes)
+D 0x92EB 0x9399 casillas_92EB  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9279 (174 bytes)
+D 0x9399 0x93B9 casillas_9399  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9279 (32 bytes)
+D 0x93E4 0x93F3 texto_93E4  texto: x, y y las letras hasta 0xFF; lo usa 0x93C2 (15 bytes)
+D 0x93F3 0x9404 texto_93F3  texto: x, y y las letras hasta 0xFF; lo usa 0x93C8 (17 bytes)
+D 0x9404 0x940A lista_dibujos_9404  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0x93D2 (6 bytes)
+D 0x940A 0x94A0 dibujo_940A  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0x93D2 (150 bytes)
+D 0x94E0 0x94E8 texto_94E0  texto: x, y y las letras hasta 0xFF; lo usa 0x94D4 (8 bytes)
+D 0x96D9 0x981B vram_96D9  RLE a la VRAM hasta el 0; lo usa 0x96D6 (322 bytes)
+# --- fin de tipos.py ---

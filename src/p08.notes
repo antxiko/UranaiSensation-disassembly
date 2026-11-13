@@ -1,0 +1,5 @@
+# Notas de p08 (sectores 181-183, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9841 0x9A65 casillas_9841  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x982C (548 bytes)
+D 0x9A65 0x9BA6 vram_9A65  RLE a la VRAM hasta el 0; lo usa 0x983E (321 bytes)
+# --- fin de tipos.py ---

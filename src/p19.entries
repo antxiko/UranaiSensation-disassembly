@@ -1,0 +1,24 @@
+# Puntos de entrada de la parte 19 (sectores 176-180, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9841
+0x9803   # tabla de saltos: jp 0x9867
+0x9806   # tabla de saltos: jp 0x9864
+0x9809   # tabla de saltos: jp 0x981E
+0x980C   # tabla de saltos: jp 0x982C
+0x980F   # tabla de saltos: jp 0x99F9
+0x9812   # tabla de saltos: jp 0x9832
+0x9815   # tabla de saltos: jp 0x9F80
+0x9818   # tabla de saltos: jp 0x9CCD
+0x981B   # tabla de saltos: jp 0x987E
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9B53   # tabla del despachador de 0x9B48
+0x9B9E   # tabla del despachador de 0x9B48
+0x9BD4   # tabla del despachador de 0x9B48
+0x9C40   # tabla del despachador de 0x9B48
+0x9BE4   # tabla del despachador de 0x9BD7
+0x9BF3   # tabla del despachador de 0x9BD7
+0x9C02   # tabla del despachador de 0x9BD7
+0x9C11   # tabla del despachador de 0x9BD7
+0x9C20   # tabla del despachador de 0x9BD7
+# --- fin de despachos.py ---

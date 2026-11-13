@@ -1,0 +1,4 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+0x85E7 0x85F4   # 7 destinos del despachador de 0x85E4 (call 0x853B, la tabla pegada detras)
+0x8937 0x8938   # la direccion del manejador de errores de disco (DISKVE apunta aqui)
+0x84FB 0x8503   # copia de los 9 bytes de 0x8451: 0x84A6 los compara

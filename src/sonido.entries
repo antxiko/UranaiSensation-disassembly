@@ -1,0 +1,43 @@
+# Puntos de entrada del controlador de sonido (sectores 25-56, copiado por el nucleo a la RAM de 0x4000).
+#
+# Su tabla de saltos de cabecera: el nucleo llama a 0x4000 (peticion, 0x8561) y a 0x4003 (cada cuadro, desde
+# H.TIMI en 0x8514).
+0x4000   # tabla de saltos: jp 0x4006 (peticion de sonido, A = el numero)
+0x4003   # tabla de saltos: jp 0x41A6 (cada cuadro)
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x48D7   # tabla del jp (hl) de 0x4898
+0x48ED   # tabla del jp (hl) de 0x4898
+0x490D   # tabla del jp (hl) de 0x4898
+0x4938   # tabla del jp (hl) de 0x4898
+0x494C   # tabla del jp (hl) de 0x4898
+0x495C   # tabla del jp (hl) de 0x4898
+0x496E   # tabla del jp (hl) de 0x4898
+0x497F   # tabla del jp (hl) de 0x4898
+0x4986   # tabla del jp (hl) de 0x4898
+0x498D   # tabla del jp (hl) de 0x4898
+0x49D8   # tabla del jp (hl) de 0x4898
+0x49E2   # tabla del jp (hl) de 0x4898
+0x49E9   # tabla del jp (hl) de 0x4898
+0x49F4   # tabla del jp (hl) de 0x4898
+0x49FA   # tabla del jp (hl) de 0x4898
+0x4A04   # tabla del jp (hl) de 0x4898
+0x4A1F   # tabla del jp (hl) de 0x4898
+0x4A2E   # tabla del jp (hl) de 0x4898
+0x4A34   # tabla del jp (hl) de 0x4898
+0x4A3A   # tabla del jp (hl) de 0x4898
+0x4A44   # tabla del jp (hl) de 0x4898
+0x4A4B   # tabla del jp (hl) de 0x4898
+0x4A56   # tabla del jp (hl) de 0x4898
+0x4A5E   # tabla del jp (hl) de 0x4898
+0x4A79   # tabla del jp (hl) de 0x4898
+0x4A90   # tabla del jp (hl) de 0x4898
+0x4A94   # tabla del jp (hl) de 0x4898
+0x4AE7   # tabla del jp (hl) de 0x4AC6
+0x4AEF   # tabla del jp (hl) de 0x4AC6
+0x4B0A   # tabla del jp (hl) de 0x4AC6
+0x4B21   # tabla del jp (hl) de 0x4AC6
+0x4B2B   # tabla del jp (hl) de 0x4AC6
+0x4B2D   # tabla del jp (hl) de 0x4AC6
+0x4B34   # tabla del jp (hl) de 0x4AC6
+0x4B3A   # tabla del jp (hl) de 0x4AC6
+# --- fin de despachos.py ---

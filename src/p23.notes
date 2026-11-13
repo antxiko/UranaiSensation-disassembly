@@ -1,0 +1,9 @@
+# Notas de p23 (sectores 208-210, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x98CD 0x9AFA casillas_98CD  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9878 (557 bytes)
+D 0x9B01 0x9B42 casillas_9B01  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x988E (65 bytes)
+D 0x9B42 0x9BA9 casillas_9B42  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x988E (103 bytes)
+D 0x9BA9 0x9C16 vram_9BA9  RLE a la VRAM hasta el 0; lo usa 0x9809 (109 bytes)
+D 0x9C1E 0x9C24 lista_dibujos_9C1E  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0x986B (6 bytes)
+D 0x9C24 0x9C3E dibujo_9C24  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0x986B (26 bytes)
+# --- fin de tipos.py ---

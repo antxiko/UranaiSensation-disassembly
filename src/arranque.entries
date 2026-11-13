@@ -1,0 +1,3 @@
+# Puntos de entrada del sector de arranque (la BIOS del disco lo carga en 0xC000).
+0xC01E   # la BIOS del disco entra aqui al arrancar, si el sector empieza por 0xEB o 0xE9
+0xC02D   # H.STKE (0xFEDA) = jp 0xC02D: el BASIC lo llama al acabar de arrancar

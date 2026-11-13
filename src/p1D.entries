@@ -1,0 +1,5 @@
+# Puntos de entrada de la parte 1D (sectores 17-17, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9806
+0x9803   # tabla de saltos: jp 0x98F4

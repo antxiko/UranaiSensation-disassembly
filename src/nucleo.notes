@@ -1,0 +1,27 @@
+# Notas del nucleo (sectores 234-241, cargado por el arranque en 0x8200).
+B 0x8200 ===== tabla de saltos: las partes llaman al nucleo por aqui =====
+B 0x82E4 ===== peticiones de sonido: A = el numero, al controlador de 0x4000 por 0x8558 =====
+B 0x8451 ===== entrada desde el arranque =====
+D 0x84FB 0x8504 copia_8451  los 9 bytes de 0x8451 otra vez: 0x84A6 los compara con los de verdad y, si alguien los ha tocado, se queda colgado en 0x85CB (9 bytes)
+B 0x8504 ===== H.TIMI: la interrupcion de cada cuadro =====
+D 0x85E7 0x85F5 estados  7 destinos del despachador de 0x85E4 (call 0x853B con la tabla pegada detras), uno por estado de 0xD1C0: 85F5, 8646, 867D, 8687, 8697, 8722, 879B (14 bytes)
+F 0x85E7 w7
+D 0x871E 0x8722 partes_8711  4 partes que carga 0x8711 segun 0xD1D6: 0x10, 0x07, 0x1F, 0x0D (4 bytes)
+D 0x8828 0x8834 vdp_87FB  6 parejas (valor, registro) del VDP para WRTVDP en 0x8815 (12 bytes)
+F 0x8828 2
+D 0x88CE 0x88EE paleta  los 16 colores de la paleta, dos bytes cada uno, para 0x88BD (32 bytes)
+F 0x88CE 2
+D 0x8937 0x8939 diskve  la direccion del manejador de errores de disco (0x8939): DISKVE (0xF323) apunta aqui (2 bytes)
+D 0x89B6 0x89C0 tabla_89B6  la lee 0x89A9 (10 bytes)
+D 0x8A2B 0x8A6B punteros_8A2B  32 punteros a las entradas de 3 bytes de 0x8A6B; los lee 0x8A20 (64 bytes)
+F 0x8A2B w8
+D 0x8A6B 0x8ACB tabla_8A6B  32 entradas de 3 bytes (64 bytes)
+F 0x8A6B 3
+D 0x8E26 0x8E2C lectura  la lectura en curso: cuantos y unidad (0x8E26), primer sector (0x8E28), destino (0x8E2A); los pone 0x8E88 (6 bytes)
+D 0x8EC0 0x8EC7 tabla_8EC0  la usa 0x8EB3 (7 bytes)
+D 0x8F68 0x8F6E tabla_8F68  (6 bytes)
+D 0x9064 0x906C relleno_9064  8 x 0xFF (8 bytes)
+D 0x906C 0x9168 partes  las 41 partes del programa, 6 bytes cada una: primer sector, destino, unidad (0) y cuantos sectores; la lee 0x8E7C. Despues, 6 ceros (252 bytes)
+F 0x906C 6
+D 0x918F 0x9190 byte_918F  (1 byte)
+D 0x919A 0x9200 tabla_919A  (102 bytes)

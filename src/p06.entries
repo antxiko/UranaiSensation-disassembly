@@ -1,0 +1,24 @@
+# Puntos de entrada de la parte 06 (sectores 88-92, en 0x9200).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9200   # tabla de saltos: jp 0x921B
+0x9203   # tabla de saltos: jp 0x983E
+0x9206   # tabla de saltos: jp 0x94E8
+0x9209   # tabla de saltos: jp 0x94F6
+0x920C   # tabla de saltos: jp 0x9511
+0x920F   # tabla de saltos: jp 0x94A0
+0x9212   # tabla de saltos: jp 0x94C6
+0x9215   # tabla de saltos: jp 0x93CB
+0x9218   # tabla de saltos: jp 0x9A00
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9851   # tabla del despachador de 0x9844
+0x9858   # tabla del despachador de 0x9844
+0x9910   # tabla del despachador de 0x9844
+0x9973   # tabla del despachador de 0x9844
+0x99DD   # tabla del despachador de 0x9844
+0x9A10   # tabla del despachador de 0x9A03
+0x9A18   # tabla del despachador de 0x9A03
+0x9A22   # tabla del despachador de 0x9A03
+0x9A2A   # tabla del despachador de 0x9A03
+0x9A8D   # tabla del despachador de 0x9A03
+# --- fin de despachos.py ---

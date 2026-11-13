@@ -1,0 +1,36 @@
+# Puntos de entrada de la parte 1B (sectores 141-150, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x98A7
+0x9803   # tabla de saltos: jp 0x98A7
+0x9806   # tabla de saltos: jp 0x9863
+0x9809   # tabla de saltos: jp 0x9D03
+0x980C   # tabla de saltos: jp 0x9CD4
+0x980F   # tabla de saltos: jp 0x9A21
+0x9812   # tabla de saltos: jp 0xA309
+0x9815   # tabla de saltos: jp 0x9D6F
+0x9818   # tabla de saltos: jp 0xA32D
+0x981B   # tabla de saltos: jp 0xA356
+0x981E   # tabla de saltos: jp 0x9D7F
+0x9821   # tabla de saltos: jp 0x9DCD
+0x9824   # tabla de saltos: jp 0xA2B4
+0x9827   # tabla de saltos: jp 0x9DFD
+0x982A   # tabla de saltos: jp 0x9E53
+0x982D   # tabla de saltos: jp 0xA556
+0x9830   # tabla de saltos: jp 0xA417
+0x9833   # tabla de saltos: jp 0x9E65
+0x9836   # tabla de saltos: jp 0xA58A
+0x9839   # tabla de saltos: jp 0xA42E
+0x983C   # tabla de saltos: jp 0xA59E
+0x983F   # tabla de saltos: jp 0xA495
+0x9842   # tabla de saltos: jp 0x9D5E
+0x9845   # tabla de saltos: jp 0x9F84
+0x9848   # tabla de saltos: jp 0x9D41
+0x984B   # tabla de saltos: jp 0xA0B2
+0x984E   # tabla de saltos: jp 0xA153
+0x9851   # tabla de saltos: jp 0x9FA2
+0x9854   # tabla de saltos: jp 0xA154
+0x9857   # tabla de saltos: jp 0xA267
+0x985A   # tabla de saltos: jp 0xA284
+0x985D   # tabla de saltos: jp 0x9D2B
+0x9860   # tabla de saltos: jp 0x9E49

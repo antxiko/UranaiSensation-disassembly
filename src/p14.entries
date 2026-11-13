@@ -1,0 +1,9 @@
+# Puntos de entrada de la parte 14 (sectores 157-159, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9814
+0x9803   # tabla de saltos: jp 0x9A9D
+0x9806   # tabla de saltos: jp 0x9AAE
+0x9809   # tabla de saltos: jp 0x9A3F
+0x980C   # tabla de saltos: jp 0x9A5A
+0x980F   # tabla de saltos: jp 0x9BCA

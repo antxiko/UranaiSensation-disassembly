@@ -1,0 +1,5 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x4899 0x48D7   # 31 destinos de la tabla del jp (hl) de 0x4898
+0x4AC7 0x4AE7   # 16 destinos de la tabla del jp (hl) de 0x4AC6
+# --- fin de despachos.py ---

@@ -1,0 +1,7 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+# 0x9860: llamada al despachador sin tabla legible detras
+# --- fin de despachos.py ---
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+0x9AF6 0x9AFA   # casillas_9AF6
+# --- fin de tipos.py ---

@@ -1,0 +1,3 @@
+# Puntos de entrada de la parte 23 (sectores 208-210, en 0x9800).
+#
+0x9800   # sin tabla de saltos: se entra por el principio

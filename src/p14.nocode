@@ -1,0 +1,7 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+0x98A2 0x98A6   # casillas_98A2
+0x98A6 0x99F4   # casillas_98A6
+0x99F4 0x9A14   # paleta_99F4
+0x9A14 0x9A37   # vram_9A14
+# --- fin de tipos.py ---

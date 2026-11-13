@@ -1,0 +1,21 @@
+# Notas del sector de arranque (sector 0, cargado por la BIOS del disco en 0xC000).
+D 0xC000 0xC013 cabecera  0xEB y 0x03 (lo que mira la BIOS del disco para saber que el sector arranca) y 17 bytes que NO son la cabecera de MSX-DOS: el disco no tiene FAT ni directorio que leer (19 bytes)
+D 0xC013 0xC01E formato  lo que si es como en MSX-DOS: 1440 sectores, F9 (doble cara, 9 sectores por pista), 3 sectores de FAT, 9 por pista, 2 caras, 0 ocultos (11 bytes)
+B 0xC01E ===== la BIOS del disco entra aqui: solo deja un gancho y vuelve =====
+C 0xC01E los 3 bytes de jp 0xC02D, de 0xC02A
+C 0xC021 a H.STKE: el BASIC lo llama cuando acaba de arrancar, con todo el disco ya montado
+C 0xC029 vuelve a la BIOS del disco, que sigue arrancando
+D 0xC02A 0xC02D gancho_stke  jp 0xC02D, lo que se copia en H.STKE; lo lee 0xC01E (3 bytes)
+B 0xC02D ===== H.STKE: lee el nucleo (8 sectores desde el 234) en 0x8200 y entra =====
+L 0xC02D arranca
+C 0xC02D CLS y ERAFNK: borra la pantalla y quita las teclas de funcion
+C 0xC033 CLIKSW = 0: sin clic de teclado
+C 0xC037 8 sectores (H) de la unidad A (L = 0) desde el 234 (BC) en 0x8200 (DE)
+C 0xC043 si el primer byte es 0xE5 (sector de un disco recien formateado) se queda colgado: no es el disco
+C 0xC04A el nucleo
+L 0xC04F lee_sectores  BDOS 0x1A (destino DE) y 0x2F (lectura directa: DE = primer sector, H = cuantos, L = unidad)
+C 0xC050 BC (el primer sector) y HL a la pila
+C 0xC052 0x1A SETDTA: los sectores se leeran en DE
+C 0xC057 DE = el primer sector, HL = cuantos y unidad
+C 0xC059 0x2F: lectura de sectores sin pasar por ficheros
+D 0xC05F 0xC200 relleno  ceros hasta el final del sector (417 bytes)

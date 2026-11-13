@@ -1,0 +1,32 @@
+# Puntos de entrada de la parte 0B (sectores 188-193, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x984F
+0x9803   # tabla de saltos: jp 0x98C3
+0x9806   # tabla de saltos: jp 0x99FD
+0x9809   # tabla de saltos: jp 0x9A69
+0x980C   # tabla de saltos: jp 0x9A7A
+0x980F   # tabla de saltos: jp 0x9E6F
+0x9812   # tabla de saltos: jp 0x9AF9
+0x9815   # tabla de saltos: jp 0x9C53
+0x9818   # tabla de saltos: jp 0x9CDC
+0x981B   # tabla de saltos: jp 0x9D04
+0x981E   # tabla de saltos: jp 0x9D62
+0x9821   # tabla de saltos: jp 0x9ADE
+0x9824   # tabla de saltos: jp 0x9DEF
+0x9827   # tabla de saltos: jp 0x9E6E
+0x982A   # tabla de saltos: jp 0x9E5F
+0x982D   # tabla de saltos: jp 0x9ABE
+0x9830   # tabla de saltos: jp 0x9B19
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9A16   # tabla del despachador de 0x9A07
+0x9A2A   # tabla del despachador de 0x9A07
+0x9A37   # tabla del despachador de 0x9A07
+0x9A3F   # tabla del despachador de 0x9A07
+0x9A47   # tabla del despachador de 0x9A07
+0x9A4F   # tabla del despachador de 0x9A07
+0x9E7A   # tabla del despachador de 0x9E6F
+0x9E88   # tabla del despachador de 0x9E6F
+0x9EBC   # tabla del despachador de 0x9E6F
+0x9F16   # tabla del despachador de 0x9E6F
+# --- fin de despachos.py ---

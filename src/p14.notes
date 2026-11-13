@@ -1,0 +1,7 @@
+# Notas de p14 (sectores 157-159, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x98A2 0x98A6 casillas_98A2  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9886 (4 bytes)
+D 0x98A6 0x99F4 casillas_98A6  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9886 (334 bytes)
+D 0x99F4 0x9A14 paleta_99F4  paleta: 16 colores de 2 bytes; lo usa 0x9896 (32 bytes)
+D 0x9A14 0x9A37 vram_9A14  RLE a la VRAM hasta el 0; lo usa 0x989F (35 bytes)
+# --- fin de tipos.py ---

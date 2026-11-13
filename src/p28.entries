@@ -1,0 +1,30 @@
+# Puntos de entrada de la parte 28 (sectores 242-250, en 0x9A00).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9A00   # tabla de saltos: jp 0xA069
+0x9A03   # tabla de saltos: jp 0x9EB1
+0x9A06   # tabla de saltos: jp 0xA09F
+0x9A09   # tabla de saltos: jp 0xA104
+0x9A0C   # tabla de saltos: jp 0x9A44
+0x9A0F   # tabla de saltos: jp 0xA105
+0x9A12   # tabla de saltos: jp 0xA106
+0x9A15   # tabla de saltos: jp 0xA107
+0x9A18   # tabla de saltos: jp 0xA108
+0x9A1B   # tabla de saltos: jp 0xA27D
+0x9A1E   # tabla de saltos: jp 0x9FD3
+0x9A21   # tabla de saltos: jp 0xA287
+0x9A24   # tabla de saltos: jp 0xA288
+0x9A27   # tabla de saltos: jp 0xA532
+0x9A2A   # tabla de saltos: jp 0xA5E6
+0x9A2D   # tabla de saltos: jp 0xA60F
+0x9A30   # tabla de saltos: jp 0xA63D
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0xA591   # tabla del despachador de 0xA586
+0xA5B0   # tabla del despachador de 0xA586
+0xA5C2   # tabla del despachador de 0xA586
+0xA5CE   # tabla del despachador de 0xA586
+0xA6AD   # tabla del despachador de 0xA6A2
+0xA6B6   # tabla del despachador de 0xA6A2
+0xA6C9   # tabla del despachador de 0xA6A2
+0xA6D2   # tabla del despachador de 0xA6A2
+# --- fin de despachos.py ---

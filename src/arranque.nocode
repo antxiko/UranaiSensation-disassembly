@@ -1,0 +1,3 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+0xC000 0xC01D   # cabecera del sector: no se ejecuta
+0xC05F 0xC1FF   # relleno a cero hasta el final del sector

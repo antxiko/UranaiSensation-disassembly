@@ -1,0 +1,7 @@
+# Notas de p21 (sectores 203-204, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9859 0x9B07 casillas_9859  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9850 (686 bytes)
+D 0x9B07 0x9B27 paleta_9B07  paleta: 16 colores de 2 bytes; lo usa 0x9856 (32 bytes)
+D 0x9B27 0x9B2D lista_dibujos_9B27  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0x980C (6 bytes)
+D 0x9B2D 0x9B47 dibujo_9B2D  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0x980C (26 bytes)
+# --- fin de tipos.py ---

@@ -1,0 +1,9 @@
+# Notas de p0A (sectores 184-187, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x98A7 0x98AF texto_98A7  texto: x, y y las letras hasta 0xFF; lo usa 0x9868 (8 bytes)
+D 0x98AF 0x98B2 texto_98AF  texto: x, y y las letras hasta 0xFF; lo usa 0x98D3 (3 bytes)
+D 0x9A2F 0x9C30 casillas_9A2F  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x993A (513 bytes)
+D 0x9C30 0x9C49 casillas_9C30  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x993A (25 bytes)
+D 0x9D0C 0x9D10 casillas_9D0C  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9CD1 (4 bytes)
+D 0x9EE7 0x9FD2 vram_9EE7  RLE a la VRAM hasta el 0; lo usa 0x9EE4 (235 bytes)
+# --- fin de tipos.py ---

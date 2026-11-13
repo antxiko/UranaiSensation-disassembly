@@ -1,0 +1,14 @@
+# Puntos de entrada de la parte 0C (sectores 194-198, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x98B8
+0x9803   # tabla de saltos: jp 0x9B8E
+0x9806   # tabla de saltos: jp 0x9821
+0x9809   # tabla de saltos: jp 0x9856
+0x980C   # tabla de saltos: jp 0x985C
+0x980F   # tabla de saltos: jp 0x9F10
+0x9812   # tabla de saltos: jp 0x9C5D
+0x9815   # tabla de saltos: jp 0x983F
+0x9818   # tabla de saltos: jp 0x9913
+0x981B   # tabla de saltos: jp 0x9950
+0x981E   # tabla de saltos: jp 0x9987

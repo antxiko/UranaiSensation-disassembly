@@ -1,0 +1,6 @@
+# Notas de p0F (sectores 81-82, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x989C 0x98BC paleta_989C  paleta: 16 colores de 2 bytes; lo usa 0x9864 (32 bytes)
+D 0x98BC 0x9AD5 casillas_98BC  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9871 (537 bytes)
+D 0x9AD5 0x9BE8 vram_9AD5  RLE a la VRAM hasta el 0; lo usa 0x987A (275 bytes)
+# --- fin de tipos.py ---

@@ -1,0 +1,4 @@
+# Notas de p12 (sectores 83-87, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9E07 0x9E2E texto_9E07  texto: x, y y las letras hasta 0xFF; lo usa 0x98C8 (39 bytes)
+# --- fin de tipos.py ---

@@ -1,0 +1,12 @@
+# Notas de p0E (sectores 129-133, en 0x9800).
+D 0x980C 0x981E cabecera_p0C  seis jp copiados tal cual de la cabecera de la p0C (alli 0x985C, 0x9F10, 0x9C5D, 0x983F, 0x9913 y 0x9950 son rutinas); en la p0E caen en mitad de una instruccion o en las casillas de 0x9AB1, asi que no llevan a nada (18 bytes)
+F 0x980C 3
+D 0x9821 0x9823 nop_9821  dos bytes que se cambian solos: empiezan valiendo cd 31 y la parte los pone a 0 (0x9827, 0x982A); desde entonces son nop ; nop y 0x9806 (jp 0x9821) sigue en 0x9823 (2 bytes)
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9AB1 0x9D6B casillas_9AB1  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x984E (698 bytes)
+D 0x9D6B 0x9D8B paleta_9D6B  paleta: 16 colores de 2 bytes; lo usa 0x986A (32 bytes)
+D 0x9DF0 0x9FA3 vram_9DF0  RLE a la VRAM hasta el 0; lo usa 0x9864 (435 bytes)
+D 0x9FA3 0xA035 casillas_9FA3  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A62 (146 bytes)
+D 0xA035 0xA0C7 casillas_A035  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A62 (146 bytes)
+D 0xA0C7 0xA158 casillas_A0C7  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A62 (145 bytes)
+# --- fin de tipos.py ---

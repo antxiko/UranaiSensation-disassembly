@@ -1,0 +1,10 @@
+# Puntos de entrada de la parte 16 (sectores 162-163, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x980B
+0x9803   # tabla de saltos: jp 0x9918
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x9817   # tabla del despachador de 0x980E
+0x983A   # tabla del despachador de 0x980E
+0x9862   # tabla del despachador de 0x980E
+# --- fin de despachos.py ---

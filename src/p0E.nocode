@@ -1,0 +1,13 @@
+# Zonas que el trazador NO puede entrar a desensamblar como codigo.
+0x9821 0x9823   # dos bytes que la parte cambia (cd 31 -> 00 00): ver p0E.notes
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x98DA 0x98FB   # 17 destinos del despachador (call 0x822D en 0x98D7)
+# --- fin de despachos.py ---
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+0x9AB1 0x9D6B   # casillas_9AB1
+0x9D6B 0x9D8B   # paleta_9D6B
+0x9DF0 0x9FA3   # vram_9DF0
+0x9FA3 0xA035   # casillas_9FA3
+0xA035 0xA0C7   # casillas_A035
+0xA0C7 0xA158   # casillas_A0C7
+# --- fin de tipos.py ---

@@ -1,0 +1,9 @@
+# Puntos de entrada de la parte 25 (sectores 228-233, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9812
+0x9803   # tabla de saltos: jp 0x9833
+0x9806   # tabla de saltos: jp 0x983C
+0x9809   # tabla de saltos: jp 0xA0C3
+0x980C   # tabla de saltos: jp 0x9E10
+0x980F   # tabla de saltos: jp 0x98C6

@@ -1,0 +1,17 @@
+# Notas de p24 (sectores 211-227, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9A4E 0x9A52 casillas_9A4E  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A3A (4 bytes)
+D 0x9A52 0x9A56 casillas_9A52  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9A3A (4 bytes)
+D 0x9F34 0x9F51 texto_9F34  texto: x, y y las letras hasta 0xFF; lo usa 0x9ED7 (29 bytes)
+D 0x9F84 0x9F9D texto_9F84  texto: x, y y las letras hasta 0xFF; lo usa 0x9F7A (25 bytes)
+D 0xA00C 0xA012 lista_dibujos_A00C  lista de dibujos, 5 bytes cada uno (marca, puntero, posicion, color), hasta la marca 0; lo usa 0xA009 (6 bytes)
+D 0xA012 0xA02C dibujo_A012  dibujo en el RLE de 0x9014 (nucleo), hasta el 0; lo usa 0xA009 (26 bytes)
+D 0xB27C 0xB30B vram_B27C  RLE a la VRAM hasta el 0; lo usa 0xB264 (143 bytes)
+D 0xB313 0xB397 vram_B313  RLE a la VRAM hasta el 0; lo usa 0xB255 (132 bytes)
+D 0xB39F 0xB44F vram_B39F  RLE a la VRAM hasta el 0; lo usa 0xB228 (176 bytes)
+D 0xB457 0xB53E vram_B457  RLE a la VRAM hasta el 0; lo usa 0xB246 (231 bytes)
+D 0xB546 0xB5A5 vram_B546  RLE a la VRAM hasta el 0; lo usa 0xB218 (95 bytes)
+D 0xB5AD 0xB62F vram_B5AD  RLE a la VRAM hasta el 0; lo usa 0xB237 (130 bytes)
+D 0xB637 0xB6E1 vram_B637  RLE a la VRAM hasta el 0; lo usa 0xB273 (170 bytes)
+D 0xB6FA 0xB783 vram_B6FA  RLE a la VRAM hasta el 0; lo usa 0xB6EF (137 bytes)
+# --- fin de tipos.py ---

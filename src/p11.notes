@@ -1,0 +1,9 @@
+# Notas de p11 (sectores 151-154, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x99CD 0x9C58 casillas_99CD  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9833 (651 bytes)
+D 0x9C58 0x9CE4 casillas_9C58  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9849 (140 bytes)
+D 0x9CE4 0x9D0A casillas_9CE4  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9855 (38 bytes)
+D 0x9D0A 0x9D26 casillas_9D0A  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9903 (28 bytes)
+D 0x9D26 0x9D59 casillas_9D26  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x992B (51 bytes)
+D 0x9F25 0x9F45 paleta_9F25  paleta: 16 colores de 2 bytes; lo usa 0x99CA (32 bytes)
+# --- fin de tipos.py ---

@@ -1,0 +1,12 @@
+# Notas de p1A (sectores 134-140, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x99B7 0x99D7 paleta_99B7  paleta: 16 colores de 2 bytes; lo usa 0x98C5 (32 bytes)
+D 0x99D7 0x9B40 casillas_99D7  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x98D2 (361 bytes)
+D 0x9B40 0x9B60 casillas_9B40  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9873 (32 bytes)
+D 0x9B60 0x9B9A casillas_9B60  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x988A (58 bytes)
+D 0x9B9A 0x9B9E casillas_9B9A  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x98A1 (4 bytes)
+D 0x9C8F 0x9C96 texto_9C8F  texto: x, y y las letras hasta 0xFF; lo usa 0x994E (7 bytes)
+D 0x9C9D 0x9CA1 casillas_9C9D  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x99B4 (4 bytes)
+D 0xA02E 0xA064 vram_A02E  RLE a la VRAM hasta el 0; lo usa 0xA02B (54 bytes)
+D 0xA3DC 0xA523 vram_A3DC  RLE a la VRAM hasta el 0; lo usa 0xA3D9 (327 bytes)
+# --- fin de tipos.py ---

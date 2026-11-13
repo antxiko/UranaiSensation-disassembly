@@ -1,0 +1,13 @@
+# Puntos de entrada de la parte 11 (sectores 151-154, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x980F
+0x9803   # tabla de saltos: jp 0x98B1
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x98C7   # tabla del despachador de 0x98B8
+0x98E4   # tabla del despachador de 0x98B8
+0x98FA   # tabla del despachador de 0x98B8
+0x990F   # tabla del despachador de 0x98B8
+0x991F   # tabla del despachador de 0x98B8
+0x9943   # tabla del despachador de 0x98B8
+# --- fin de despachos.py ---

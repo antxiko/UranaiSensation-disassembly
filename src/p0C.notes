@@ -1,0 +1,5 @@
+# Notas de p0C (sectores 194-198, en 0x9800).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x98DF 0x9913 casillas_98DF  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x982E (52 bytes)
+D 0x9BC8 0x9BCC casillas_9BC8  casillas en el RLE de 0x8EC7 (nucleo), hasta el 0; lo usa 0x9BBE (4 bytes)
+# --- fin de tipos.py ---

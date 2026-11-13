@@ -1,0 +1,57 @@
+# Puntos de entrada de la parte 01 (sectores 12-13, en 0x9200).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9200   # tabla de saltos: jp 0x9208
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x921D   # tabla del despachador de 0x9212
+0x9229   # tabla del despachador de 0x9212
+0x923D   # tabla del despachador de 0x9212
+0x9243   # tabla del despachador de 0x9212
+0x9251   # tabla del despachador de 0x9246
+0x9472   # tabla del despachador de 0x9246
+0x9505   # tabla del despachador de 0x9246
+0x95A5   # tabla del despachador de 0x9246
+0x92A4   # tabla del despachador de 0x9259
+0x92B6   # tabla del despachador de 0x9259
+0x92C4   # tabla del despachador de 0x9259
+0x92D7   # tabla del despachador de 0x9259
+0x92EA   # tabla del despachador de 0x9259
+0x931E   # tabla del despachador de 0x9259
+0x932C   # tabla del despachador de 0x9259
+0x9348   # tabla del despachador de 0x9259
+0x9351   # tabla del despachador de 0x9259
+0x9364   # tabla del despachador de 0x9259
+0x937F   # tabla del despachador de 0x9259
+0x9397   # tabla del despachador de 0x9259
+0x93AD   # tabla del despachador de 0x9259
+0x93CA   # tabla del despachador de 0x9259
+0x93D3   # tabla del despachador de 0x9259
+0x93E6   # tabla del despachador de 0x9259
+0x93F9   # tabla del despachador de 0x9259
+0x9402   # tabla del despachador de 0x9259
+0x9418   # tabla del despachador de 0x9259
+0x943A   # tabla del despachador de 0x9259
+0x9443   # tabla del despachador de 0x9259
+0x9457   # tabla del despachador de 0x9259
+0x9461   # tabla del despachador de 0x9259
+0x946A   # tabla del despachador de 0x9259
+0x9467   # tabla del despachador de 0x9475
+0x9488   # tabla del despachador de 0x9475
+0x948D   # tabla del despachador de 0x9475
+0x949B   # tabla del despachador de 0x9475
+0x94B6   # tabla del despachador de 0x9475
+0x94CC   # tabla del despachador de 0x9475
+0x94E8   # tabla del despachador de 0x9475
+0x94FF   # tabla del despachador de 0x9475
+0x9515   # tabla del despachador de 0x9508
+0x951A   # tabla del despachador de 0x9508
+0x9539   # tabla del despachador de 0x9508
+0x958D   # tabla del despachador de 0x9508
+0x959D   # tabla del despachador de 0x9508
+0x95B7   # tabla del despachador de 0x95A8
+0x95BC   # tabla del despachador de 0x95A8
+0x95CA   # tabla del despachador de 0x95A8
+0x95D8   # tabla del despachador de 0x95A8
+0x95E7   # tabla del despachador de 0x95A8
+0x95F0   # tabla del despachador de 0x95A8
+# --- fin de despachos.py ---

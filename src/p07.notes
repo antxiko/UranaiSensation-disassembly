@@ -1,0 +1,4 @@
+# Notas de p07 (sectores 67-69, en 0x9200).
+# --- tipos.py: datos medidos por el servicio que los lee (no editar a mano) ---
+D 0x9517 0x9537 paleta_9517  paleta: 16 colores de 2 bytes; lo usa 0x9514 (32 bytes)
+# --- fin de tipos.py ---

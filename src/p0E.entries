@@ -1,0 +1,16 @@
+# Puntos de entrada de la parte 0E (sectores 129-133, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9823
+0x9803   # tabla de saltos: jp 0x98CD
+0x9806   # tabla de saltos: jp 0x9821
+0x9809   # tabla de saltos: jp 0x9856
+0x981E   # tabla de saltos: jp 0x9987
+# no es cabecera: 0x980C 0x980F 0x9812 0x9815 0x9818 0x981B   (copiados de la cabecera de la p0C: alli llevan a rutinas, aqui a mitad de instruccion o a datos)
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x99E3   # tabla del despachador de 0x98D7
+0x99F4   # tabla del despachador de 0x98D7
+0x9A05   # tabla del despachador de 0x98D7
+0x9A39   # tabla del despachador de 0x98D7
+0x9A4A   # tabla del despachador de 0x98D7
+# --- fin de despachos.py ---

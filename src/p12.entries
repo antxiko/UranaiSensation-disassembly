@@ -1,0 +1,22 @@
+# Puntos de entrada de la parte 12 (sectores 83-87, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x9842
+0x9803   # tabla de saltos: jp 0xA073
+0x9806   # tabla de saltos: jp 0x9866
+0x9809   # tabla de saltos: jp 0x9871
+0x980C   # tabla de saltos: jp 0x9895
+0x980F   # tabla de saltos: jp 0x987A
+0x9812   # tabla de saltos: jp 0x98A2
+0x9815   # tabla de saltos: jp 0x98EB
+0x9818   # tabla de saltos: jp 0x9928
+0x981B   # tabla de saltos: jp 0x99D0
+0x981E   # tabla de saltos: jp 0x9A70
+0x9821   # tabla de saltos: jp 0x9A82
+0x9824   # tabla de saltos: jp 0x9ABE
+0x9827   # tabla de saltos: jp 0x9AF8
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0x994A   # tabla del despachador de 0x9941
+0x9955   # tabla del despachador de 0x9941
+0x9966   # tabla del despachador de 0x9941
+# --- fin de despachos.py ---

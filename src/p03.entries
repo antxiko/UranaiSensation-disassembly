@@ -1,0 +1,58 @@
+# Puntos de entrada de la parte 03 (sectores 100-110, en 0x9C00).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9C00   # tabla de saltos: jp 0x9C8D
+0x9C03   # tabla de saltos: jp 0xAA54
+0x9C06   # tabla de saltos: jp 0xA0EA
+0x9C09   # tabla de saltos: jp 0x960C (fuera de la parte)
+0x9C0C   # tabla de saltos: jp 0xA10F
+0x9C0F   # tabla de saltos: jp 0xA124
+0x9C12   # tabla de saltos: jp 0xA12E
+0x9C15   # tabla de saltos: jp 0xA169
+0x9C18   # tabla de saltos: jp 0xA231
+0x9C1B   # tabla de saltos: jp 0xAB30
+0x9C1E   # tabla de saltos: jp 0xA268
+0x9C21   # tabla de saltos: jp 0xAA3E
+0x9C24   # tabla de saltos: jp 0xA98A
+0x9C27   # tabla de saltos: jp 0xA26F
+0x9C2A   # tabla de saltos: jp 0xA25A
+0x9C2D   # tabla de saltos: jp 0xA0DF
+0x9C30   # tabla de saltos: jp 0xA2E3
+0x9C33   # tabla de saltos: jp 0xA31E
+0x9C36   # tabla de saltos: jp 0xA2C0
+0x9C39   # tabla de saltos: jp 0xA738
+0x9C3C   # tabla de saltos: jp 0xA776
+0x9C3F   # tabla de saltos: jp 0xA28F
+0x9C42   # tabla de saltos: jp 0xA743
+0x9C45   # tabla de saltos: jp 0xA783
+0x9C48   # tabla de saltos: jp 0xA86C
+0x9C4B   # tabla de saltos: jp 0xA8D0
+0x9C4E   # tabla de saltos: jp 0xA804
+0x9C51   # tabla de saltos: jp 0xA8D9
+0x9C54   # tabla de saltos: jp 0xA818
+0x9C57   # tabla de saltos: jp 0xA837
+0x9C5A   # tabla de saltos: jp 0xA8F1
+0x9C5D   # tabla de saltos: jp 0xA8FB
+0x9C60   # tabla de saltos: jp 0xA8FE
+0x9C63   # tabla de saltos: jp 0xA21B
+0x9C66   # tabla de saltos: jp 0xA2B0
+0x9C69   # tabla de saltos: jp 0xA36B
+0x9C6C   # tabla de saltos: jp 0xA353
+0x9C6F   # tabla de saltos: jp 0xA371
+0x9C72   # tabla de saltos: jp 0xA399
+0x9C75   # tabla de saltos: jp 0xA3AC
+0x9C78   # tabla de saltos: jp 0xA3C9
+0x9C7B   # tabla de saltos: jp 0xA3D4
+0x9C7E   # tabla de saltos: jp 0xA224
+0x9C81   # tabla de saltos: jp 0xA0C1
+0x9C84   # tabla de saltos: jp 0xA284
+0x9C87   # tabla de saltos: jp 0xA385
+0x9C8A   # tabla de saltos: jp 0xA3DF
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0xADBE   # tabla del despachador de 0xAD45
+0xAE4A   # tabla del despachador de 0xAD45
+0xAE83   # tabla del despachador de 0xAD45
+0xAEE5   # tabla del despachador de 0xAD45
+0xAF45   # tabla del despachador de 0xAD45
+0xAF8C   # tabla del despachador de 0xAD45
+# --- fin de despachos.py ---

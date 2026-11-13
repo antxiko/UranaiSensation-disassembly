@@ -1,0 +1,13 @@
+# Puntos de entrada de la parte 02 (sectores 9-11, en 0x9600).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9600   # tabla de saltos: jp 0x961E
+0x9603   # tabla de saltos: jp 0x9646
+0x9606   # tabla de saltos: jp 0x9A14
+0x9609   # tabla de saltos: jp 0x9657
+0x960C   # tabla de saltos: jp 0x970D
+0x960F   # tabla de saltos: jp 0x989A
+0x9612   # tabla de saltos: jp 0x96C3
+0x9615   # tabla de saltos: jp 0x9A1E
+0x9618   # tabla de saltos: jp 0x9A46
+0x961B   # tabla de saltos: jp 0x9918

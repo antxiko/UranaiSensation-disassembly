@@ -1,0 +1,53 @@
+# Puntos de entrada de la parte 24 (sectores 211-227, en 0x9800).
+#
+# Su tabla de saltos de cabecera: se entra por org+3k.
+0x9800   # tabla de saltos: jp 0x993E
+0x9803   # tabla de saltos: jp 0x993E
+0x9806   # tabla de saltos: jp 0x9855
+0x9809   # tabla de saltos: jp 0x9867
+0x980C   # tabla de saltos: jp 0x993E
+0x980F   # tabla de saltos: jp 0x9C62
+0x9812   # tabla de saltos: jp 0x9AAA
+0x9815   # tabla de saltos: jp 0x9AC7
+0x9818   # tabla de saltos: jp 0x9B21
+0x981B   # tabla de saltos: jp 0x9C48
+0x981E   # tabla de saltos: jp 0x9C56
+0x9821   # tabla de saltos: jp 0x9DFA
+0x9824   # tabla de saltos: jp 0x9E7E
+0x9827   # tabla de saltos: jp 0x9EA3
+0x982A   # tabla de saltos: jp 0x9B52
+0x982D   # tabla de saltos: jp 0x9F9D
+0x9830   # tabla de saltos: jp 0x9B5D
+0x9833   # tabla de saltos: jp 0x9B73
+0x9836   # tabla de saltos: jp 0xA004
+0x9839   # tabla de saltos: jp 0xA8B2
+0x983C   # tabla de saltos: jp 0xA070
+0x983F   # tabla de saltos: jp 0xA628
+0x9842   # tabla de saltos: jp 0xB78B
+0x9845   # tabla de saltos: jp 0xB820
+0x9848   # tabla de saltos: jp 0xA02C
+0x984B   # tabla de saltos: jp 0x9A9D
+0x984E   # tabla de saltos: jp 0x9B44
+0x9851   # tabla de saltos: jp 0xA005
+# --- despachos.py: tablas de 0x822D (no editar a mano) ---
+0xAE02   # tabla del despachador de 0xADF1
+0xAE0F   # tabla del despachador de 0xADF1
+0xAE1C   # tabla del despachador de 0xADF1
+0xAE29   # tabla del despachador de 0xADF1
+0xAE36   # tabla del despachador de 0xADF1
+0xAE43   # tabla del despachador de 0xADF1
+0xAE50   # tabla del despachador de 0xADF1
+0xB212   # tabla del despachador de 0xB201
+0xB222   # tabla del despachador de 0xB201
+0xB231   # tabla del despachador de 0xB201
+0xB240   # tabla del despachador de 0xB201
+0xB24F   # tabla del despachador de 0xB201
+0xB25E   # tabla del despachador de 0xB201
+0xB26D   # tabla del despachador de 0xB201
+0xB84D   # tabla del despachador de 0xB83E
+0xB884   # tabla del despachador de 0xB83E
+0xB8A4   # tabla del despachador de 0xB83E
+0xB927   # tabla del despachador de 0xB83E
+0xB92E   # tabla del despachador de 0xB83E
+0xB96D   # tabla del despachador de 0xB83E
+# --- fin de despachos.py ---
