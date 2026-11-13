@@ -145,3 +145,26 @@ def _foto(self, ruta, pagina=0, escala=2, sprites=True):
 Uranai.pulsa = _pulsa
 Uranai.foto = _foto
 ESPACIO = (8, 0)
+
+
+def _una(self):
+    """Los RST (rst 0x20 = DCOMPR, que usa el juego) van a la BIOS como un call."""
+    op = self.mem[self.pc]
+    if op & 0xC7 == 0xC7:
+        self._push((self.pc + 1) & 0xFFFF)
+        self.pc = op & 0x38
+        return
+    Msx._una(self)
+
+
+def _bios2(self, pc):
+    if pc == 0x0020:                       # DCOMPR: compara HL con DE (Z iguales, C si HL < DE)
+        hl = (self.h << 8) | self.l
+        de = (self.d << 8) | self.e
+        self.f = (self.f & ~0x41) | (0x40 if hl == de else 0) | (0x01 if hl < de else 0)
+        return
+    _bios(self, pc)
+
+
+Uranai._una = _una
+Uranai.bios = _bios2
