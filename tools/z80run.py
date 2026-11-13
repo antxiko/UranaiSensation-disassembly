@@ -122,6 +122,7 @@ class Z80:
         self.pc = 0
         self.af_ = self.bc_ = self.de_ = self.hl_ = 0
         self.pasos = 0
+        self.refresco = 0         # el registro R: 7 bits que suben uno por instruccion (el Z80 sube uno por M1)
 
     # ------------------------------------------------------------ memoria
 
@@ -246,6 +247,7 @@ class Z80:
             self._una()
 
     def _una(self):
+        self.refresco = (self.refresco + 1) & 0x7F
         pc0 = self.pc
         op = self._leer(self.pc)
         self.pc = (self.pc + 1) & 0xFFFF
@@ -663,10 +665,12 @@ class Z80:
             return
         if op in (0x47, 0x4F, 0x57, 0x5F):               # ld i,a / ld a,r ...
             if op in (0x57, 0x5F):
-                # El registro R no se emula: aqui no hay refresco. Quien lo use
-                # para hacer de azar tiene que saberlo, asi que se devuelve 0.
-                self.a = 0
-                self._sz(0)
+                # ld a,i da 0 (no hay modo 2). ld a,r da el refresco: uno por
+                # instruccion (el Z80 sube uno por M1, dos con prefijo), lo
+                # bastante para los que lo usan de azar (la omikuji, p1A 0x9EF3,
+                # se quedaba buscando para siempre con R = 0).
+                self.a = self.refresco if op == 0x5F else 0
+                self._sz(self.a)
             return
         raise ParadaZ80("opcode ED 0x%02X sin implementar, en 0x%04X"
                         % (op, pc0))
