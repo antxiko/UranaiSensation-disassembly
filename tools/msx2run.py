@@ -32,6 +32,10 @@ sys.path.insert(0, AQUI)
 from z80run import Z80, ParadaZ80, Maquina, Vdp   # noqa: E402
 
 
+def _cero():
+    return 0
+
+
 class V9938:
     def __init__(self):
         self.vram = bytearray(0x20000)
@@ -48,7 +52,7 @@ class V9938:
         # puesto hasta que el reloj (instrucciones del Z80, ver reloj) llega a
         # ocupado_hasta. Sin tiempos, las ordenes acaban al instante.
         self.tiempos = False
-        self.reloj = lambda: 0
+        self.reloj = _cero        # una funcion del modulo, no una lambda: el estado se puede guardar con pickle
         self.unidad = 1           # COSTE por unidad del reloj: 1 instrucciones, 6,6 ciclos
         self.ocupado_hasta = 0
 
