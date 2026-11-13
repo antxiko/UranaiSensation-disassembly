@@ -11,6 +11,17 @@ con la RAM plana de 64 KB que usa el juego y el disco servido desde uranai.dsk.
   apaga el motor); aqui vuelve sin hacer nada.
 - La BIOS, como en msx2run.py.
 
+Teclas (nucleo 0x8841, byte de 0xD1C8/0xD1C9): bits 0-3 arriba, abajo, izquierda, derecha
+(cursores, fila 8 bits 5, 6, 4, 7, o el mando); bit 4 espacio (fila 8 bit 0); bit 5 M (fila 4
+bit 2); bit 6 RETURN (fila 7 bit 7); bit 7 ESC (fila 7 bit 2).
+
+Receta medida (2026-11-13):
+  u = Uranai(); u.arranca(); u.cuadro(900)          -> el titulo
+  u.pulsa(*ESPACIO, cuadros=8, despues=600)         -> la pantalla principal (lista y botones)
+  u.pulsa(*ESPACIO, cuadros=4, despues=1200)        -> MENU: el pinguino va al boton y se
+                                                       abre la lista de adivinaciones
+El cursor y el pinguino son sprites: u.foto() los pinta encima.
+
 Uso (como modulo): u = Uranai(); u.parte(0x28); u.llama(0x9A00); u.vdp.pagina(0)
 """
 import os
@@ -114,3 +125,23 @@ def _cuadro(self, n=1):
 
 Uranai.arranca = _arranca
 Uranai.cuadro = _cuadro
+
+
+def _pulsa(self, fila, bit, cuadros=6, despues=0):
+    """Pulsa la tecla (fila, bit) de la matriz durante unos cuadros y la suelta."""
+    self.teclas[fila] = 0xFF & ~(1 << bit)
+    self.cuadro(cuadros)
+    self.teclas.pop(fila, None)
+    self.cuadro(despues)
+
+
+def _foto(self, ruta, pagina=0, escala=2, sprites=True):
+    im = self.vdp.pagina(pagina).convert("RGB")
+    if sprites:
+        self.vdp.sprites(im)
+    im.resize((im.width * escala, im.height * escala)).save(ruta)
+
+
+Uranai.pulsa = _pulsa
+Uranai.foto = _foto
+ESPACIO = (8, 0)
