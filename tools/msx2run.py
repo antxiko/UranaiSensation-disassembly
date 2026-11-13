@@ -98,13 +98,19 @@ class V9938:
                 # empiece el retrazado horizontal" y "que acabe" pasan solas
                 self.hr ^= 0x20
                 ce = self.hmmc or (self.tiempos and self.reloj() < self.ocupado_hasta)
-                return 0x80 | self.hr | (1 if ce else 0)
+                return 0x80 | self.hr | getattr(self, "bd", 0) | (1 if ce else 0)
             if s == 0:                    # F: hubo VBLANK (se borra al leerlo)
                 v, self.f = self.f, 0
                 return v
             if s == 1:                    # FH: hubo interrupcion de linea
                 v, self.fh = self.fh, 0
                 return v
+            if s == 7:                    # CL: el color de POINT
+                return getattr(self, "s7", 0)
+            if s == 8:                    # BX: donde paro SRCH
+                return getattr(self, "bx", 0) & 0xFF
+            if s == 9:
+                return 0xFE | ((getattr(self, "bx", 0) >> 8) & 1)
             return 0
         return 0xFF
 
@@ -203,6 +209,17 @@ class V9938:
                         x += ix
                     else:
                         y += iy
+        elif cmd == 0x4:                    # POINT: el color de (SX, SY) a S#7
+            self.s7 = self.punto(sx, sy)
+        elif cmd == 0x6:                    # SRCH: de SX hacia DIX hasta el color (EQ = 0) o hasta otro (EQ = 1)
+            clr, eq = self.r[44] & 15, arg & 2
+            x, self.bd = sx, 0
+            while 0 <= x <= 255:
+                if (self.punto(x, sy) != clr) if eq else (self.punto(x, sy) == clr):
+                    self.bd = 0x10
+                    break
+                x += ix
+            self.bx = x & 511
         elif cmd == 0x5:                    # PSET: un punto, con la operacion
             self.pon(dx, dy, self.r[44] & 15, op)
         elif cmd == 0xF:                    # HMMC: el primer byte ya esta en CLR

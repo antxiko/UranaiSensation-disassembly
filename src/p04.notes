@@ -29,7 +29,6 @@ D 0xA98B 0xAC3F leido_A98B  lo usa el codigo: 0xA581 ld hl,0a98bh -> 0x9609 (el 
 D 0xAC57 0xAD28 leido_AC57  lo usa el codigo: 0xA885 ld hl,0ac57h; 0xA87A ld hl,0ac89h (en +50); 0xA86C ld hl,0acbch (en +101); 0xA861 ld hl,0ace5h (en +142) (209 bytes)
 D 0xAE5A 0xAE5D leido_AE5A  lo usa el codigo: 0xAEC5 ld hl,0ae5ah (3 bytes)
 D 0xAFC4 0xB175 leido_AFC4  lo usa el codigo: 0xAE9F ld de,0afc4h; 0xA89A ld de,0b028h (en +100); 0xB183 ld hl,0b174h (en +432); 0xB19D ld (0b174h),a -> 0x8221 (tabla de bytes: HL + A) (en +432) (433 bytes)
-D 0xB1CE 0xB1E1 leido_B1CE  lo usa el codigo: 0xB1A8 ld hl,0b1ceh (19 bytes)
 D 0xB1E6 0xB1F6 leido_B1E6  lo usa el codigo: 0xB1A1 ld hl,0b1e6h -> 0x8221 (tabla de bytes: HL + A) (16 bytes)
 D 0xB2CB 0xB2EA leido_B2CB  lo usa el codigo: 0xB2EE ld hl,0b2cbh; 0xB309 ld (0b2cbh),hl; 0xB2F3 ld de,0b2cch (en +1); 0xB311 ld (0b2cdh),a (en +2) (31 bytes)
 D 0xB32C 0xB338 leido_B32C  lo usa el codigo: 0xB320 ld hl,0b32ch (12 bytes)

@@ -173,4 +173,26 @@ clean:
 	rm -f $(WORK)/*.trace.json $(WORK)/*.blocks $(WORK)/*.out.bin $(WORK)/verify_*.log \
 	      $(WORK)/reensamblado.dsk $(WORK)/pasmo.err
 
+# Las pantallas de la web, EJECUTANDO el disco (tools/pantallas.py): unos 30 minutos.
+# `pantallas-copia` solo vuelve a copiar las elegidas de work/fotos.
+PY ?= python3      # con PIL (Pillow)
+pantallas: $(DSK)
+	$(PY) tools/pantallas.py docs/imagenes
+
+pantallas-copia:
+	$(PY) tools/pantallas.py docs/imagenes copia
+
+# La web: en el repositorio solo van las paginas en markdown; GitHub Pages las
+# convierte con Jekyll (tools/jekyll.py escribe su configuracion y plantillas).
+# La portada la monta make_web.py con lo de tools/contenido_web.py.
+JEKYLL ?= C:/msys64/mingw64/bin/ruby C:/msys64/mingw64/bin/jekyll
+web:
+	python3 tools/jekyll.py docs
+	python3 tools/make_web.py docs/imagenes docs/index.html en
+	python3 tools/make_web.py docs/imagenes docs/es/index.html es
+	rm -rf $(WORK)/_site
+	$(JEKYLL) build -s docs -d $(WORK)/_site
+	python3 tools/check_enlaces.py $(WORK)/_site
+
+.PHONY: pantallas pantallas-copia web
 .PHONY: all comprueba modulos mapa despachos tipos cobertura trace listado verify sanity densidad test clean

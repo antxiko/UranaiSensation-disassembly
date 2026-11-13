@@ -60,3 +60,6 @@
 0xA12E   # tabla del despachador de 0xA0CB
 0xA133   # tabla del despachador de 0xA0CB
 # --- fin de despachos.py ---
+# A mano: la vuelta de cada movimiento del cursor de las letras (L_B175 hace
+# `ld hl,0b1ceh ; push hl` y salta; el `ret` de la rutina de cada direccion vuelve aqui).
+0xB1CE   # el cursor se ha movido: si cae en la fila 8, columna 10, nada; si no, al sonido

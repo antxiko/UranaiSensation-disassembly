@@ -2176,7 +2176,7 @@ DATA_leido_AFC4:
 	defb 0d2h	; b174
 
 ; ======================================================================
-; CODIGO 0xb175..0xb1ce  (89 bytes)
+; CODIGO 0xb175..0xb1e6  (113 bytes)
 ; ======================================================================
 
 
@@ -2184,7 +2184,7 @@ L_B175:
 	ld a,(0d1c8h)		;b175
 	ld b,a			;b178
 	cp 010h		;b179
-	jr z,$+102		;b17b
+	jr z,L_B1E1		;b17b
 	ld a,b			;b17d
 	and 00fh		;b17e
 	ld c,a			;b180
@@ -2208,7 +2208,7 @@ L_B1A1:
 	ld hl,0b1e6h		;b1a1
 	call 08221h		;b1a4
 	ld a,(hl)			;b1a7
-	ld hl,0b1ceh		;b1a8
+	ld hl,L_B1CE		;b1a8
 	push hl			;b1ab
 	ld hl,0d231h		;b1ac
 	ld de,0d232h		;b1af
@@ -2225,19 +2225,18 @@ L_B1A1:
 L_B1CC:
 	or a			;b1cc
 	ret			;b1cd
-
-; ----------------------------------------------------------------------
-; DATOS leido_B1CE: lo usa el codigo: 0xB1A8 ld hl,0b1ceh (19 bytes)
-;   0xb1ce..0xb1e1  (19 bytes)
-DATA_leido_B1CE:
-	defb 03ah,030h,0d2h,0feh,008h,020h,007h,03ah,031h,0d2h,0feh,00ah,028h,003h,0cdh,0eeh	; b1ce  :0... .:1...(...
-	defb 082h,0b7h,0c9h	; b1de
-
-; ======================================================================
-; CODIGO 0xb1e1..0xb1e6  (5 bytes)
-; ======================================================================
-
-
+L_B1CE:
+	ld a,(0d230h)		;b1ce
+	cp 008h		;b1d1
+	jr nz,L_B1DC		;b1d3
+	ld a,(0d231h)		;b1d5
+	cp 00ah		;b1d8
+	jr z,L_B1DF		;b1da
+L_B1DC:
+	call 082eeh		;b1dc
+L_B1DF:
+	or a			;b1df
+	ret			;b1e0
 L_B1E1:
 	call 082f3h		;b1e1
 	scf			;b1e4

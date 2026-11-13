@@ -5,7 +5,8 @@ con la RAM plana de 64 KB que usa el juego y el disco servido desde uranai.dsk.
 - El nucleo (sectores 234-241) va en 0x8200 como lo deja el arranque.
 - El disco: el nucleo lee por la BDOS (0x8928: `call 0xF37D` con C = 0x1A, la direccion
   de destino en DE, y despues C = 0x2F, H sectores desde el DE); aqui se atrapa 0xF37D y se
-  copian los sectores del .dsk.
+  copian los sectores del .dsk. C = 0x30 graba (una copia del .dsk en memoria: el fichero no
+  se toca).
 - El sonido: 0x4000 y 0x4003 son un `ret` (el controlador no pinta nada).
 - 0xE0F4: donde el nucleo guarda el H.TIMI de antes (el del controlador de disco, que
   apaga el motor); aqui vuelve sin hacer nada.
@@ -35,7 +36,7 @@ from msx2run import Msx, ParadaZ80        # noqa: E402
 
 class Uranai(Msx):
     def __init__(self, dsk=None):
-        self.dsk = dsk or disco.lee(os.path.join(AQUI, "..", "uranai.dsk"))
+        self.dsk = bytearray(dsk or disco.lee(os.path.join(AQUI, "..", "uranai.dsk")))
         super().__init__(bytes(0x8000), msx2=True)
         self.mem[0x4000:0xC000] = bytes(0x8000)
         self.mem[0x4000] = self.mem[0x4003] = 0xC9
@@ -43,6 +44,7 @@ class Uranai(Msx):
         self.mem[0x8200:0x8200 + 8 * disco.SECTOR] = self.dsk[n * disco.SECTOR:(n + 8) * disco.SECTOR]
         self.dta = 0
         self.lecturas = []
+        self.grabados = []
 
     def pon_banco(self, ventana, banco):      # no hay mapper: RAM plana
         pass
@@ -55,6 +57,14 @@ class Uranai(Msx):
         for i, x in enumerate(t):
             self.mem[(destino + i) & 0xFFFF] = x
         self.lecturas.append((primero, cuantos, destino))
+
+    def graba(self, primero, cuantos, desde):
+        n = cuantos * disco.SECTOR
+        if not isinstance(self.dsk, bytearray):          # estados guardados antes de grabar
+            self.dsk = bytearray(self.dsk)
+        self.dsk[primero * disco.SECTOR:primero * disco.SECTOR + n] = bytes(
+            self.mem[(desde + i) & 0xFFFF] for i in range(n))
+        self.__dict__.setdefault("grabados", []).append((primero, cuantos, desde))
 
     def parte(self, n):
         """Carga la parte n como 0x8EA0 (por su tabla de 0x906C)."""
@@ -77,6 +87,9 @@ class Uranai(Msx):
                     self.dta = (self.d << 8) | self.e
                 elif self.c == 0x2F:
                     self.sectores((self.d << 8) | self.e, self.h, self.dta)
+                    self.a = 0
+                elif self.c == 0x30:              # escribir sectores (la lista de personas, 1438-1439)
+                    self.graba((self.d << 8) | self.e, self.h, self.dta)
                     self.a = 0
                 else:
                     raise ParadaZ80("BDOS 0x%02X sin hacer" % self.c)
