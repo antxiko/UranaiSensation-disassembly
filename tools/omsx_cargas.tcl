@@ -37,7 +37,14 @@ if {[info exists ::env(CARGAS_RAM)]} {
     }
     after time 20 mira
 }
+# CARGAS_VRAM: al final, la VRAM entera (128 KB) y la paleta en ese fichero
 after time $::env(CARGAS_SEG) {
+    if {[info exists ::env(CARGAS_VRAM)] && $::env(CARGAS_VRAM) ne ""} {
+        set g [open $::env(CARGAS_VRAM) wb]
+        puts -nonewline $g [debug read_block VRAM 0 0x20000]
+        puts -nonewline $g [debug read_block {VDP palette} 0 32]
+        close $g
+    }
     screenshot -raw -prefix $::env(CARGAS_SALIDA)
     close $::f; exit
 }
